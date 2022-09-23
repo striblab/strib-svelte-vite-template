@@ -1,0 +1,20 @@
+{
+  "name": "strib-svelte-vite-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy-staging": "./strib-deploy.sh --environment staging",
+    "deploy-production": "./strib-deploy.sh --environment production"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "sass": "^1.55.0",
+    "svelte": "^3.49.0",
+    "vite": "^3.1.0",
+    "vite-plugin-compression": "^0.5.1"
+  }
+}

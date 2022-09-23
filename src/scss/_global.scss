@@ -1,0 +1,121 @@
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: #333;
+	margin: 0;
+	/*padding: 8px;*/
+	box-sizing: border-box;
+	font-family: "Benton Sans", sans-serif;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+input[type="range"] {
+	height: 0;
+}
+
+button {
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+/*CHORUS OVERRIDE STYLING*/
+
+.series-article .l-article-body .article-body {
+    width: 100% !important;
+    margin: auto !important;
+}
+
+.series-article div.text-wrapper {
+	width: 85%;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+.series-article .l-article-body .article-author-contact {
+	width: 85%;
+	margin: 0 auto;
+	max-width: 600px;
+	margin-top: 50px;
+}
+
+.series-article .l-article-body .comments-section {
+	width: 85%;
+	margin: 0 auto;
+	max-width: 600px;
+	margin-top: 50px;
+}
+
+.series-article p {
+	line-height: 140%;
+    margin-bottom: 14px;
+    font-size: 16px !important;
+    margin-bottom: 25px !important;
+}
+
+.series-article div.text-wrapper.methodology p {
+	font-family: "Benton Sans" !important;
+}
+
+.content {
+    max-width: 100%;
+    padding: 0;
+}
+
+.m-controls {
+	display: none;
+	@media only screen and (max-width: 520px) {
+		display: block;
+	}
+}
+
+.series-article h1.article-title {
+    font-size: 3em;
+    padding: 15px;
+}
+
+.article-author-contact {
+    width: 85%;
+    margin-left: 7.5%;
+}
