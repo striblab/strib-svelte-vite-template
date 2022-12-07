@@ -18,6 +18,13 @@ To run the dev server run `npm run dev`.
 
 To build for deployment, run `npm run build`.
 
+## Strib webfonts
+
+The licenses for the webfonts used on the Star Tribune mean they can only be served from startribune.com
+URLs, meaning they are blocked from localhost while you are developing. To get around this, the template
+app serves the fonts from the `public/` directory. That means you need a `strib-webfonts/` folder with all
+the relevant font files inside the `public/`, which you can get from someone who already has them.
+
 ## Deploying
 
 Deployment is currently handled by a shell script (`strib-deploy.sh`) that has two dependencies:
