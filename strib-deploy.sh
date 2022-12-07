@@ -21,9 +21,25 @@ fi
 
 if [ "$DEPLOY_PATH" != "" ]; then
   if [ -d "dist/" ]; then
-    aws s3 sync dist/ $DEPLOY_PATH --profile default --exclude ".DS_Store"
-    aws s3 cp dist/assets/index.*.js.gz $DEPLOY_PATH --profile default --content-encoding=gzip --content-type=application/javascript
-    aws s3 cp dist/assets/index.*.css.gz $DEPLOY_PATH --profile default --content-encoding=gzip --content-type=text/css
+    aws s3 sync ./dist/ $DEPLOY_PATH \
+      --profile default \
+      --exclude ".DS_Store" \
+      --exclude "strib-webfonts/*" \
+      --exclude "assets/*"
+      
+    aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
+      --exclude "*" \
+      --include "*.js.gz" \
+      --profile default \
+      --content-encoding=gzip \
+      --content-type=application/javascript
+
+    aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
+      --exclude "*" \
+      --include "*.css.gz" \
+      --profile default \
+      --content-encoding=gzip \
+      --content-type=text/css
   else
     echo "No 'dist/' directory found. Do you need to run the build command?"
   fi
