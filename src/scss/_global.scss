@@ -68,6 +68,33 @@ button:focus {
 	border-color: #666;
 }
 
+// No JS module
+#no-js {
+	max-width: 600px;
+	margin: 2rem auto;
+	padding: 1.2rem;
+	border: 1px solid #999;
+	border-radius: .5rem;
+	background-color: #f5f5f5;
+
+	h3 {
+		font-family:'Benton Sans',Helvetica,sans-serif;
+		font-style: normal;
+		font-weight:bold;
+		font-size: 1.4rem;
+	}
+
+	p {
+		font-family:'Benton Sans',Helvetica,sans-serif;
+		font-style: normal;
+		font-weight:normal;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
 /*CHORUS OVERRIDE STYLING*/
 
 .series-article .l-article-body .article-body {
@@ -95,7 +122,7 @@ button:focus {
 	margin-top: 50px;
 }
 
-.series-article p {
+.series-article #proj-container p {
 	line-height: 140%;
     margin-bottom: 14px;
     font-size: 16px !important;

@@ -6,7 +6,7 @@ if (import.meta.env.DEV) {
   import("./scss/local-webfonts.scss")
 } 
 
-
+document.getElementById('proj-container').innerHTML = ""
 const app = new App({
   target: document.getElementById('proj-container')
 })
