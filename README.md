@@ -37,4 +37,4 @@ Deployment is currently handled by a shell script (`strib-deploy.sh`) that has t
 brew install jq
 ```
 
-To deploy to staging, run `npm run deploy-staging`. For production, run `npm run deploy-production`. This will upload to a typical path using your project's name, which is read from `package.json`. 
+To deploy to staging, run `npm run deploy-staging`. For production, run `npm run deploy-production`. This will upload to a typical path using your project's name, which is read from the root directory of your project (where `package.json` is located). 

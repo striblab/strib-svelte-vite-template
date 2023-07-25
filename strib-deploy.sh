@@ -10,7 +10,7 @@ while [ $# -gt 0 ] ; do
   shift
 done
 
-PROJ_NAME=$(cat package.json | jq -r .name)
+PROJ_NAME=$(pwd | xargs basename)
 echo $PROJ_NAME
 
 if [ "$DEPLOYTO" == "production" ]; then
