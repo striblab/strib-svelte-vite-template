@@ -12,10 +12,10 @@
     "deploy-production": "./strib-deploy.sh --environment production"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "sass": "^1.56.2",
     "svelte": "^4.0.5",
-    "vite": "^4.0.1",
+    "vite": "^5.0.10",
     "vite-plugin-compression": "^0.5.1"
   }
 }
