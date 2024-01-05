@@ -27,14 +27,7 @@ The local webfonts themselves and the webfont SCSS file that references them are
 
 ## Deploying
 
-Deployment is currently handled by a shell script (`strib-deploy.sh`) that has two dependencies:
-
-[AWS CLI](https://aws.amazon.com/cli/) with properly configured credentials for the static.startribune.com bucket using the 'default' profile.
-
-[jq](https://stedolan.github.io/jq/), which can be installed on a Mac via [Homebrew](https://brew.sh/):
-
-```
-brew install jq
-```
+Deployment is currently handled by a shell script (`strib-deploy.sh`). You need to have the [AWS CLI](https://aws.amazon.com/cli/) installed
+with credentials for the static.startribune.com bucket using the 'default' profile.
 
 To deploy to staging, run `npm run deploy-staging`. For production, run `npm run deploy-production`. This will upload to a typical path using your project's name, which is read from the root directory of your project (where `package.json` is located). 
