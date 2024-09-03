@@ -1,10 +1,8 @@
-import './scss/style.scss'
-import App from './App.svelte'
+import "./styles/tailwind/utility.css"
+import "./styles/tailwind/typography.css"
+import "./styles/tailwind/tailwind.css"
 
-// Serve local webfonts during dev 
-if (import.meta.env.DEV) {
-  import("./scss/local-webfonts.scss")
-} 
+import App from './App.svelte'
 
 document.getElementById('proj-container').innerHTML = ""
 const app = new App({

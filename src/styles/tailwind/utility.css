@@ -1,0 +1,196 @@
+@tailwind components;
+
+@layer components {
+  /* Heading */
+  .font-utility-heading-01 {
+    @apply font-graphik-bold leading-title text-36;
+  }
+
+
+
+  .font-utility-heading-03 {
+    @apply font-graphik-bold leading-title text-24;
+  }
+
+  .font-utility-heading-04 {
+    @apply font-graphik-bold leading-title text-20;
+  }
+
+  .font-utility-heading-05 {
+    @apply font-graphik-bold leading-title text-18;
+  }
+
+  .font-utility-heading-06 {
+    @apply font-graphik-bold leading-heading-tight text-16;
+  }
+
+  .font-utility-heading-07 {
+    @apply font-graphik-bold leading-heading-tight text-14;
+  }
+
+  /* Body */
+  .font-utility-body-reg-01 {
+    @apply font-graphik-regular font-regular leading-tight text-20;
+  }
+
+  .font-utility-body-bold-01 {
+    @apply font-graphik-semibold leading-tight text-20;
+  }
+
+  .font-utility-body-italic-01 {
+    @apply font-graphik-italic font-regular leading-tight text-20;
+  }
+
+  .font-utility-body-bold-italic-01 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-20;
+  }
+
+  .font-utility-body-reg-02 {
+    @apply font-graphik-regular leading-tight font-regular text-18;
+  }
+
+  .font-utility-body-bold-02 {
+    @apply font-graphik-semibold leading-tight text-18;
+  }
+
+  .font-utility-body-italic-02 {
+    @apply font-graphik-italic font-regular leading-tight text-18;
+  }
+
+  .font-utility-body-bold-italic-02 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-18;
+  }
+
+  .font-utility-body-reg-03 {
+    @apply font-graphik-regular font-regular leading-tight text-16;
+  }
+
+  .font-utility-body-bold-03 {
+    @apply font-graphik-semibold leading-tight text-16;
+  }
+
+  .font-utility-body-italic-03 {
+    @apply font-graphik-italic font-regular leading-tight text-16;
+  }
+
+  .font-utility-body-bold-italic-03 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-16;
+  }
+
+  .font-utility-body-reg-04 {
+    @apply font-graphik-regular font-regular leading-link text-14;
+  }
+
+  .font-utility-body-bold-04 {
+    @apply font-graphik-semibold leading-link text-14;
+  }
+
+  .font-utility-body-italic-04 {
+    @apply font-graphik-italic font-regular leading-link text-14;
+  }
+
+  .font-utility-body-bold-italic-04 {
+    @apply font-graphik-bold-italic font-semibold leading-link text-14;
+  }
+
+  .font-utility-body-reg-05 {
+    @apply font-graphik-regular font-regular leading-link text-12;
+  }
+
+  .font-utility-body-bold-05 {
+    @apply font-graphik-semibold leading-link text-12;
+  }
+
+  .font-utility-body-italic-05 {
+    @apply font-graphik-italic font-regular leading-link text-12;
+  }
+
+  .font-utility-body-bold-italic-05 {
+    @apply font-graphik-bold-italic font-semibold leading-link text-12;
+  }
+
+  /* Button */
+  .font-utility-button-01 {
+    @apply font-graphik-semibold leading-heading tracking-wide text-14;
+  }
+
+  .font-utility-button-02 {
+    @apply font-graphik-semibold leading-heading tracking-wide text-12;
+  }
+
+  .font-utility-button-link-01 {
+    @apply font-graphik-medium leading-heading-tight text-14 font-medium;
+  }
+
+  .font-utility-button-link-02 {
+    @apply font-graphik-medium leading-heading-tight text-12 font-medium;
+  }
+
+  /* Label */
+  .font-utility-label-bold-01 {
+    @apply font-graphik-semibold leading-heading text-16;
+  }
+
+  .font-utility-label-reg-01 {
+    @apply font-graphik-regular font-regular leading-heading text-16;
+  }
+
+  .font-utility-label-reg-caps-01 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wide text-16;
+  }
+
+  .font-utility-label-bold-caps-01 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wide text-16;
+  }
+
+  .font-utility-label-bold-02 {
+    @apply font-graphik-semibold leading-heading text-14;
+  }
+
+  .font-utility-label-reg-02 {
+    @apply font-graphik-regular font-regular leading-heading text-14;
+  }
+
+  .font-utility-label-reg-caps-02 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wide text-14;
+  }
+
+  .font-utility-label-bold-caps-02 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wide text-14;
+  }
+
+  .font-utility-label-bold-03 {
+    @apply font-graphik-semibold leading-heading text-11;
+  }
+
+  .font-utility-label-reg-03 {
+    @apply font-graphik-regular font-regular leading-heading tracking-wide text-11;
+  }
+
+  .font-utility-label-reg-caps-03 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wider text-11;
+  }
+
+  .font-utility-label-bold-caps-03 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wider text-11;
+  }
+
+  /* Meta */
+  .font-utility-meta-reg-01 {
+    @apply font-graphik-regular font-regular leading-heading text-14;
+  }
+
+  .font-utility-meta-bold-01 {
+    @apply font-graphik-semibold leading-heading text-14;
+  }
+
+  .font-utility-meta-reg-02 {
+    @apply font-graphik-regular font-regular leading-heading text-12;
+  }
+
+  .font-utility-meta-bold-02 {
+    @apply font-graphik-semibold leading-heading text-12;
+  }
+
+
+}
