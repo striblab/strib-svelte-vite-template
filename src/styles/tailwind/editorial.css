@@ -1,0 +1,410 @@
+@tailwind components;
+@layer components {
+  /* Display */
+  /* Popular Font */
+  .font-editorial-display-brand-uppercase-01 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-82 text-45;
+  }
+
+  .font-editorial-display-brand-uppercase-02 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-65 text-34;
+  }
+
+  .font-editorial-display-brand-uppercase-03 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-42 text-28;
+  }
+
+  .font-editorial-display-brand-uppercase-04 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-34 text-24;
+  }
+
+  .font-editorial-display-brand-uppercase-05 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-24 text-20;
+  }
+
+  .font-editorial-display-brand-uppercase-06 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-20 text-18;
+  }
+
+  /* Publico Headline Font */
+  .font-editorial-display-serif-01 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-110 text-72;
+  }
+
+  .font-editorial-display-serif-02 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-85 text-64;
+  }
+
+  .font-editorial-display-serif-03 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-72 text-56;
+  }
+
+  /* Heading News */
+  /* Publico Headline Condensed*/
+  .font-editorial-news-heading-01 {
+    @apply font-publico-banner-condensed-medium font-medium leading-title tracking-normal lg:text-66 text-40;
+  }
+
+  .font-editorial-news-heading-02 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight md:leading-title tracking-normal lg:text-46 text-32;
+  }
+
+  .font-editorial-news-heading-03 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight tracking-normal md:text-32 text-28;
+  }
+
+  .font-editorial-news-heading-04 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight tracking-normal text-24;
+  }
+
+  .font-editorial-news-heading-05 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-tight tracking-normal text-20;
+  }
+
+  .font-editorial-news-heading-06 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-tight tracking-wide text-18;
+  }
+
+  /* Heading Non-News */
+  /* Publico Headline */
+  .font-editorial-non-news-heading-01 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-66 text-42;
+  }
+
+  .font-editorial-non-news-heading-02 {
+    @apply font-publico-headline-roman font-regular leading-title md:leading-title text-44;
+  }
+
+  .font-editorial-non-news-heading-03 {
+    @apply font-publico-headline-roman font-regular leading-heading-extra-tight md:text-32 text-28;
+  }
+
+  .font-editorial-non-news-heading-04 {
+    @apply font-publico-headline-roman font-regular leading-heading-extra-tight text-22;
+  }
+
+  .font-editorial-non-news-heading-05 {
+    @apply font-publico-headline-roman font-regular leading-heading-tight text-19;
+  }
+
+  .font-editorial-non-news-heading-06 {
+    @apply font-publico-headline-roman font-regular leading-heading-tight text-17;
+  }
+
+  /* Heading Voice */
+  /* Publico Headline */
+  .font-editorial-voice-heading-01 {
+    @apply font-publico-banner-light-italic font-light leading-title tracking-normal md:text-66 text-42;
+  }
+
+  .font-editorial-voice-heading-02 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight md:leading-title tracking-normal md:text-46 text-32;
+  }
+
+  .font-editorial-voice-heading-03 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight tracking-normal md:text-32 text-28;
+  }
+
+  .font-editorial-voice-heading-04 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight tracking-normal text-24;
+  }
+
+  .font-editorial-voice-heading-05 {
+    @apply font-publico-headline-italic font-regular leading-heading-tight tracking-normal text-20;
+  }
+
+  .font-editorial-voice-heading-06 {
+    @apply font-publico-headline-italic font-regular leading-heading-tight tracking-wide text-18;
+  }
+
+  /* Heading Enterprise */
+  /* Publico Headline Condensed*/
+  .font-editorial-enterprise-heading-01 {
+    @apply font-publico-banner-condensed-medium font-black leading-title tracking-normal md:text-66 text-42;
+  }
+
+  .font-editorial-enterprise-heading-02 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight md:leading-title tracking-normal md:text-46 text-32;
+  }
+
+  .font-editorial-enterprise-heading-03 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight tracking-normal md:text-34 text-28;
+  }
+
+  .font-editorial-enterprise-heading-04 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight tracking-normal text-24;
+  }
+
+  .font-editorial-enterprise-heading-05 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-tight tracking-normal text-20;
+  }
+
+  .font-editorial-enterprise-heading-06 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-tight tracking-wide text-18;
+  }
+
+  /* Heading Section */
+  /* Popular*/
+  .font-editorial-section-heading-01 {
+    @apply font-popular-bold leading-none md:text-48 text-34;
+  }
+
+  .font-editorial-section-heading-02 {
+    @apply font-popular-bold leading-none md:text-36 text-28;
+  }
+
+  .font-editorial-section-heading-03 {
+    @apply font-popular-bold leading-heading-extra-tight md:leading-none md:text-28 text-22;
+  }
+
+  .font-editorial-section-heading-04 {
+    @apply font-popular-bold leading-heading-extra-tight md:leading-none text-18 md:text-22;
+  }
+
+  /* Heading Article */
+  /* Publico Headline */
+  .font-editorial-article-header-01 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-28;
+  }
+
+  .font-editorial-article-header-02 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-23 md:text-24 text-article-heading tracking-normal;
+  }
+
+  .font-editorial-article-header-03 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-20;
+  }
+
+  .font-editorial-article-header-04 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-18;
+  }
+
+  /* Body */
+  /* Publico Text */
+  .font-editorial-body-reg-01 {
+    @apply font-publico-text-roman font-regular leading-description text-20;
+  }
+
+  .font-editorial-body-italic-01 {
+    @apply font-publico-text-italic font-regular leading-description text-20;
+  }
+
+  .font-editorial-body-bold-01 {
+    @apply font-publico-text-bold font-bold leading-description text-20;
+  }
+
+  .font-editorial-body-bold-italic-01 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-20;
+  }
+
+  .font-editorial-body-reg-02 {
+    @apply font-publico-text-roman font-regular leading-description text-18;
+  }
+
+  .font-editorial-body-italic-02 {
+    @apply font-publico-text-italic font-regular leading-description text-18;
+  }
+
+  .font-editorial-body-bold-02 {
+    @apply font-publico-text-bold font-bold leading-description text-18;
+  }
+
+  .font-editorial-body-bold-italic-02 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-18;
+  }
+
+  .font-editorial-body-reg-03 {
+    @apply font-publico-text-roman font-regular leading-description text-16;
+  }
+
+  .font-editorial-body-italic-03 {
+    @apply font-publico-text-italic font-regular leading-description text-16;
+  }
+
+  .font-editorial-body-bold-03 {
+    @apply font-publico-text-bold font-bold leading-description text-16;
+  }
+
+  .font-editorial-body-bold-italic-03 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-16;
+  }
+
+  .font-editorial-body-reg-04 {
+    @apply font-publico-text-roman font-regular leading-description text-14;
+  }
+
+  .font-editorial-body-italic-04 {
+    @apply font-publico-text-italic font-regular leading-description text-14;
+  }
+
+  .font-editorial-body-bold-04 {
+    @apply font-publico-text-bold font-bold leading-description text-14;
+  }
+
+  .font-editorial-body-bold-italic-04 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-14;
+  }
+
+  .font-editorial-body-reg-05 {
+    @apply font-publico-text-roman font-regular leading-description text-12;
+  }
+
+  .font-editorial-body-italic-05 {
+    @apply font-publico-text-italic font-regular leading-description text-12;
+  }
+
+  .font-editorial-body-bold-05 {
+    @apply font-publico-text-bold font-bold leading-description text-12;
+  }
+
+  .font-editorial-body-bold-italic-05 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-12;
+  }
+
+  /* Quote */
+  .font-editorial-quote-01 {
+    @apply font-publico-headline-italic leading-heading-tight md:text-32 text-28;
+  }
+
+  .font-editorial-quote-03 {
+    /* adding important here since article-body-rich-text class is overriding the quote styles */
+    @apply !font-publico-headline-italic !italic !leading-heading-tight !text-22 md:!text-24;
+  }
+
+  /* Number */
+  .font-editorial-number-01 {
+    @apply font-publico-headline-condensed-medium font-light leading-title text-78;
+  }
+
+  .font-editorial-number-02 {
+    @apply font-publico-headline-condensed-medium font-light leading-title;
+  }
+
+  /* Sponsored Heading */
+  /* Barlow Font */
+  .font-sponsored-heading-01 {
+    @apply font-barlow-condensed-medium font-medium text-42 md:text-66 leading-title md:leading-title tracking-tight;
+  }
+
+  .font-sponsored-heading-02 {
+    @apply font-barlow-condensed-medium font-medium text-32 md:text-46 leading-heading-extra-tight md:leading-title tracking-tight;
+  }
+
+  .font-sponsored-heading-03 {
+    @apply font-barlow-condensed-medium font-medium text-28 md:text-34 leading-heading-extra-tight md:tracking-tight;
+  }
+
+  .font-sponsored-heading-04 {
+    @apply font-barlow-condensed-medium font-medium text-24 leading-heading-extra-tight;
+  }
+
+  .font-sponsored-heading-05 {
+    @apply font-barlow-condensed-medium font-medium text-20 leading-heading-extra-tight;
+  }
+
+  .font-sponsored-heading-06 {
+    @apply font-barlow-condensed-medium font-medium text-18 leading-heading-extra-tight;
+  }
+
+  /* Sponsored Article Heading */
+  .font-sponsored-article-header-01 {
+    @apply font-barlow-condensed-semibold font-semibold text-28 leading-heading-tight;
+  }
+
+  .font-sponsored-article-header-02 {
+    @apply font-barlow-condensed-semibold font-semibold text-24 leading-heading-tight;
+  }
+
+  .font-sponsored-article-header-03 {
+    @apply font-barlow-condensed-semibold font-semibold text-20 leading-heading-tight;
+  }
+
+  .font-sponsored-article-header-04 {
+    @apply font-barlow-condensed-semibold font-semibold text-18 leading-heading-tight;
+  }
+
+  /* Sponsored Body */
+  .font-sponsored-body-reg-01 {
+    @apply font-barlow-regular font-normal text-20 leading-description;
+  }
+
+  .font-sponsored-heading-large-06 {
+    @apply font-barlow-condensed-semibold text-19 leading-heading-extra-tight;
+  }
+
+  .font-sponsored-body-reg-02 {
+    @apply font-barlow-regular font-normal text-18 leading-description;
+  }
+
+  .font-sponsored-body-reg-03 {
+    @apply font-barlow-regular font-normal text-16 leading-description;
+  }
+
+  .font-sponsored-body-reg-04 {
+    @apply font-barlow-regular font-normal text-14 leading-description;
+  }
+
+  .font-sponsored-body-reg-05 {
+    @apply font-barlow-regular font-normal text-12 leading-description;
+  }
+
+  .font-sponsored-body-bold-01 {
+    @apply font-barlow-semibold font-semibold text-20 leading-description;
+  }
+
+  .font-sponsored-body-bold-02 {
+    @apply font-barlow-semibold font-semibold text-18 leading-description;
+  }
+
+  .font-sponsored-body-bold-03 {
+    @apply font-barlow-semibold font-semibold text-16 leading-description;
+  }
+
+  .font-sponsored-body-bold-04 {
+    @apply font-barlow-semibold font-semibold text-14 leading-description;
+  }
+
+  .font-sponsored-body-bold-05 {
+    @apply font-barlow-semibold font-semibold text-12 leading-description;
+  }
+
+  .font-sponsored-body-italic-01 {
+    @apply font-barlow-italic font-normal text-20 leading-description;
+  }
+
+  .font-sponsored-body-italic-02 {
+    @apply font-barlow-italic font-normal text-18 leading-description;
+  }
+
+  .font-sponsored-body-italic-03 {
+    @apply font-barlow-italic font-normal text-16 leading-description;
+  }
+
+  .font-sponsored-body-italic-04 {
+    @apply font-barlow-italic font-normal text-14 leading-description;
+  }
+
+  .font-sponsored-body-italic-05 {
+    @apply font-barlow-italic font-normal text-12 leading-description;
+  }
+
+  .font-sponsored-body-bold-italic-01 {
+    @apply font-barlow-semibold-italic font-semibold text-20 leading-description;
+  }
+
+  .font-sponsored-body-bold-italic-02 {
+    @apply font-barlow-semibold-italic font-semibold text-18 leading-description;
+  }
+
+  .font-sponsored-body-bold-italic-03 {
+    @apply font-barlow-semibold-italic font-semibold text-16 leading-description;
+  }
+
+  .font-sponsored-body-bold-italic-04 {
+    @apply font-barlow-semibold-italic font-semibold text-14 leading-description;
+  }
+
+  .font-sponsored-body-bold-italic-05 {
+    @apply font-barlow-semibold-italic font-semibold text-12 leading-description;
+  }
+}

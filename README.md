@@ -20,10 +20,8 @@ To build for deployment, run `npm run build`.
 
 ## Strib webfonts
 
-The licenses for webfonts used by the Star Tribune stipulate the fonts can only be served from startribune.com
-URLs, meaning they are blocked from localhost while you are developing. To get around this, run the shell script `npm run get-fonts` to download .woff font files directly to the `/public/strib-webfonts/` directory.
-The local webfonts themselves and the webfont SCSS file that references them are excluded from build and deploy processes. If deployed to static.startribune.com, Star Tribune webfonts will render as they normally should without the need for local font files.
-
+Manually place your font folders in the directory `src/fonts/` to render them on the page.
+These local fonts will be included in the build and deploy processes until a CORS policy issue can be resolved on static.startribune.com.
 
 ## Deploying
 

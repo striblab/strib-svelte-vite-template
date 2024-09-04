@@ -1,0 +1,31 @@
+@tailwind components;
+@layer components {
+  /* Roboto */
+  .font-roboto-heading-01 {
+    @apply font-roboto text-20 md:text-[22px] text-text-primary leading-heading-tight font-medium;
+  }
+
+  .font-roboto-body-reg-04 {
+    @apply font-roboto text-12 md:text-14 text-text-primary leading-description font-normal;
+  }
+
+  .font-roboto-heading-02 {
+    @apply font-roboto lg:text-[48px] md:text-[40px] text-[32px] text-text-primary leading-heading-tight lg:leading-title font-medium;
+  }
+
+  .font-roboto-heading-03 {
+    @apply font-roboto text-24 md:text-32 leading-tight font-medium text-text-primary;
+  }
+
+  .font-roboto-body-reg-03 {
+    @apply font-roboto text-lg md:text-xl text-text-primary lg:leading-tight font-normal;
+  }
+
+  .font-roboto-body-reg-05 {
+    @apply font-roboto text-14 text-text-secondary font-normal leading-description;
+  }
+
+  .font-roboto-heading-04 {
+    @apply font-roboto text-18 text-text-primary leading-heading-tight;
+  }
+}

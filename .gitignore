@@ -25,4 +25,4 @@ dist-ssr
 *.sw?
 
 # Do not commit actual webfonts to source control -- license restrictions
-public/strib-webfonts/
+*/fonts/
