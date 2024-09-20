@@ -5,7 +5,7 @@
 /* Roboto fonts */
 @font-face {
   font-family: "roboto";
-  src: url("/src/fonts/RobotoMedium/RobotoMedium.woff2") format("woff2");
+  src: url("/fonts/RobotoMedium/RobotoMedium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "popular-bold";
-  src: url("/src/fonts/PopularBold/Popular-Bold.woff2") format("woff2");
+  src: url("/fonts/PopularBold/Popular-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "popular-light";
-  src: url("/src/fonts/PopularLight/Popular-Light.woff2") format("woff2");
+  src: url("/fonts/PopularLight/Popular-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@
 
 @font-face {
   font-family: "popular-medium";
-  src: url("/src/fonts/PopularMedium/Popular-Medium.woff2") format("woff2");
+  src: url("/fonts/PopularMedium/Popular-Medium.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
   font-family: "popular-regular";
-  src: url("/src/fonts/PopularRegular/Popular-Regular.woff2") format("woff2");
+  src: url("/fonts/PopularRegular/Popular-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -49,28 +49,28 @@
 
 @font-face {
   font-family: "publico-text-roman";
-  src: url("/src/fonts/PublicoTextRoman/PublicoText-Roman-Web.woff2") format("woff2");
+  src: url("/fonts/PublicoTextRoman/PublicoText-Roman-Web.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "publico-text-bold";
-  src: url("/src/fonts/PublicoTextBold/PublicoText-Bold.woff2") format("woff2");
+  src: url("/fonts/PublicoTextBold/PublicoText-Bold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "publico-text-italic";
-  src: url("/src/fonts/PublicoTextItalic/PublicoText-Italic.woff2") format("woff2");
+  src: url("/fonts/PublicoTextItalic/PublicoText-Italic.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "publico-text-bold-italic";
-  src: url("/src/fonts/PublicoTextBoldItalic/PublicoText-BoldItalic.woff2")
+  src: url("/fonts/PublicoTextBoldItalic/PublicoText-BoldItalic.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -79,7 +79,7 @@
 /* Publico Headline fonts */
 @font-face {
   font-family: "publico-headline-condensed-medium";
-  src: url("/src/fonts/PublicoHeadlineCondensedMedium/PublicoHeadlineCondensed-Medium.woff2")
+  src: url("/fonts/PublicoHeadlineCondensedMedium/PublicoHeadlineCondensed-Medium.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -87,7 +87,7 @@
 
 @font-face {
   font-family: "publico-banner-condensed-medium";
-  src: url("/src/fonts/PublicoBannerCondensedMedium/PublicoBannerCondensed-Medium.woff2")
+  src: url("/fonts/PublicoBannerCondensedMedium/PublicoBannerCondensed-Medium.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -95,7 +95,7 @@
 
 @font-face {
   font-family: "publico-banner-light-italic";
-  src: url("/src/fonts/PublicoBannerLightItalic/PublicoBanner-LightItalic.woff2")
+  src: url("/fonts/PublicoBannerLightItalic/PublicoBanner-LightItalic.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -103,7 +103,7 @@
 
 @font-face {
   font-family: "publico-headline-italic";
-  src: url("/src/fonts/PublicoHeadlineItalic/PublicoHeadline-Italic.woff2")
+  src: url("/fonts/PublicoHeadlineItalic/PublicoHeadline-Italic.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -111,7 +111,7 @@
 
 @font-face {
   font-family: "publico-headline-light-italic";
-  src: url("/src/fonts/PublicoHeadlineLightItalic/PublicoHeadline-LightItalic.woff2")
+  src: url("/fonts/PublicoHeadlineLightItalic/PublicoHeadline-LightItalic.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -119,7 +119,7 @@
 
 @font-face {
   font-family: "publico-headline-medium";
-  src: url("/src/fonts/PublicoHeadlineMedium/PublicoHeadline-Medium.woff2")
+  src: url("/fonts/PublicoHeadlineMedium/PublicoHeadline-Medium.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -127,7 +127,7 @@
 
 @font-face {
   font-family: "publico-headline-roman";
-  src: url("/src/fonts/PublicoHeadlineRoman/PublicoHeadline-Roman.woff2")
+  src: url("/fonts/PublicoHeadlineRoman/PublicoHeadline-Roman.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -137,35 +137,35 @@
 
 @font-face {
   font-family: "graphik-regular";
-  src: url("/src/fonts/GraphikRegular/Graphik-Regular.woff2") format("woff2");
+  src: url("/fonts/GraphikRegular/Graphik-Regular.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "graphik-bold";
-  src: url("/src/fonts/GraphikBold/Graphik-Bold.woff2") format("woff2");
+  src: url("/fonts/GraphikBold/Graphik-Bold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "graphik-medium";
-  src: url("/src/fonts/GraphikMedium/Graphik-Medium.woff2") format("woff2");
+  src: url("/fonts/GraphikMedium/Graphik-Medium.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "graphik-semibold";
-  src: url("/src/fonts/GraphikSemibold/Graphik-Semibold.woff2") format("woff2");
+  src: url("/fonts/GraphikSemibold/Graphik-Semibold.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "graphik-italic";
-  src: url("/src/fonts/GraphikRegularItalic/GraphikRegularItalic-Italic.woff2")
+  src: url("/fonts/GraphikRegularItalic/GraphikRegularItalic-Italic.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -173,14 +173,14 @@
 
 @font-face {
   font-family: "graphik-bold-italic";
-  src: url("/src/fonts/GraphikBoldItalic/Graphik-BoldItalic.woff2") format("woff2");
+  src: url("/fonts/GraphikBoldItalic/Graphik-BoldItalic.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "graphik-condensed-medium";
-  src: url("/src/fonts/GraphikCondensedMedium/GraphikCondensed-Medium.woff2")
+  src: url("/fonts/GraphikCondensedMedium/GraphikCondensed-Medium.woff2")
     format("woff2");
   font-style: normal;
   font-display: swap;
@@ -190,19 +190,19 @@
 
 @font-face {
   font-family: "publico-banner";
-  src: url("/src/fonts/PublicoBannerWebFonts/PublicoBanner-Roman-Web.woff2") format("woff2");
+  src: url("/fonts/PublicoBannerWebFonts/PublicoBanner-Roman-Web.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "publico-banner-xcondensed";
-  src: url("/src/fonts/PublicoBannerXCondensedWebFonts/PublicoBannerXCondensed-Roman-Web.woff2") format("woff2");
+  src: url("/fonts/PublicoBannerXCondensedWebFonts/PublicoBannerXCondensed-Roman-Web.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "publico-headline";
-  src: url("/src/fonts/PublicoHeadlineWebFonts/PublicoHeadline-Medium-Web.woff2") format("woff2");
+  src: url("/fonts/PublicoHeadlineWebFonts/PublicoHeadline-Medium-Web.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }

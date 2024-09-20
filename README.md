@@ -20,7 +20,7 @@ To build for deployment, run `npm run build`.
 
 ## Strib webfonts
 
-Manually place your font folders in the directory `src/fonts/` to render them on the page.
+Manually place your font folders in the directory `public/fonts/` to render them on the page.
 These local fonts will be included in the build and deploy processes until a CORS policy issue can be resolved on static.startribune.com.
 
 ## Deploying
