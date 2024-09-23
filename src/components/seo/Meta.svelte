@@ -1,4 +1,5 @@
 <script>
+    //expects data from /src/config/seo.json passed as prop
     export let seo;
 </script>
 

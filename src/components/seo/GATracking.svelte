@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
+    //expects data from /src/config/seo.json passed as prop
     export let seo;
 
     onMount(() => {
