@@ -5,8 +5,11 @@ DEPLOYTO=""
 
 while [ $# -gt 0 ]; do
   case $1 in
-  --environment) DEPLOYTO="$2"; shift 2;;
-  *) shift 1;;
+  --environment)
+    DEPLOYTO="$2"
+    shift 2
+    ;;
+  *) shift 1 ;;
   esac
 done
 
@@ -24,12 +27,26 @@ echo "Deployment Path: $DEPLOY_PATH"
 
 if [ "$DEPLOY_PATH" != "" ]; then
   if [ -d "dist/" ]; then
+
+    FONTS_PATH="$DEPLOY_PATH/fonts/"
+
+    # Check if the fonts directory exists in the S3 bucket
+    if ! (aws s3 ls "$FONTS_PATH" --profile default | { grep -q 'PRE' || true; }
+); then
+      echo "Fonts directory not found in S3. Syncing now..."
+      aws s3 sync ./dist/fonts $FONTS_PATH \
+        --profile default
+    else
+      echo "Fonts directory already exists in S3. No action taken."
+    fi
+
     echo "Syncing general assets..."
     aws s3 sync ./dist/ $DEPLOY_PATH \
       --profile default \
       --exclude ".DS_Store" \
       --exclude "strib-webfonts/*" \
-      --exclude "assets/*"
+      --exclude "assets/*" \
+      --exclude "assets/fonts/*"
 
 
     echo "Syncing JavaScript .gz files..."
@@ -41,7 +58,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --content-type "application/javascript" \
       --delete
 
-
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
       --exclude "*" \
@@ -49,7 +65,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-type "application/javascript" \
       --delete
-
 
     echo "Syncing CSS .gz files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -59,7 +74,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --content-encoding "gzip" \
       --content-type "text/css" \
       --delete
-
 
     echo "Syncing CSS files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
