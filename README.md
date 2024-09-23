@@ -34,7 +34,7 @@ To deploy to staging, run `npm run deploy-staging`. For production, run `npm run
 
 ## Deploying to the website
 
-By default, this template expects the built app to be included on a Star Tribune article page via Pym.js. Pym.js configuration for the built app, i.e. the child page, is already handled by default in App.svelte. Find documentation for setting up the parent article [https://library.stribapps.com/team-specifics/digital-design-and-production/workflows-and-schemes/using-pym-to-manage-iframed-content-in-arc-articles](here).
+By default, this template expects the built app to be included on a Star Tribune article page via Pym.js. Pym.js configuration for the built app, i.e. the child page, is already handled by default in App.svelte. Find documentation for setting up the parent article [here](https://library.stribapps.com/team-specifics/digital-design-and-production/workflows-and-schemes/using-pym-to-manage-iframed-content-in-arc-articles).
 
 ## Deploying offsite
 
