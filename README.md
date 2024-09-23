@@ -32,6 +32,10 @@ with credentials for the static.startribune.com bucket using the 'default' profi
 
 To deploy to staging, run `npm run deploy-staging`. For production, run `npm run deploy-production`. This will upload to a typical path using your project's name, which is read from the root directory of your project (where `package.json` is located).
 
-The this template by default does not include article headers, footers, meta tags or tracking logic. This is best for in-article deployment via pym.js, where the parent page will already include these components.
+## Deploying to the website
 
-If you wish instead to publish the article entirely on the static server, this template includes the four components mentioned above. Header and footer components need no configuration — simply import them to the App.svelte component. Meta.svelte and GATracking.svelte components should also be included in the App.svelte component, and will require the complete data from `/src/config/seo.json` filled out and passed in to each component as a prop for proper tracking.
+By default, this template expects the built app to be included on a Star Tribune article page via Pym.js. Pym.js configuration for the built app, i.e. the child page, is already handled by default in App.svelte. Find documentation for setting up the parent article [https://library.stribapps.com/team-specifics/digital-design-and-production/workflows-and-schemes/using-pym-to-manage-iframed-content-in-arc-articles](here).
+
+## Deploying offsite
+
+If you wish instead to publish the article entirely on the static server, this template includes header, footer, meta and tracking components. Header and footer components need no configuration — simply import them to the App.svelte component. Meta.svelte and GATracking.svelte components should also be included in the App.svelte component. Fill out the data inside `/src/config/seo.json` carefully for proper tracking and pass that data into Meta.svelte and GATracking.svelte as the `data` prop. If deploying offsite, there's no need to include the Pym.js code provided in the App.svelte component.
