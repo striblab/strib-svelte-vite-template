@@ -56,7 +56,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-encoding "gzip" \
       --content-type "application/javascript" \
-      --delete
 
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -64,7 +63,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --include "*.js" \
       --profile default \
       --content-type "application/javascript" \
-      --delete
 
     echo "Syncing CSS .gz files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -73,7 +71,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-encoding "gzip" \
       --content-type "text/css" \
-      --delete
 
     echo "Syncing CSS files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -81,7 +78,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --include "*.css" \
       --profile default \
       --content-type "text/css" \
-      --delete
 
   else
     echo "No 'dist/' directory found. Do you need to run the build command?"
