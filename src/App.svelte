@@ -1,14 +1,6 @@
 <script>
 
-  import { Child } from "pym.js";
-  import { onMount } from "svelte";
-
-  let message = "Hello world!"
-
-  onMount(() => {
-        const pymChild = new Child({ polling: 500});
-        pymChild.sendHeight();
-    })
+  let message = $state("Hello world!")
 
 </script>
 

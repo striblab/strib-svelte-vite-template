@@ -11,13 +11,14 @@
     "deploy-production": "./strib-deploy.sh --environment production"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@sveltejs/vite-plugin-svelte": "^5.0.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
+    "postcss-prefix-selector": "^2.1.0",
     "sass": "^1.56.2",
-    "svelte": "^4.0.5",
+    "svelte": "^5.2.9",
     "tailwindcss": "^3.4.4",
-    "vite": "^5.0.10",
+    "vite": "^6.0.1",
     "vite-plugin-compression": "^0.5.1"
   },
   "dependencies": {
