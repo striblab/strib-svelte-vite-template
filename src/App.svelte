@@ -1,11 +1,9 @@
 <script>
-
-  let message = $state("Hello world!")
-
+  import Map from './components/Map.svelte';
 </script>
 
 <main class="px-4 lg:px-20 pt-8">
-  <h1 class="font-editorial-news-heading-02">{message}</h1>
+  <Map />
 </main>
 
 <style>
