@@ -1,0 +1,18 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "label": "Lake Christina"
+        },
+        "geometry": {
+          "coordinates": [
+            -95.7423,
+            46.0929
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

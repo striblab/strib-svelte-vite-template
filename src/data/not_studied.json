@@ -1,0 +1,18 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "label": "Area not studied"
+        },
+        "geometry": {
+          "coordinates": [
+            -92.256,
+            44
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

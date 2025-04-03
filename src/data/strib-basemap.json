@@ -43,7 +43,7 @@
     }
   },
   "sprite": "https://tiles.dwcdn.net/sprites/dwsprites",
-  "glyphs": "https://tiles.dwcdn.net/glyphs/{fontstack}/{range}.pbf",
+  "glyphs": "/glyphs/{fontstack}/{range}.pbf",
   "transition": {"duration": 0, "delay": 0},
   "layers": [
     {
