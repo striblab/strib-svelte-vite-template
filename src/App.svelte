@@ -33,7 +33,7 @@
 
     <section class="h-screen flex flex-col justify-center items-center step">
       <div class="z-10 font-editorial-body-reg-01 bg-white p-4 md:p-7 h-min rounded-lg shadow-lg w-full max-w-xl mx-auto">
-        <p>Settlers systemically dried out the wetlands with ditches and underground pipes known as tile drainage.</p>
+        <p>Settlers systematically dried out the wetlands with ditches and underground pipes known as tile drainage.</p>
         <svg class="mt-2" width="300" height="30">
           <g>
             <rect x="0" y="10" width="20" height="20" fill="#BAA8D7" />
@@ -51,7 +51,7 @@
 
     <section class="h-screen flex flex-col justify-center items-center step">
       <div class="z-10 font-editorial-body-reg-01 bg-white p-4 md:p-7 h-min rounded-lg shadow-lg w-full max-w-xl mx-auto">
-        <p>Today, only 5% of the original wet prairies remain. The underground plumbing keeps today’s farm fields from developing into wetlands again.</p>
+        <p>Today, only 5% of the original wet prairies remain. The underground plumbing keeps today’s farm fields from turning into wetlands again.</p>
         <svg class="mt-2" width="300" height="30">
           <g>
             <rect x="0" y="10" width="20" height="20" fill="#B6E32B" />

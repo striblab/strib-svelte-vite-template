@@ -43,7 +43,7 @@
     }
   },
   "sprite": "https://tiles.dwcdn.net/sprites/dwsprites",
-  "glyphs": "/glyphs/{fontstack}/{range}.pbf",
+  "glyphs": "https://static.startribune.com/staging/news/projects/all/20250414-ducks-/glyphs/{fontstack}/{range}.pbf",
   "transition": {"duration": 0, "delay": 0},
   "layers": [
     {

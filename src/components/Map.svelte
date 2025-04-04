@@ -8,6 +8,7 @@
   import basemap from "../data/strib-basemap.json";
   import notStudied from "../data/not_studied.json";
   import lakeChristina from "../data/lake_christina.json";
+  import lakeButler from "../data/butler_lake.json";
   import { mobile } from "../data/stores.js";
 
   // Accept the scroll index as a prop from the parent
@@ -149,7 +150,38 @@
         layout: {
           "text-field": ["get", "label"],
           "text-size": 14,
-          "text-font": ["Graphik Web Bold"],
+          "text-font": ["Graphik Web Semibold"],
+          "text-offset": [0.3, -1.4],
+          "text-anchor": "top-left",
+        },
+        paint: {
+          "text-color": "#7e7e7e",
+          "text-halo-color": "#ffffff",
+          "text-halo-width": 1,
+          "text-opacity": 1,
+        },
+      });
+      map.addSource("lakeButler", {
+        type: "geojson",
+        data: lakeButler,
+      });
+      map.addLayer({
+        id: "lakeButler_dot",
+        type: "circle",
+        source: "lakeButler",
+        paint: {
+          "circle-radius": 4,
+          "circle-color": "#7e7e7e",
+        },
+      });
+      map.addLayer({
+        id: "lakeButler",
+        type: "symbol",
+        source: "lakeButler",
+        layout: {
+          "text-field": ["get", "label"],
+          "text-size": 14,
+          "text-font": ["Graphik Web Semibold"],
           "text-offset": [0.3, -1.4],
           "text-anchor": "top-left",
         },
