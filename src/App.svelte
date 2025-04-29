@@ -1,13 +1,17 @@
 <script>
-
-  let message = $state("Hello world!")
-
+  import StoryBody from './templates/StoryBody.svelte';
+  import FeaturedMedia from './templates/FeaturedMedia.svelte';
+  import HeadlineByline from './templates/HeadlineByline.svelte';
 </script>
 
-<main class="px-4 lg:px-20 pt-8">
-  <h1 class="font-editorial-news-heading-02">{message}</h1>
+<main class="col-span-full">
+  <div class="project">
+    <div class="project-inner lg:max-w-8xl mx-auto pb-4">
+      <FeaturedMedia />
+      <HeadlineByline />
+      <StoryBody />
+    </div>
+  </div>
 </main>
 
-<style>
-
-</style>
+<style></style>
