@@ -1,7 +1,7 @@
 <script>
-  import StoryBody from './templates/StoryBody.svelte';
-  import FeaturedMedia from './templates/FeaturedMedia.svelte';
-  import HeadlineByline from './templates/HeadlineByline.svelte';
+  import StoryBody from "./components/StoryBody.svelte";
+  import FeaturedMedia from "./components/FeaturedMedia.svelte";
+  import HeadlineByline from "./components/HeadlineByline.svelte";
 </script>
 
 <main class="col-span-full">
