@@ -15,7 +15,7 @@
           class="absolute z-10 w-full h-full flex flex-col gap-2 justify-end items-center pb-8"
         >
           <HeroSectionLabel variant={"pill"}>Section label</HeroSectionLabel>
-          <div class="text-center">
+          <div class="text-center max-w-[800px]">
             <HeroHeadline variant={"overlayed"}>
               Lorem ipsum dolor sit amet consectetur adipiscing elit
             </HeroHeadline>
