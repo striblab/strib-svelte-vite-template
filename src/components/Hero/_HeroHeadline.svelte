@@ -1,10 +1,10 @@
 <script>
-  let { variant = "stacked", children } = $props();
+  let { variant = "default", children } = $props();
 
   let variantStyles = $state("");
 
   switch (variant) {
-    case "stacked":
+    case "default":
       variantStyles = "text-text-primary";
       break;
     case "overlayed":
