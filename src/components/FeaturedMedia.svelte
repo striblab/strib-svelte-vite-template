@@ -1,3 +1,7 @@
+<script>
+  import HeroSectionLabel from "./Hero/_HeroSectionLabel.svelte";
+</script>
+
 <!-- custom hero with absolute positioning -->
 
 <div
@@ -8,12 +12,13 @@
     class="w-full px-4 lg:w-[835px] md:w-[705px] absolute bottom-[24px] md:bottom-[64px] left-1/2 -translate-x-1/2"
   >
     <div class="mb-4 mx-auto w-min">
-      <a
+      <HeroSectionLabel variant={"overlayed"} />
+      <!-- <a
         href="/"
         target="_blank"
         class="uppercase !text-[white] bg-[black] p-2 font-utility-label-bold-caps-02 tracking-normal whitespace-nowrap !no-underline"
         >Section label</a
-      >
+      > -->
     </div>
     <h1
       class="font-editorial-news-heading-01 text-center drop-shadow-[0px_2px_3px_rgba(102,102,102,1)] text-4xl xl:text-7xl lg:text-7xl md:text-6xl leading-heading-extra-tight uppercase text-[white]"
