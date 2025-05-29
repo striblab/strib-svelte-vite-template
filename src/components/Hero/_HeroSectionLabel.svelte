@@ -5,7 +5,7 @@
 
   switch (variant) {
     case "eyebrow":
-      variantStyles = "";
+      variantStyles = "text-text-color-01";
       break;
     case "pill":
       variantStyles =
