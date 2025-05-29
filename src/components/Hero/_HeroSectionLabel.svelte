@@ -15,7 +15,7 @@
 
 <a
   data-testid="link-button"
-  class="{variantStyles} font-utility-label-bold-caps-02 uppercase no-underline break-word whitespace-nowrap"
+  class="{variantStyles} block font-utility-label-bold-caps-02 uppercase no-underline break-word whitespace-nowrap"
   href="https://www.startribune.com/"
   target="_blank"
 >
