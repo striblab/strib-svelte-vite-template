@@ -29,49 +29,49 @@
       <Image variant={"inlineCaption"} />
     </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Paragraph
         >Quam consectetur iure impedit consequatur deleniti esse asperiores
         corrupti et facilis debitis aut aspernatur consequuntur, ipsum
         repellendus maiores, vero harum quis non eum voluptates. Ex quis
         repudiandae reiciendis sunt neque?</Paragraph
       >
-    </div>
+    </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Image />
-    </div>
+    </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </div>
+    </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </div>
+    </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </div>
+    </GridWrapper>
 
-    <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
+    <GridWrapper>
       <Image />
-    </div>
+    </GridWrapper>
   </div>
 </section>
 
