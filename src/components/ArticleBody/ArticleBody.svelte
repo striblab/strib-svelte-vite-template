@@ -10,9 +10,13 @@
   >
     <GridWrapper>
       <Paragraph
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quas,
-        facilis itaque minus totam repudiandae magnam esse asperiores temporibus
-        sed laborum nisi ut corporis ab officiis dolorum odio, porro eveniet.</Paragraph
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. <a
+          href="https://www.startribune.com/"
+          target="_blank"
+          rel="noreferrer">Debitis quas</a
+        >, facilis itaque minus totam repudiandae magnam esse asperiores
+        temporibus sed laborum nisi ut corporis ab officiis dolorum odio, porro
+        eveniet.</Paragraph
       >
 
       <Paragraph
