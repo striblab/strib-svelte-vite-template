@@ -8,7 +8,7 @@
       variantStyles =
         "col-span-full md:col-span-6 md:col-start-2 lg:col-start-4";
       break;
-    case "fullbleed":
+    case "large":
       variantStyles = "col-span-full -mx-4 md:-mx-8 lg:mx-0";
       break;
   }

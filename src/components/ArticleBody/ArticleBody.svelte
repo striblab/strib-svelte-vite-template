@@ -25,7 +25,7 @@
       >
     </GridWrapper>
 
-    <GridWrapper variant={"fullbleed"}>
+    <GridWrapper variant={"large"}>
       <Image variant={"inlineCaption"} />
     </GridWrapper>
 
@@ -70,7 +70,7 @@
     </div>
 
     <div class="col-span-full md:col-span-6 md:col-start-2 lg:col-start-4">
-      <Image variant={"grid"} />
+      <Image />
     </div>
   </div>
 </section>
