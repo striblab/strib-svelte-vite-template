@@ -14,9 +14,14 @@
         facilis itaque minus totam repudiandae magnam esse asperiores temporibus
         sed laborum nisi ut corporis ab officiis dolorum odio, porro eveniet.</Paragraph
       >
-    </GridWrapper>
 
-    <GridWrapper>
+      <Paragraph
+        >Voluptate molestiae, perferendis iusto dolor officiis eaque cum
+        quisquam quidem, doloremque dicta temporibus fuga ducimus voluptatum
+        excepturi ratione laborum ab omnis quibusdam, accusamus vel eum culpa
+        repellendus exercitationem. Fugit, consequatur!</Paragraph
+      >
+
       <Paragraph
         >Voluptate molestiae, perferendis iusto dolor officiis eaque cum
         quisquam quidem, doloremque dicta temporibus fuga ducimus voluptatum
@@ -25,7 +30,7 @@
       >
     </GridWrapper>
 
-    <GridWrapper variant={"large"}>
+    <GridWrapper variant={"wide"}>
       <Image variant={"inlineCaption"} />
     </GridWrapper>
 
@@ -36,40 +41,29 @@
         repellendus maiores, vero harum quis non eum voluptates. Ex quis
         repudiandae reiciendis sunt neque?</Paragraph
       >
-    </GridWrapper>
 
-    <GridWrapper>
       <Image />
-    </GridWrapper>
 
-    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </GridWrapper>
 
-    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </GridWrapper>
 
-    <GridWrapper>
       <Paragraph
         >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
         quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
         reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
         eveniet magnam.</Paragraph
       >
-    </GridWrapper>
-
-    <GridWrapper>
       <Image />
     </GridWrapper>
   </div>
