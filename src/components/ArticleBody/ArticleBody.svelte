@@ -1,5 +1,5 @@
 <script>
-  import Image from "./_Image.svelte";
+  import Image from "../Image/Image.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import GridWrapper from "./_GridWrapper.svelte";
 </script>

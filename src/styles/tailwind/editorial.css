@@ -42,7 +42,7 @@
   /* Heading News */
   /* Publico Headline Condensed*/
   .font-editorial-news-heading-01 {
-    @apply font-publico-banner-condensed-medium font-medium leading-title tracking-normal lg:text-66 text-40;
+    @apply font-publico-headline-condensed-medium md:font-publico-banner-condensed-medium font-medium leading-title text-42 md:text-48 lg:text-66;
   }
 
   .font-editorial-news-heading-02 {

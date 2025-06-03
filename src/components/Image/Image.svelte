@@ -1,5 +1,5 @@
 <script>
-  import ImageCaption from "../Shared/_ImageCaption.svelte";
+  import ImageCaption from "./_ImageCaption.svelte";
 
   let {
     imgUrl = "https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg",
@@ -26,7 +26,7 @@
 </script>
 
 <figure class={variantStylesFigure}>
-  <img class="{variantStylesImg} mb-2" src={imgUrl} alt="" />
+  <img class="{variantStylesImg} w-full mb-2" src={imgUrl} alt="" />
   <div class={variantStylesCaption}>
     <ImageCaption>{caption}</ImageCaption>
   </div>
