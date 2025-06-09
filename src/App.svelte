@@ -1,11 +1,15 @@
 <script>
 
-  let message = $state("Hello world!")
+  import Map from "./Map.svelte";
 
 </script>
 
-<main class="px-4 lg:px-20 pt-8">
-  <h1 class="font-editorial-news-heading-02">{message}</h1>
+<main class="">
+      <div class="map-wrapper w-full h-full">
+                <Map
+                    
+                />
+            </div>
 </main>
 
 <style>
