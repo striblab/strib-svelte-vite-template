@@ -27,7 +27,7 @@
             center: initialView.center,
             zoom: isMobile ? mobileZoom : initialView.zoom,
             cooperativeGestures: true,
-            maxZoom: 14,
+            maxZoom: 17,
             // maxBounds: [
             //     [-94, 44], // Southwest coordinates
             //     [-92, 46], // Northeast coordinates
