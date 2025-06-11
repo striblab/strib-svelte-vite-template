@@ -3,7 +3,7 @@
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
     import { Protocol } from "pmtiles";
-    import style from "./map-components/strib-basemap-light-all-hidden.json";
+    import style from "./map-components/strib-basemap-light.json";
 
     const protocol = new Protocol();
     maplibregl.addProtocol("pmtiles", protocol.tile);
