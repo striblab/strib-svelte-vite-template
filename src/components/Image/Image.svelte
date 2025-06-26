@@ -13,21 +13,17 @@
 
   switch (variant) {
     case "default":
-      variantStylesFigure = "";
-      variantStylesImg = "";
-      variantStylesCaption = "";
       break;
-    //several assumptins about the configuration of the article body's grid container here;
-    case "inlineCaption":
-      variantStylesCaption =
-        "pl-4 md:pl-[calc(((100vw-64px)/8)+32px)] lg:max-w-[calc(min(100vw,1140px)/2)] lg:mx-auto lg:pl-0";
+    case "fullBleed":
+      variantStylesFigure = "w-screen max-w-[1800px] justify-self-center";
+      variantStylesCaption = "md:text-center";
       break;
   }
 </script>
 
-<figure class={variantStylesFigure}>
-  <img class="{variantStylesImg} w-full mb-2" src={imgUrl} alt="" />
-  <div class={variantStylesCaption}>
+<figure class="-mx-4 md:mx-0 {variantStylesFigure}">
+  <img src={imgUrl} alt="" class="{variantStylesImg} w-full mb-2" />
+  <div class="px-4 md:px-0 {variantStylesCaption}">
     <ImageCaption>{caption}</ImageCaption>
   </div>
 </figure>
