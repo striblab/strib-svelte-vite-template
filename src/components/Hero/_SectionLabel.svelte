@@ -1,24 +1,33 @@
 <!-- 
 @component
-- Render a green section label in the style of the Immersive Template
-- This component accepts no props and renders markup slotted between component tags
+### SectionLabel component
+Render a section label in the style of the Immersive Template with an optional link to a section page.
 
-@example
+#### Optional properties
+- href: string;
+
+#### Example
 ```svelte
 <SectionLabel>Economy</SectionLabel>
 ```
- 
 -->
-
 <script>
-  let { children } = $props();
+  /** @type {{href?: string; children?: function}} */
+  let { href = "", children } = $props();
 </script>
 
-<a
-  data-testid="link-button"
-  class="break-words text-text-color-01 uppercase font-utility-label-bold-caps-02"
-  href="https://www.startribune.com/"
-  target="_blank"
->
-  {@render children()}
-</a>
+{#if href}
+  <a target="_blank" rel="noreferrer" {href}>
+    <span
+      class="break-words text-text-color-01 uppercase font-utility-label-bold-caps-02"
+    >
+      {@render children?.()}
+    </span>
+  </a>
+{:else}
+  <span
+    class="break-words text-text-color-01 uppercase font-utility-label-bold-caps-02"
+  >
+    {@render children?.()}
+  </span>
+{/if}

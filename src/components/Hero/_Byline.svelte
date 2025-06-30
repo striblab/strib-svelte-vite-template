@@ -1,25 +1,38 @@
 <!--
 @component 
-- Renders a single author name hyperlinked to their author bio page
-- This component accepts the following props
+### Byline component
+Renders a single author name, optionally hyperlinked to an author bio page.  
+Wrap this component around the markup you want rendered.
 
-@example 
+#### Optional properties
+- href: string;
+
+#### Example
 ```svelte
 <Byline
-author="Bryan Brussee"
 href="https://www.startribune.com/author/bryan-brussee/8455834"
-/>
+>By Bryan Brussee
+</Byline>
 ```
 -->
 
 <script>
-  let { author, href } = $props();
+  /** @type {{href?: string; children?: function;}} */
+  let { href = "", children } = $props();
 </script>
 
-<a class="flex w-fit h-fit" {href}
-  ><div class="flex items-center gap-0.5">
+{#if href}
+  <a target="_blank" rel="noreferrer" class="flex w-fit h-fit" {href}>
+    <div class="flex items-center gap-0.5">
+      <p class=" font-utility-label-bold-02 text-text-primary relative">
+        {@render children?.()}
+      </p>
+    </div>
+  </a>
+{:else}
+  <div class="flex items-center gap-0.5">
     <p class=" font-utility-label-bold-02 text-text-primary relative">
-      By {author}
+      {@render children?.()}
     </p>
-  </div></a
->
+  </div>
+{/if}

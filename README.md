@@ -4,18 +4,6 @@ This is a template for building Svelte apps at the Star Tribune. It uses
 Svelte 5; See the
 [migration guide](https://svelte.dev/docs/svelte/v5-migration-guide).
 
-Runes mode is not turned on by default in the template;
-to enable it, add a `svelte.config.js` file to the root with
-the following:
-
-```
-export default {
-    compilerOptions: {
-        runes: true
-    }
-};
-```
-
 ## Starting a project
 
 To start a new project based on this template, run

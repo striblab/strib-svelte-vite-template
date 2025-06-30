@@ -1,35 +1,39 @@
 <!-- 
 @component
-- Renders a figure with image and caption in the style of the Immersive Template. Two variants are supported. 
-- The default variant renders an image that fills its container on tablet and desktop. On mobile, the default variant will expand slightly beyond its container, to create an edge to edge presentation.
+### Image component
+Renders a figure tag with nested image and figcaption tags in the style of the Immersive Template.  
 
-@example
+#### Optional properties
+- src: string;
+- alt: string;
+- caption: string;
+- variant: "default" | "fullBleed";
+
+#### Variants
+- default: Figure tag renders renders edge-to-edge on mobile (i.e. full width inside its container plus 32 pixels in negative margin). Figure renders the width of its parent container on tablet and desktop.
+- fullBleed: Figure tag renders edge-to-edge across mobile, tablet and desktop up to 1800 pixels. 
+
+#### Example
 ```svelte
 <Image
-imgUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
-caption="This is my caption"
-altText="Please don't leave out the alt text!"
+src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+alt="Please don't leave out the alt text!"
+caption="This image will render as the fullBleed variant"
+variant="fullBleed"
 >
 ```
-
-- The other variant, fullBleed, renders an image the width of the viewport across mobile, tablet and desktop monitors up to 1800px.
-- This variant is appropriate for both Hero images and full bleed images further down in the body.
-
-```svelte
-<Image
-variant="fullbleed"
-imgUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
-caption="This is my caption"
-altText="Please don't leave out the alt text!"
->
-```
- 
 -->
 
 <script>
   import ImageCaption from "./_ImageCaption.svelte";
 
-  let { imgUrl, caption, altText, variant = "default" } = $props();
+  /** @type {{src?: string; alt?: string; caption?: string; variant?: "default" | "fullBleed"}} */
+  let {
+    src = "",
+    alt = "",
+    caption = "Caption tk tk tk",
+    variant = "default",
+  } = $props();
 
   let variantStylesFigure = $state("");
   let variantStylesImg = $state("");
@@ -46,7 +50,9 @@ altText="Please don't leave out the alt text!"
 </script>
 
 <figure class="-mx-4 md:mx-0 {variantStylesFigure}">
-  <img src={imgUrl} alt={altText} class="{variantStylesImg} w-full mb-2" />
+  {#if src}
+    <img {src} {alt} class="{variantStylesImg} w-full mb-2" />
+  {/if}
   <ImageCaption additionalClasses="px-4 md:px-0 {variantStylesCaption}">
     {caption}
   </ImageCaption>

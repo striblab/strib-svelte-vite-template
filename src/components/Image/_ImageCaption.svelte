@@ -1,15 +1,20 @@
 <!-- 
 @component
-- Renders an image caption in the style of the Immersive Template
-- This component accepts no props and renders markup slotted between component tags
+### ImageCaption component
+Renders a figcaption tag in the style of the Immersive Template's image captions.  
+Accepts the optional property additionalClasses for customization.
 
-@example
+#### Optional properties
+- additionalClasses: string;
+
+#### Example
 ```svelte
-<Paragraph>Hello world!</Paragraph>
+<ImageCaption additionalClasses="px-4">Hello world!</ImageCaption>
 ```
 -->
 
 <script>
+  /** @type {{additionalClasses?: string; children?: function}} */
   let { additionalClasses = "", children } = $props();
 </script>
 
@@ -18,5 +23,5 @@
 <figcaption
   class="font-utility-meta-reg-02 text-text-secondary {additionalClasses}"
 >
-  {@render children()}
+  {@render children?.()}
 </figcaption>

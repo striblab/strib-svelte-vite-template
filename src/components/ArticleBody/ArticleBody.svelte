@@ -1,8 +1,9 @@
 <!-- 
 @component
-- This is a general workspace illustrating what an article body might look like if you use only the included components.
-- ArticleBody doesn't receive any props. All contents will need to be hand-placed by a designer directly inside this component.
-- In this example, Grid and GridRow help establish the width of the article body's contents. Documentation included with those components explains further.
+### ArticleBody component
+This is a general workspace illustrating what an article body might look like if you use only the included components.  
+ArticleBody doesn't accept any props. All contents will need to be hand-placed by a designer directly inside this component.  
+In this example, Grid and GridRow help establish the width of the article body's contents. Documentation included with those components and accessed by VSCode tooltip explains each component in greater detail detail.
 -->
 
 <script>
@@ -42,9 +43,9 @@
   <GridRow>
     <Image
       variant={"fullBleed"}
-      imgUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
       caption="Caption tk tk tk"
-      altText=""
     />
   </GridRow>
 
@@ -57,9 +58,9 @@
     >
 
     <Image
-      imgUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
       caption="Caption tk tk tk"
-      altText=""
     />
 
     <Paragraph
@@ -79,10 +80,13 @@
       suscipit omnis asperiores cupiditate, a eos, aliquid libero, reprehenderit
       rerum excepturi ex. Eius perferendis rem fugit nostrum eveniet magnam.</Paragraph
     >
+  </GridRow>
+
+  <GridRow>
     <Image
-      imgUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
       caption="Caption tk tk tk"
-      altText=""
     />
   </GridRow>
 </Grid>

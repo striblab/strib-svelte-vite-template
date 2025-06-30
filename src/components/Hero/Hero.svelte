@@ -1,9 +1,20 @@
 <!--
-@component 
-- Renders a visual replica of the Immersive Template hero 
-- This component accepts the following props
+@component
+### Hero component 
+Renders a visual replica of the Immersive Template hero. 
 
-@example 
+#### Optional properties
+- sectionLabel: string;
+- headline: string;
+- timestamp: string;
+- heroImageUrl: string;
+- heroImageCaption: string;
+- heroImageAltText: string;
+- dek: string;
+- authorName: string;
+- authorBioUrl: string;
+
+#### Example
 ```svelte
 <Hero
   sectionLabel = "Section label",
@@ -29,16 +40,17 @@
   import Dek from "./_Dek.svelte";
   import Byline from "./_Byline.svelte";
 
+  /** @type {{sectionLabel?: string; headline?: string; timestamp?: string; heroImageUrl?: string; heroImageCaption?: string; heroImageAltText?: string; dek?: string; authorName?: string; authorBioUrl?: string;}} */
   let {
-    sectionLabel,
-    headline,
-    timestamp,
-    heroImageUrl,
-    heroImageCaption,
-    heroImageAltText,
-    dek,
-    authorName,
-    authorBioUrl,
+    sectionLabel = "",
+    headline = "",
+    timestamp = "",
+    heroImageUrl = "",
+    heroImageCaption = "",
+    heroImageAltText = "",
+    dek = "",
+    authorName = "",
+    authorBioUrl = "",
   } = $props();
 </script>
 
@@ -53,14 +65,16 @@
     </div>
   </GridRow>
 
-  <GridRow>
-    <Image
-      imgUrl={heroImageUrl}
-      caption={heroImageCaption}
-      altText={heroImageAltText}
-      variant={"fullBleed"}
-    />
-  </GridRow>
+  {#if heroImageUrl}
+    <GridRow>
+      <Image
+        src={heroImageUrl}
+        alt={heroImageAltText}
+        caption={heroImageCaption}
+        variant={"fullBleed"}
+      />
+    </GridRow>
+  {/if}
 
   <GridRow additionalClasses="md:max-w-[535px] md:text-center lg:max-w-[712px]">
     <div class="flex flex-col gap-y-5 md:justify-items-center md:items-center">
@@ -69,9 +83,11 @@
       </Dek>
       <div class="flex items-center w-full gap-x-2 md:justify-center">
         <div class="flex flex-col gap-y-0.5 gap-x-1 md:flex-row">
-          <div class="flex">
-            <Byline author={authorName} href={authorBioUrl} />
-          </div>
+          {#if authorName}
+            <div class="flex">
+              <Byline href={authorBioUrl}>By {authorName}</Byline>
+            </div>
+          {/if}
 
           <span class="text-text-secondary font-utility-label-reg-02">
             The Minnesota Star Tribune
