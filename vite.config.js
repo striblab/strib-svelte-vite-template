@@ -1,13 +1,16 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-import viteCompression from 'vite-plugin-compression';
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import viteCompression from "vite-plugin-compression";
 
 export default defineConfig({
-  base: '',
+  base: "",
   plugins: [
     svelte(),
     viteCompression({
       filter: /\.(js|css|svg)$/, // Compress only these file types
-    })
-  ]
-})
+    }),
+  ],
+  server: {
+    open: true,
+  },
+});
