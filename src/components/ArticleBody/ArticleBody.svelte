@@ -9,6 +9,7 @@ In this example, Grid and GridRow help establish the width of the article body's
 <script>
   import Grid from "../Grid/Grid.svelte";
   import GridRow from "../Grid/_GridRow.svelte";
+  import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import Image from "../Image/Image.svelte";
 </script>
@@ -62,6 +63,8 @@ In this example, Grid and GridRow help establish the width of the article body's
       alt="Descriptive alt text"
       caption="Caption tk tk tk"
     />
+
+    <Subhead>Subhead</Subhead>
 
     <Paragraph
       >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non quam

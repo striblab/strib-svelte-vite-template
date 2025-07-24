@@ -168,7 +168,7 @@
   }
 
   .font-editorial-article-header-02 {
-    @apply font-publico-headline-medium font-medium leading-heading-tight text-23 md:text-24 text-article-heading tracking-normal;
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-24 tracking-normal;
   }
 
   .font-editorial-article-header-03 {
