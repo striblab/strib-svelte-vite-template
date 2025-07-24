@@ -9,25 +9,25 @@ let app;
 let tgt = document.getElementById("proj-container");
 tgt.innerHTML = "";
 try {
-  mount(App, {
-    target: document.getElementById("proj-container"),
-  });
+    mount(App, {
+        target: document.getElementById("proj-container"),
+    });
 } catch {
-  app = undefined;
+    app = undefined;
 }
 
 setInterval(() => {
-  let tgt = document.getElementById("proj-container");
-  if (tgt.innerHTML === "") {
-    if (app) app.$destroy();
-    try {
-      mount(App, {
-        target: document.getElementById("proj-container"),
-      });
-    } catch {
-      app = undefined;
+    let tgt = document.getElementById("proj-container");
+    if (tgt.innerHTML === "") {
+        if (app) app.$destroy();
+        try {
+            mount(App, {
+                target: document.getElementById("proj-container"),
+            });
+        } catch {
+            app = undefined;
+        }
     }
-  }
 }, 500);
 
 export default app;
