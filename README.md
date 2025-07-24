@@ -12,7 +12,22 @@ To start a new project based on this template, click the green `Use this templat
 
 On the following page, make sure the new repository's owner is `striblab` and that the repository is `private`. Click `Create repository` to create your new project.
 
-Now you've created a new repository from the template's code. Find your new template's repository, click the green `Code` button and select `Open with Github Desktop` from the dropdown to pull of your new repository's starter code down to your machine.
+Now you've created a new repository from the template's code. Find your new template's repository, click the green `Code` button and select `Open with Github Desktop` from the dropdown to pull of your new repository's starter code down to your machine. Or, if you prefer to
+use git on the command line, copy the SSH url and run `git clone <ssh url>` in your terminal.
+
+The code in this repository requires [node.js](https://nodejs.org) to be installed on your machine. It is recommended that you use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) to install node to allow for multiple versions.
+
+After cloning the project to your machine, use the terminal to navigate into the project directory:
+
+```bash
+cd path/to/project-directory
+```
+
+and run
+
+```bash
+npm install
+```
 
 ## Development
 
@@ -45,3 +60,6 @@ To deploy to staging, run `npm run deploy-staging`. For production, run
 `npm run deploy-production`. This will upload to a typical path using your
 project's name, which is read from the root directory of your project
 (where `package.json` is located).
+
+Alternatively, you can use Yarkon to upload bundled assets in the dist folder to the
+static.startribune.com foder.
