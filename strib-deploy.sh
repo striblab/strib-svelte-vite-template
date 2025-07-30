@@ -79,6 +79,21 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-type "text/css" \
 
+    JS_BUNDLE=$(basename dist/assets/index-*.js.gz)
+    CSS_BUNDLE=$(basename dist/assets/index-*.css.gz)
+    echo "
+    
+    Deploy complete! Code block:
+
+
+    <div id=\"proj-container\"></div>
+    <link rel=\"stylesheet\" href=\"${DEPLOY_PATH/s3:/https:}/assets/$CSS_BUNDLE\">
+    <script type=\"module\" crossorigin src=\"${DEPLOY_PATH/s3:/https:}/assets/$JS_BUNDLE\"></script>
+    
+    
+    
+    "
+
   else
     echo "No 'dist/' directory found. Do you need to run the build command?"
   fi
