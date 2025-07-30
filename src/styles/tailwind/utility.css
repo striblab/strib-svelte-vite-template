@@ -6,7 +6,9 @@
     @apply font-graphik-bold leading-title text-36;
   }
 
-
+  .font-utility-heading-02 {
+    @apply font-graphik-bold leading-title text-30;
+  }
 
   .font-utility-heading-03 {
     @apply font-graphik-bold leading-title text-24;
@@ -191,6 +193,4 @@
   .font-utility-meta-bold-02 {
     @apply font-graphik-semibold leading-heading text-12;
   }
-
-
 }
