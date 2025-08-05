@@ -15,7 +15,6 @@
 
   let mapContainer;
   let map = $state(null);
-  let layerReady = $state(false);
 
   function fadeLayerOpacity(layerId, targetOpacity, duration = 600) {
     if (!map.getLayer(layerId)) return;
@@ -56,12 +55,20 @@
 
     // Reset all layers to initial opacity
     fadeLayerOpacity("submissions_outline", 0);
+    fadeLayerOpacity("10pct_outline", 0);
+    fadeLayerOpacity("50pct_outline", 0);
+    fadeLayerOpacity("90pct_outline", 0);
+    fadeLayerOpacity("98pct_outline", 0);
 
     // Apply scroll-based opacity changes
     if (scrollIndex === 0) {
     } else if (scrollIndex === 1) {
       fadeLayerOpacity("submissions_outline", 0.25);
     } else if (scrollIndex === 2) {
+      fadeLayerOpacity("10pct_outline", 1);
+      fadeLayerOpacity("50pct_outline", 1);
+      fadeLayerOpacity("90pct_outline", 1);
+      fadeLayerOpacity("98pct_outline", 1);
     } else if (scrollIndex === 3) {
     }
   });
@@ -81,6 +88,7 @@
 
     map.on("load", () => {
 
+      //submissions
       map.addSource("submissions", {
         type: "vector",
         url: "pmtiles://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/submissions.pmtiles",
@@ -96,6 +104,75 @@
           "line-opacity": 0
         }
       }, "roads_labels_light_rail");
+
+      //10pct
+      map.addSource("10pct", {
+        type: "vector",
+        url: "pmtiles://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/all_10pct.pmtiles",
+      });
+      map.addLayer({
+        id: "10pct_outline",
+        type: "line",
+        source: "10pct",
+        "source-layer": "all_10pct",
+        paint: {
+          "line-color": "#000000",
+          "line-width": 1,
+          "line-opacity": 0
+        }
+      }, "roads_labels_light_rail");    
+      
+      //50pct
+      map.addSource("50pct", {
+        type: "vector",
+        url: "pmtiles://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/all_50pct.pmtiles",
+      });
+      map.addLayer({
+        id: "50pct_outline",
+        type: "line",
+        source: "50pct",
+        "source-layer": "all_50pct",
+        paint: {
+          "line-color": "#000000",
+          "line-width": 1,
+          "line-opacity": 0
+        }
+      }, "roads_labels_light_rail");  
+
+      //90pct
+      map.addSource("90pct", {
+        type: "vector",
+        url: "pmtiles://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/all_90pct.pmtiles",
+      });
+      map.addLayer({
+        id: "90pct_outline",
+        type: "line",
+        source: "90pct",
+        "source-layer": "all_90pct",
+        paint: {
+          "line-color": "#000000",
+          "line-width": 1,
+          "line-opacity": 0
+        }
+      }, "roads_labels_light_rail");
+
+      //98pct
+      map.addSource("98pct", {
+        type: "vector",
+        url: "pmtiles://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/all_98pct.pmtiles",
+      });
+      map.addLayer({
+        id: "98pct_outline",
+        type: "line",
+        source: "98pct",
+        "source-layer": "all_98pct",
+        paint: {
+          "line-color": "#000000",
+          "line-width": 1,
+          "line-opacity": 0
+        }
+      }, "roads_labels_light_rail");
+
     });
   });
 </script>
