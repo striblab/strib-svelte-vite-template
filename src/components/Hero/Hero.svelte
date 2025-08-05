@@ -67,12 +67,12 @@ Renders a visual replica of the Immersive Template hero.
 
   {#if heroImageUrl}
     <GridRow>
-      <Image
+      <!-- <Image
         src={heroImageUrl}
         alt={heroImageAltText}
         caption={heroImageCaption}
         variant={"fullBleed"}
-      />
+      /> -->
     </GridRow>
   {/if}
 

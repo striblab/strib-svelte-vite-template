@@ -7,15 +7,28 @@ In this example, Grid and GridRow help establish the width of the article body's
 -->
 
 <script>
+  import ResultsScrolly from "../ResultsScrolly.svelte";
   import Grid from "../Grid/Grid.svelte";
   import GridRow from "../Grid/_GridRow.svelte";
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import Image from "../Image/Image.svelte";
+
+  const {
+    isMobile,
+  } = $props();
+
 </script>
 
 <Grid additionalClasses={"gap-y-5"}>
-  <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
+
+  <GridRow variant={"default"} additionalClasses={"gap-y-5"}>
+    <ResultsScrolly
+      {isMobile}
+    />
+  </GridRow>
+
+  <!-- <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
     <Paragraph
       >Lorem ipsum dolor sit amet consectetur adipisicing elit. <a
         href="https://www.startribune.com/"
@@ -24,9 +37,9 @@ In this example, Grid and GridRow help establish the width of the article body's
       >, facilis itaque minus totam repudiandae magnam esse asperiores
       temporibus sed laborum nisi ut corporis ab officiis dolorum odio, porro
       eveniet.</Paragraph
-    >
+    > -->
 
-    <Paragraph
+    <!-- <Paragraph
       >Voluptate molestiae, perferendis iusto dolor officiis eaque cum quisquam
       quidem, doloremque dicta temporibus fuga ducimus voluptatum excepturi
       ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
@@ -91,7 +104,7 @@ In this example, Grid and GridRow help establish the width of the article body's
       alt="Descriptive alt text"
       caption="Caption tk tk tk"
     />
-  </GridRow>
+  </GridRow> -->
 </Grid>
 
 <style>
