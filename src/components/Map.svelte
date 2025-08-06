@@ -4,14 +4,14 @@
   import "../../node_modules/maplibre-gl/dist/maplibre-gl.css";
   import { Protocol } from "pmtiles";
   import basemap from "../data/strib-basemap-light.json";
-  import { fromUrl } from 'geotiff';
+  import { cogProtocol } from "@geomatico/maplibre-cog-protocol";
+
+  maplibregl.addProtocol("cog", cogProtocol);
 
   const {
     scrollIndex,
     isMobile
   } = $props();
-
-  $inspect(scrollIndex)
 
   let mapContainer;
   let map = $state(null);
@@ -28,6 +28,7 @@
       symbol: "text-opacity",
       background: "background-opacity",
       heatmap: "heatmap-opacity",
+      raster: "raster-opacity",
     }[layerType];
 
     if (!opacityProp) return;
@@ -55,6 +56,7 @@
 
     // Reset all layers to initial opacity
     fadeLayerOpacity("submissions_outline", 0);
+    fadeLayerOpacity("resultsLayer", 0);
     fadeLayerOpacity("10pct_outline", 0);
     fadeLayerOpacity("50pct_outline", 0);
     fadeLayerOpacity("90pct_outline", 0);
@@ -65,11 +67,13 @@
     } else if (scrollIndex === 1) {
       fadeLayerOpacity("submissions_outline", 0.25);
     } else if (scrollIndex === 2) {
+      fadeLayerOpacity("resultsLayer", 0.75);
+    } else if (scrollIndex === 3) {
+      fadeLayerOpacity("resultsLayer", 0.75);
       fadeLayerOpacity("10pct_outline", 1);
       fadeLayerOpacity("50pct_outline", 1);
       fadeLayerOpacity("90pct_outline", 1);
       fadeLayerOpacity("98pct_outline", 1);
-    } else if (scrollIndex === 3) {
     }
   });
 
@@ -105,6 +109,26 @@
         }
       }, "roads_labels_light_rail");
 
+      //results raster
+       map.addSource('results', {
+        type: 'raster',
+        url: [
+          'cog://https://static.startribune.com/news/projects/all/202508XX-UPTOWN/results_cog.tif',
+                '#color:',
+          'CartoPurpOr,0.1,99,c'
+        ].join(''),
+        tileSize: 256
+      });
+          map.addLayer({
+        id: 'resultsLayer',
+        type: 'raster',
+        source: 'results',
+        paint: {
+          'raster-opacity': 0
+        }
+      }, 'overture-buildings-3D');
+
+
       //10pct
       map.addSource("10pct", {
         type: "vector",
@@ -116,8 +140,8 @@
         source: "10pct",
         "source-layer": "all_10pct",
         paint: {
-          "line-color": "#000000",
-          "line-width": 1,
+          "line-color": "#ffffff",
+          "line-width": 2,
           "line-opacity": 0
         }
       }, "roads_labels_light_rail");    
@@ -133,8 +157,8 @@
         source: "50pct",
         "source-layer": "all_50pct",
         paint: {
-          "line-color": "#000000",
-          "line-width": 1,
+          "line-color": "#ffffff",
+          "line-width": 2,
           "line-opacity": 0
         }
       }, "roads_labels_light_rail");  
@@ -150,8 +174,8 @@
         source: "90pct",
         "source-layer": "all_90pct",
         paint: {
-          "line-color": "#000000",
-          "line-width": 1,
+          "line-color": "#ffffff",
+          "line-width": 2,
           "line-opacity": 0
         }
       }, "roads_labels_light_rail");
@@ -167,8 +191,8 @@
         source: "98pct",
         "source-layer": "all_98pct",
         paint: {
-          "line-color": "#000000",
-          "line-width": 1,
+          "line-color": "#ffffff",
+          "line-width": 2,
           "line-opacity": 0
         }
       }, "roads_labels_light_rail");

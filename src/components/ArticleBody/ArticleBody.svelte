@@ -8,6 +8,7 @@ In this example, Grid and GridRow help establish the width of the article body's
 
 <script>
   import ResultsScrolly from "../ResultsScrolly.svelte";
+  import SlippyMap from "../SlippyMap.svelte";
   import Grid from "../Grid/Grid.svelte";
   import GridRow from "../Grid/_GridRow.svelte";
   import Subhead from "./_Subhead.svelte";
@@ -27,6 +28,13 @@ In this example, Grid and GridRow help establish the width of the article body's
       {isMobile}
     />
   </GridRow>
+
+  <GridRow variant={"default"} additionalClasses={"gap-y-5"}>
+    <SlippyMap
+      {isMobile}
+    />
+  </GridRow>
+
 
   <!-- <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
     <Paragraph

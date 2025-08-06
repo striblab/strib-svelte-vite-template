@@ -23,8 +23,9 @@
     "vite-plugin-compression": "^0.5.1"
   },
   "dependencies": {
+    "@geomatico/maplibre-cog-protocol": "^0.5.0",
     "geotiff": "^2.1.4-beta.0",
-    "maplibre-gl": "^5.6.1",
+    "maplibre-gl": "^5.6.2",
     "pmtiles": "^4.3.0"
   }
 }
