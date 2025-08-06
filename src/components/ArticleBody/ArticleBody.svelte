@@ -8,6 +8,7 @@ In this example, Grid and GridRow help establish the width of the article body's
 
 <script>
   import ResultsScrolly from "../ResultsScrolly.svelte";
+  import AgeScrolly from "../AgeScrolly.svelte";
   import SlippyMap from "../SlippyMap.svelte";
   import Grid from "../Grid/Grid.svelte";
   import GridRow from "../Grid/_GridRow.svelte";
@@ -25,6 +26,12 @@ In this example, Grid and GridRow help establish the width of the article body's
 
   <GridRow variant={"default"} additionalClasses={"gap-y-5"}>
     <ResultsScrolly
+      {isMobile}
+    />
+  </GridRow>
+
+  <GridRow variant={"default"} additionalClasses={"gap-y-5"}>
+    <AgeScrolly
       {isMobile}
     />
   </GridRow>

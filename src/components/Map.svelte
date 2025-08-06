@@ -13,6 +13,7 @@
     isMobile
   } = $props();
 
+  $inspect(scrollIndex)
   let mapContainer;
   let map = $state(null);
 
