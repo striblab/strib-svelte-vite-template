@@ -54,7 +54,7 @@ Renders a visual replica of the Immersive Template hero.
   } = $props();
 </script>
 
-<Grid additionalClasses="gap-y-8 md:gap-y-10 md:justify-items-center">
+<Grid additionalClasses="gap-y-8 md:gap-y-10">
   <GridRow>
     <div class="flex justify-center my-6">
       <SectionLabel>{sectionLabel}</SectionLabel>
@@ -66,17 +66,19 @@ Renders a visual replica of the Immersive Template hero.
   </GridRow>
 
   {#if heroImageUrl}
-    <GridRow>
+    <GridRow variant={"fullBleed"}>
       <Image
+        variant={"captionCentered"}
         src={heroImageUrl}
         alt={heroImageAltText}
         caption={heroImageCaption}
-        variant={"fullBleed"}
       />
     </GridRow>
   {/if}
 
-  <GridRow additionalClasses="md:max-w-[535px] md:text-center lg:max-w-[712px]">
+  <GridRow
+    additionalClasses="justify-self-center md:max-w-[535px] md:text-center lg:max-w-[712px]"
+  >
     <div class="flex flex-col gap-y-5 md:justify-items-center md:items-center">
       <Dek>
         {dek}
