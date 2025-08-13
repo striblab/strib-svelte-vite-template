@@ -3,7 +3,31 @@
 ### ArticleBody component
 This is a general workspace illustrating what an article body might look like if you use only the included components.  
 ArticleBody doesn't accept any props. All contents will need to be hand-placed by a designer directly inside this component.  
-In this example, Grid and GridRow help establish the width of the article body's contents. Documentation included with those components and accessed by VSCode tooltip explains each component in greater detail detail.
+In this example, Grid and GridRow help establish the width of the article body's contents. 
+Documentation included with those components and accessed by VSCode tooltip explains each component in greater detail detail.
+
+#### State in this component
+- innerWidth: int - pixel width of the viewport.
+- isMobile: boolean - derived from innerWidth, true if less than 768 pixels
+- isTablet: boolean - derived from innerWidth, true if between 768 pixels inclusive and 1024 pixels exclusive
+- isDesktop: boolean - derived from innerWidth, true if greater than 1024 pixels inclusive
+
+#### Using state in this component
+You can use any of the three derived states to render different variants of a GridRow component reactively.
+The following example uses a ternary to render an image edge-to-edge on mobile but inline otherwise.
+
+#### Example
+```svelte
+  <GridRow
+    variant={isMobile ? "fullBleed" : "inline"}
+  >
+    <Image
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
+      caption="Caption tk tk tk"
+    />
+  </GridRow>
+```
 -->
 
 <script>
@@ -12,7 +36,14 @@ In this example, Grid and GridRow help establish the width of the article body's
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import Image from "../Image/Image.svelte";
+
+  let innerWidth = $state(0);
+  let isMobile = $derived(innerWidth < 768);
+  let isTablet = $derived(innerWidth >= 768 && innerWidth < 1024);
+  let isDesktop = $derived(innerWidth >= 1024);
 </script>
+
+<svelte:window bind:innerWidth />
 
 <Grid additionalClasses={"gap-y-5"}>
   <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
@@ -41,29 +72,33 @@ In this example, Grid and GridRow help establish the width of the article body's
     >
   </GridRow>
 
-  <GridRow>
+  <GridRow variant={"fullBleed"}>
     <Image
-      variant={"fullBleed"}
+      variant={"captionCentered"}
       src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
       alt="Descriptive alt text"
       caption="Caption tk tk tk"
     />
   </GridRow>
 
-  <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
+  <GridRow variant="inline">
     <Paragraph
-      >Quam consectetur iure impedit consequatur deleniti esse asperiores
-      corrupti et facilis debitis aut aspernatur consequuntur, ipsum repellendus
-      maiores, vero harum quis non eum voluptates. Ex quis repudiandae
-      reiciendis sunt neque?</Paragraph
+      >Voluptate molestiae, perferendis iusto dolor officiis eaque cum quisquam
+      quidem, doloremque dicta temporibus fuga ducimus voluptatum excepturi
+      ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
+      exercitationem. Fugit, consequatur!</Paragraph
     >
+  </GridRow>
 
+  <GridRow variant={isMobile ? "fullBleed" : "inline"}>
     <Image
       src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
       alt="Descriptive alt text"
       caption="Caption tk tk tk"
     />
+  </GridRow>
 
+  <GridRow variant="inline" additionalClasses={"gap-y-5"}>
     <Subhead>Subhead</Subhead>
 
     <Paragraph
@@ -85,7 +120,7 @@ In this example, Grid and GridRow help establish the width of the article body's
     >
   </GridRow>
 
-  <GridRow>
+  <GridRow variant={isMobile ? "fullBleed" : "default"}>
     <Image
       src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
       alt="Descriptive alt text"
