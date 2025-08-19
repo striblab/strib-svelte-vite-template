@@ -3,10 +3,20 @@
     import GridRow from "./components/Grid/_GridRow.svelte";
     import ArticleBody from "./components/ArticleBody/ArticleBody.svelte";
     import Hero from "./components/Hero/Hero.svelte";
+    import Map from "./components/Map.svelte";
+
+    let innerWidth = $state(0);
+    let isMobile = $derived(innerWidth < 640);
 </script>
 
-<Grid additionalClasses="gap-y-8 md:gap-y-10 px-4">
-    <GridRow>
+<svelte:window bind:innerWidth />
+
+<Grid additionalClasses="gap-y-8 md:gap-y-10">
+    <GridRow variant={"default"}>
+        <Map {isMobile} />
+    </GridRow>
+
+    <!-- <GridRow>
         <Hero
             sectionLabel="Section label"
             headline="Lorem ipsum dolor sit amet consectetur adipiscing elit"
@@ -18,9 +28,9 @@
             authorName="Bryan Brussee"
             authorBioUrl="https://www.startribune.com/bryan-brussee/8455834"
         />
-    </GridRow>
+    </GridRow> -->
 
-    <GridRow>
+    <!-- <GridRow>
         <ArticleBody />
-    </GridRow>
+    </GridRow> -->
 </Grid>
