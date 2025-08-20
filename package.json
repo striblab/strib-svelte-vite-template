@@ -1,25 +1,25 @@
 {
-  "name": "strib-svelte-vite-template",
-  "private": true,
-  "version": "0.2.1",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "svelte-check": "svelte-check",
-    "deploy-staging": "./strib-deploy.sh --environment staging",
-    "deploy-production": "./strib-deploy.sh --environment production"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^5.0.1",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
-    "postcss-prefix-selector": "^2.1.0",
-    "svelte": "^5.2.9",
-    "svelte-check": "^4.2.2",
-    "tailwindcss": "^3.4.4",
-    "vite": "^6.0.1",
-    "vite-plugin-compression": "^0.5.1"
-  }
+    "name": "strib-svelte-vite-template",
+    "private": true,
+    "version": "0.2.2",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "preview": "vite preview",
+        "svelte-check": "svelte-check",
+        "deploy-staging": "./strib-deploy.sh --environment staging",
+        "deploy-production": "./strib-deploy.sh --environment production"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^5.0.1",
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.39",
+        "postcss-prefix-selector": "^2.1.0",
+        "svelte": "^5.2.9",
+        "svelte-check": "^4.2.2",
+        "tailwindcss": "^3.4.4",
+        "vite": "^6.0.1",
+        "vite-plugin-compression": "^0.5.1"
+    }
 }
