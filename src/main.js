@@ -2,27 +2,28 @@ import "./styles/tailwind/utility.css";
 import "./styles/tailwind/typography.css";
 import "./styles/tailwind/tailwind.css";
 
-import { mount } from "svelte";
+import { mount, unmount } from "svelte";
 import App from "./App.svelte";
 
 let app;
 let tgt = document.getElementById("proj-container");
 tgt.innerHTML = "";
 try {
-    mount(App, {
-        target: document.getElementById("proj-container"),
+    app = mount(App, {
+        target: tgt,
     });
 } catch {
     app = undefined;
 }
 
 setInterval(() => {
+    // Need to refind target because a rerender would break the previous link
     let tgt = document.getElementById("proj-container");
     if (tgt.innerHTML === "") {
-        if (app) app.$destroy();
+        if (app) unmount(app);
         try {
-            mount(App, {
-                target: document.getElementById("proj-container"),
+            app = mount(App, {
+                target: tgt,
             });
         } catch {
             app = undefined;
