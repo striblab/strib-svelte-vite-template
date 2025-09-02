@@ -19,7 +19,7 @@ Renders a visual replica of the Immersive Template hero.
 <Hero
   sectionLabel = "Section label",
   headline = "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-  timestamp = "Dec. 1, 1977",
+  timestamp = "December 1, 1977",
   heroImageUrl = "https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg",
   heroImageCaption = "",
   heroImageAltText = "",
@@ -61,7 +61,6 @@ Renders a visual replica of the Immersive Template hero.
     </div>
     <div class="flex flex-col gap-y-6 md:gap-y-8 text-center">
       <Headline>{headline}</Headline>
-      <Timestamp>{timestamp}</Timestamp>
     </div>
   </GridRow>
 
@@ -96,6 +95,7 @@ Renders a visual replica of the Immersive Template hero.
           </span>
         </div>
       </div>
+      <Timestamp>{timestamp}</Timestamp>
     </div>
   </GridRow>
 </Grid>

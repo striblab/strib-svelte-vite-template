@@ -7,7 +7,7 @@ Your string should use an abbreviated month, non-zero day and four digit year.
 #### Example
 ```svelte
 <Timestamp>
-Dec. 1, 1977
+December 1, 1977
 </Timestamp>
 ```
 -->
@@ -16,6 +16,6 @@ Dec. 1, 1977
   let { children } = $props();
 </script>
 
-<span class="font-utility-label-reg-caps-02 text-text-tertiary">
+<span class="text-xs font-utility-label-reg-caps-02 text-text-black tracking-wider ">
   {@render children?.()}
 </span>
