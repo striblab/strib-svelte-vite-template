@@ -45,6 +45,8 @@ export const fontFamily = {
     fallbackFont,
   ],
   "publico-banner-light-italic": ["publico-banner-light-italic", fallbackFont],
+  "publico-banner-light": ["publico-banner-light", fallbackFont],
+
   "publico-banner-condensed-medium": [
     "publico-banner-condensed-medium",
     fallbackFont,
@@ -55,6 +57,22 @@ export const fontFamily = {
   ],
   "publico-banner-xcondensed-light": [
     "publico-banner-xcondensed-light",
+    fallbackFont,
+  ],
+  "publico-banner-black": [
+    "publico-banner-black",
+    fallbackFont,
+  ],
+  "publico-headline-black": [
+    "publico-headline-black",
+    fallbackFont,
+  ],
+  "graphik-semibold-italic": [
+    "graphik-semibold-italic",
+    fallbackFont,
+  ],
+  "publico-headline-black-italic": [
+    "publico-headline-black-italic",
     fallbackFont,
   ],
   "barlow-italic": ["barlow-italic", fallbackFont],

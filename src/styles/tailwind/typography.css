@@ -222,3 +222,60 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* new fonts */
+@font-face {
+  font-family: "publico-headline-light";
+  src: url("https://static.startribune.com/fonts/PublicoHeadlineLight/PublicoHeadline-Light.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "publico-headline-condensed-black";
+  src: url("https://static.startribune.com/fonts/PublicoHeadlineCondensedWebFonts/PublicoHeadlineCondensed-Black-Web.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "publico-banner-black";
+  src: url("https://static.startribune.com/fonts/PublicoBannerBlack/PublicoBanner-Black-Web.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "publico-headline-black";
+  src: url("https://static.startribune.com/fonts/PublicoHeadlineBlack/PublicoHeadline-Black-Web.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "graphik-semibold-italic";
+  src: url("https://static.startribune.com/fonts/GraphikWebFonts/Graphik-SemiboldItalic-Web.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "publico-headline-black-italic";
+  src: url("https://static.startribune.com/fonts/PublicoHeadlineBlackItalic/PublicoHeadline-BlackItalic.otf")
+    format("otf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "publico-banner-light";
+  src: url("https://static.startribune.com/fonts/PublicoBannerLight/PublicoBanner-Light-Web.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
