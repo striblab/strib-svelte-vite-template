@@ -1,7 +1,7 @@
 {
   "name": "strib-svelte-vite-template",
   "private": true,
-  "version": "0.2.3",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
