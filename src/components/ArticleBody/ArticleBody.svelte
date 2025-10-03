@@ -1,10 +1,10 @@
 <!-- 
 @component
 ### ArticleBody component
-This is a general workspace illustrating what an article body might look like if you use only the included components.  
+This is a general workspace illustrating what an article body might look like if you use only the components included in this template.  
 ArticleBody doesn't accept any props. All contents will need to be hand-placed by a designer directly inside this component.  
 In this example, Grid and GridRow help establish the width of the article body's contents. 
-Documentation included with those components and accessed by VSCode tooltip explains each component in greater detail detail.
+Documentation included with those components and accessed by VSCode tooltip explains each component in greater detail.
 
 #### State in this component
 - innerWidth: int - pixel width of the viewport.
@@ -36,6 +36,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import Image from "../Image/Image.svelte";
+  import ScrollySection from "../Scrolly/ScrollySection.svelte";
 
   let innerWidth = $state(0);
   let isMobile = $derived(innerWidth < 768);
@@ -95,6 +96,48 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
       src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
       alt="Descriptive alt text"
       caption="Caption tk tk tk"
+    />
+  </GridRow>
+
+  <GridRow variant={"fullBleed"}>
+    <ScrollySection
+      data={[
+        {
+          step: 0,
+          color: "#143D11",
+          text: "In response to this card's appearance in the viewport, the background color is now #143D11.",
+        },
+        {
+          step: 1,
+          color: "#5E95D6",
+          text: "In response to this card's appearance in the viewport, the background color is now #5E95D6.",
+        },
+        {
+          step: 2,
+          color: "#CCCCCC",
+          text: "In response to this card's appearance in the viewport, the background color is now #CCCCCC.",
+        },
+        {
+          step: 3,
+          color: "#B13B5B",
+          text: "In response to this card's appearance in the viewport, the background color is now #B13B5B.",
+        },
+        {
+          step: 4,
+          color: "#804316",
+          text: "In response to this card's appearance in the viewport, the background color is now #804316.",
+        },
+        {
+          step: 5,
+          color: "#B28333",
+          text: "In response to this card's appearance in the viewport, the background color is now #B28333.",
+        },
+        {
+          step: 6,
+          color: "#052949",
+          text: "In response to this card's appearance in the viewport, the background color is now #052949.",
+        },
+      ]}
     />
   </GridRow>
 
