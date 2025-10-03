@@ -2,7 +2,7 @@
  @component
  ### Card component
  This component renders a minimalist card with a header and footer. The body string can contain html markup. The optional property offset can be used
- to add padding to the card, which is helpful for triggering scrolly behavior before the card's contents arrive in the viewport.
+ to add padding to the card, which is helpful for triggering scrolly behavior before the card's visible contents arrive in the viewport.
 
  #### Optional properties
  - header: string;

@@ -11,6 +11,20 @@ ScrollySection imports the Scrolly component which tracks which of its immediate
 This component leverage {@link https://svelte.dev/docs/svelte/bind Svelte's two-way binding directive} to expose Scrolly's value property and assign it to this component's scrollIndex state.
 We derive from this scrollIndex state the color string we wish to apply to our sticky-positioned div. 
 This pattern — observe a series of elements on screen, reactively update state and manipulate a sticky-positioned background element accordingly — can be good starting point for most scrollytelling formats.
+
+#### Scrollytelling in the Hero component
+This component is designed to work inside any fullBleed variant GridRow, including fullBleed GridRow instances from within the Hero component.
+Just import the ScrollySection component and include it as follows inside of the Hero markup's Grid wrapper.
+
+```Svelte
+
+  <GridRow variant={"fullBleed"}>
+    <ScrollySection
+      data={yourHeroScrollyData}
+    />
+  </GridRow>
+
+```
 -->
 <script>
   import GridRow from "../Grid/_GridRow.svelte";
