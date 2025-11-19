@@ -267,7 +267,7 @@
 @font-face {
   font-family: "publico-headline-black-italic";
   src: url("https://static.startribune.com/fonts/PublicoHeadlineBlackItalic/PublicoHeadline-BlackItalic.otf")
-    format("otf");
+    format("opentype");
   font-style: normal;
   font-display: swap;
 }
