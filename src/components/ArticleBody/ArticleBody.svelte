@@ -50,14 +50,15 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
     <Paragraph
       ><Dropcap 
-        dropcapTypeface={""} >L</Dropcap>
+        dropcapTypeface={"font-publico-headline-roman"}
+        lines={3}>L</Dropcap>
         orem ipsum dolor sit amet consectetur adipisicing elit. <a
         href="https://www.startribune.com/"
         target="_blank"
         rel="noreferrer">Debitis quas</a
       >, facilis itaque minus totam repudiandae magnam esse asperiores
       temporibus sed laborum nisi ut corporis ab officiis dolorum odio, porro
-      eveniet.</Paragraph
+      eveniet. Quis quaerat tempore adipisci nostrum quia non.</Paragraph
     >
 
     <Paragraph
