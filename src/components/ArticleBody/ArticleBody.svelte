@@ -48,11 +48,9 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 <svelte:window bind:innerWidth />
 <Grid additionalClasses={"gap-y-5"}>
   <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
-    <Paragraph
-      ><Dropcap 
-        dropcapTypeface={"font-publico-headline-roman"}
-        lines={3}>L</Dropcap>
-        orem ipsum dolor sit amet consectetur adipisicing elit. <a
+    <Paragraph dropCap={true}
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <a
         href="https://www.startribune.com/"
         target="_blank"
         rel="noreferrer">Debitis quas</a
