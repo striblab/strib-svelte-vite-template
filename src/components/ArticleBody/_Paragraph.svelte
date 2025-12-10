@@ -4,15 +4,10 @@
 Renders a p tag in the style of the Immersive Template.  
 Wrap this component around the markup you want rendered.
 
-### Optional dropcap property
-Styles the first letter of a paragraph. The property lines, 
-a number, controls the number of lines the dropcap should
-span (styled up to six lines).
-
-### Properties
-- dropcap: boolean;
-- lines: number;
-- dropcapTypeface: string;
+#### Optional properties
+- dropCap: a boolean denoting whether to make the first character of the paragraph a drop cap;
+- dropCapLines: a number between 2 and 6 inclusive that determines how many lines of text that drop cap will span;
+- dropCapFontFamily: a string corresponding to a font's font-family attribute as defined in the this project's typography.css file. Note, this must be an actual CSS font-family string, not a Tailwind utility class name;
 
 #### Example
 ```svelte
@@ -21,34 +16,32 @@ span (styled up to six lines).
 
 #### Dropcap example
 ```svelte
-<Paragraph dropCap={true} lines={3} dropcapTypeface={"font-publico-headline-black"}>Lorem ipsum</Paragraph>
+<Paragraph dropCap={true} dropCapLines={3} dropCapFontFamily={"publico-headline-black"}>Lorem ipsum</Paragraph>
 ```
 -->
 
 <script>
-  /** @type {{children?: function}} */
+  /** @type {{dropCap?: Boolean; dropCapLines?: 2|3|4|5|6; dropCapFontFamily?: String; children?: function}} */
   let {
-    children,
     dropCap = false,
-    lines = 2,
-    dropcapTypeface = "font-publico-text-roman",
+    dropCapLines = 2,
+    dropCapFontFamily = "publico-headline-condensed-light",
+    children,
   } = $props();
 </script>
 
 <p
-  class="font-editorial-body-reg-02 text-text-primary {dropCap
-    ? `dropcap dropcap-${lines}`
-    : ''} {dropCap && dropcapTypeface ? dropcapTypeface : ''}"
+  class="font-editorial-body-reg-02 text-text-primary
+  {dropCap ? `dropcap dropcap-${dropCapLines}` : ''}"
+  style:--dropcap-typeface={dropCapFontFamily}
 >
   {@render children?.()}
 </p>
 
 <style>
   .dropcap::first-letter {
-    font-family: "publico-text-roman";
     float: left;
-    position: relative;
-    left: 0;
+    font-family: var(--dropcap-typeface, "sans-serif");
   }
   /* desktop dropcap styles */
   .dropcap-2::first-letter {
