@@ -29,12 +29,13 @@ variant="captionCentered"
 <script>
   import ImageCaption from "./_ImageCaption.svelte";
 
-  /** @type {{src?: string; alt?: string; caption?: string; variant?: "default" | "captionCentered"}} */
+  /** @type {{src?: string; alt?: string; caption?: string; variant?: "default" | "captionCentered", additionalClasses?: String}} */
   let {
     src = "",
     alt = "",
     caption = "Caption tk tk tk",
     variant = "default",
+    additionalClasses = "",
   } = $props();
 
   let variantStylesFigure = $state("");
@@ -51,7 +52,7 @@ variant="captionCentered"
   }
 </script>
 
-<figure class={variantStylesFigure}>
+<figure class="pt-5 {variantStylesFigure} {additionalClasses}">
   {#if src}
     <img {src} {alt} class="{variantStylesImg} w-full mb-2" />
   {/if}
