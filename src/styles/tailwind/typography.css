@@ -86,6 +86,14 @@
 
 /* Publico Headline fonts */
 @font-face {
+  font-family: "publico-headline-condensed-light";
+  src: url("https://static.startribune.com/fonts/PublicoHeadlineCondensedLight/PublicoHeadlineCondensed-Light.woff2")
+    format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "publico-headline-condensed-medium";
   src: url("https://static.startribune.com/fonts/PublicoHeadlineCondensedMedium/PublicoHeadlineCondensed-Medium.woff2")
     format("woff2");
@@ -267,7 +275,7 @@
 @font-face {
   font-family: "publico-headline-black-italic";
   src: url("https://static.startribune.com/fonts/PublicoHeadlineBlackItalic/PublicoHeadline-BlackItalic.otf")
-    format("otf");
+    format("opentype");
   font-style: normal;
   font-display: swap;
 }

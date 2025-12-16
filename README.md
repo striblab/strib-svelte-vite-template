@@ -50,6 +50,12 @@ Many common fonts are already implemented in this template. To implement additio
 `https://static.startribune.com/fonts/`, define them in `src/styles/tailwind/typography.css` and include them
 in the `fontFamily` object exported from `src/styles/tailwind-constants/font-family.ts`.
 
+## A 'gotcha' with line height
+
+You may discover that text elements receive a mysterious `line-height: 1.5` style when deployed to an article page. This behavior occurs when line heights are not explicitly set on type elements.
+
+If you use the design tokens defined in this template’s `editorial.css` and `utility.css` files, those will include line height utility classes and you don’t need to add any additional ones. But if you’re styling type without design tokens, you’ll want to specify a preferred line height along with your type face, font size, etc. The Tailwind utility class for line height is called [leading](https://tailwindcss.com/docs/line-height).
+
 ## Deploying
 
 Deployment is currently handled by a shell script (`strib-deploy.sh`). You need to have
