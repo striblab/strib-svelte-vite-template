@@ -11,7 +11,9 @@ import {
   borderWidth,
 } from "./src/styles/tailwind-constants";
 
-export const content = ["./src/**/*.svelte"];
+export const content = [
+  "./src/**/*.svelte"
+];
 export const theme = {
   fontFamily: {
     ...fontFamily,
@@ -20,7 +22,7 @@ export const theme = {
     screens: {
       xs: "320px",
       md: "768px",
-      lg: "1160px",
+      lg: "1024px",
       xl: "1440px",
     },
     colors: {

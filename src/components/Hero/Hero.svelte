@@ -72,7 +72,6 @@ Renders a visual replica of the Immersive Template hero.
         src={heroImageUrl}
         alt={heroImageAltText}
         caption={heroImageCaption}
-        additionalClasses="!pt-0"
       />
     </GridRow>
   {/if}

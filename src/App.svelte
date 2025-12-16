@@ -5,12 +5,12 @@
   import Hero from "./components/Hero/Hero.svelte";
 </script>
 
-<Grid variant="immersiveWrapper">
+<Grid additionalClasses="gap-y-8 md:gap-y-10 px-4">
   <GridRow>
     <Hero
       sectionLabel="Section label"
       headline="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-      timestamp="December 1, 1977"
+      timestamp="Dec. 1, 1977"
       heroImageUrl="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
       heroImageCaption="Lorem ipsum dolor"
       heroImageAltText=""
