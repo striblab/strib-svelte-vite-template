@@ -35,7 +35,6 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import GridRow from "../Grid/_GridRow.svelte";
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
-  import Dropcap from "./_Dropcap.svelte";
   import Image from "../Image/Image.svelte";
   import ScrollySection from "../Scrolly/ScrollySection.svelte";
 
