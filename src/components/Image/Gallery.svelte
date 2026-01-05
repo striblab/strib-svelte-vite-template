@@ -11,19 +11,26 @@
   } from "swiper/modules";
 
   import IconButton from "../Button/IconButton.svelte";
-
   let {
     imgs = [
       {
-        img: "https://arc.stimg.co/startribunemedia/5K6ZGY6TU5D4TH7O22FA452H2U.jpg",
+        src: "https://placehold.co/1080x720",
         caption: "Caption 1 tk tk tk",
+      },
+      {
+        src: "https://placehold.co/405x720",
+        caption: "Caption 2 tk tk tk",
+      },
+      {
+        src: "https://placehold.co/720x720",
+        caption: "Caption 3 tk tk tk",
       },
     ],
   } = $props();
 
   //sort of weird, but 5 images is the fewest that can be gracefully looped
   //hence, this function, which effectively appends on image array to itself until it can be gracefully looped
-  let paddedImgs = $derived(imgs.length < 5 ? padImgs(imgs) : imgs);
+  const paddedImgs = imgs.length < 5 ? padImgs(imgs) : imgs;
 
   let activeIndex = $state(0);
 
@@ -87,11 +94,20 @@
   <div class="mb-2">
     <swiper-container aria-live="polite" init="false" use:setupSwiper>
       {#each paddedImgs as img}
-        {console.log(img)}
+        {@const aspectRatio = (() => {
+          const imageEl = new Image();
+          imageEl.src = img.src;
+          return imageEl.width / imageEl.height;
+        })()}
+
         <swiper-slide
-          class="max-[389px]:w-[90%] max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem]"
+          class="aspect-[3/2] max-[389px]:w-[90%] max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] bg-surface-reversed"
         >
-          <img src={img.img} alt="" />
+          <img
+            class={aspectRatio > 1.5 ? "w-full my-auto" : "h-full mx-auto"}
+            src={img.src}
+            alt=""
+          />
         </swiper-slide>
       {/each}
     </swiper-container>
