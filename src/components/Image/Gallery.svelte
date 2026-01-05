@@ -30,7 +30,7 @@
       },
       {
         src: "https://placehold.co/1080x540",
-        caption: "Caption 3 tk tk tk",
+        caption: "Caption 4 tk tk tk",
         alt: "A grey placeholder image with white centered text that reads '1080x540' to denote the placeholder's pixel dimensions.",
       },
     ],
@@ -106,14 +106,15 @@
         {@const aspectRatio = (() => {
           const imageEl = new Image();
           imageEl.src = img.src;
+          //Do I need to confirm image is loaded first?
           return imageEl.width / imageEl.height;
         })()}
 
         <swiper-slide
-          class="aspect-[3/2] max-[389px]:w-[90%] max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] bg-surface-reversed"
+          class="aspect-[3/2] flex items-center justify-center max-[389px]:w-[90%] max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] bg-surface-reversed"
         >
           <img
-            class={aspectRatio > 1.5 ? "w-full my-auto" : "h-full mx-auto"}
+            class={aspectRatio > 1.5 ? "w-full" : "h-full"}
             src={img.src}
             alt={img.alt}
           />
