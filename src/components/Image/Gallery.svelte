@@ -16,14 +16,22 @@
       {
         src: "https://placehold.co/1080x720",
         caption: "Caption 1 tk tk tk",
+        alt: "A grey placeholder image with white centered text that reads '1080x720' to denote the placeholder's pixel dimensions.",
       },
       {
         src: "https://placehold.co/405x720",
         caption: "Caption 2 tk tk tk",
+        alt: "A grey placeholder image with white centered text that reads '405x720' to denote the placeholder's pixel dimensions.",
       },
       {
         src: "https://placehold.co/720x720",
         caption: "Caption 3 tk tk tk",
+        alt: "A grey placeholder image with white centered text that reads '720x720' to denote the placeholder's pixel dimensions.",
+      },
+      {
+        src: "https://placehold.co/1080x540",
+        caption: "Caption 3 tk tk tk",
+        alt: "A grey placeholder image with white centered text that reads '1080x540' to denote the placeholder's pixel dimensions.",
       },
     ],
   } = $props();
@@ -74,6 +82,7 @@
     },
   };
 
+  //Probably needs cleanup function since this is used as an action
   function setupSwiper(node) {
     Object.assign(node, swiperParams);
     node.initialize();
@@ -106,7 +115,7 @@
           <img
             class={aspectRatio > 1.5 ? "w-full my-auto" : "h-full mx-auto"}
             src={img.src}
-            alt=""
+            alt={img.alt}
           />
         </swiper-slide>
       {/each}
