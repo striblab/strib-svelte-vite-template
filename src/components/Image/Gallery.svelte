@@ -40,7 +40,7 @@
 
   //sort of weird, but 5 images is the fewest that can be gracefully looped
   //hence, this function, which effectively appends on image array to itself until it can be gracefully looped
-  const paddedImgs = imgs.length < 5 ? padImgs(imgs) : imgs;
+  let paddedImgs = $derived(imgs.length < 5 ? padImgs(imgs) : imgs);
 
   let activeIndex = $state(0);
 
