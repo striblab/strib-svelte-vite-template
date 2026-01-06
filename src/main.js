@@ -3,11 +3,7 @@ import "./styles/tailwind/typography.css";
 import "./styles/tailwind/tailwind.css";
 
 import { mount, unmount } from "svelte";
-import { register } from "swiper/element/bundle";
 import App from "./App.svelte";
-
-//register swiper gallery globally, should be done only once per https://swiperjs.com/element
-register();
 
 let app;
 let tgt = document.getElementById("proj-container");

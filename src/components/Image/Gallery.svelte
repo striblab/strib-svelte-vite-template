@@ -10,6 +10,8 @@
     EffectCoverflow,
   } from "swiper/modules";
 
+  import { register } from "swiper/element/bundle";
+
   import IconButton from "../Button/IconButton.svelte";
   let {
     imgs = [
@@ -84,6 +86,10 @@
 
   //Probably needs cleanup function since this is used as an action
   function setupSwiper(node) {
+    if (!customElements.get("swiper-container")) {
+      register();
+    }
+
     Object.assign(node, swiperParams);
     node.initialize();
   }
