@@ -1,3 +1,29 @@
+<!-- 
+@component
+### Gallery component
+This component implements a swipable, mobile-friendly gallery via {@link https://swiperjs.com/element| Swiper}, the same JS library that the Immersive Template uses.
+Its default design and behavior aims to mimic that of the Immersive Template, but designers are encouraged to modify as needed.
+
+#### Properties
+- imgs: An array of objects, each of which represents an image and contains the following properties: src, caption and alt. These properties expect strings and determine that image's source url, caption and alt text.
+
+#### One Swiper quirk
+Swiper galleries will not loop correctly across all viewports if they contain fewer than five images. To mitigate this behavior, this component will duplicate the passed-in image objects to pad out the gallery create the illusion of a looping gallery. 
+
+#### Example
+```svelte
+  <GridRow variant="fullBleed">
+      <Gallery imgs={[
+        {src: "myUrl.jpg", caption="My caption.", alt="Don't forget the alt text!"},
+        {src: "myUrl.jpg", caption="My caption.", alt="Don't forget the alt text!"},
+        {src: "myUrl.jpg", caption="My caption.", alt="Don't forget the alt text!"},
+        {src: "myUrl.jpg", caption="My caption.", alt="Don't forget the alt text!"},
+        {src: "myUrl.jpg", caption="My caption.", alt="Don't forget the alt text!"},
+      ]}/>
+  </GridRow>
+ ```  
+-->
+
 <script>
   import "swiper/css";
   import "swiper/css/grid";
@@ -38,10 +64,7 @@
     ],
   } = $props();
 
-  //sort of weird, but 5 images is the fewest that can be gracefully looped
-  //hence, this function, which effectively appends on image array to itself until it can be gracefully looped
   let paddedImgs = $derived(imgs.length < 5 ? padImgs(imgs) : imgs);
-
   let activeIndex = $state(0);
 
   const id = $props.id();
@@ -77,21 +100,24 @@
     },
     on: {
       init() {},
-      slideChange() {
-        //realIndex is appropriate for a looping gallery
-        activeIndex = this.realIndex;
-      },
     },
   };
 
-  //Probably needs cleanup function since this is used as an action
   function setupSwiper(node) {
-    if (!customElements.get("swiper-container")) {
-      register();
-    }
+    $effect(() => {
+      if (!customElements.get("swiper-container")) {
+        register();
+      }
 
-    Object.assign(node, swiperParams);
-    node.initialize();
+      if (!node.swiper) {
+        Object.assign(node, swiperParams);
+        node.initialize();
+      }
+
+      return () => {
+        node.swiper.destroy(true, true);
+      };
+    });
   }
 
   function padImgs(imgs) {
@@ -107,12 +133,18 @@
 
 <div class="pt-5">
   <div class="mb-2">
-    <swiper-container aria-live="polite" init="false" use:setupSwiper>
+    <swiper-container
+      aria-live="polite"
+      init="false"
+      use:setupSwiper
+      onswiperslidechange={(e) => {
+        activeIndex = e.detail[0].realIndex;
+      }}
+    >
       {#each paddedImgs as img}
         {@const aspectRatio = (() => {
           const imageEl = new Image();
           imageEl.src = img.src;
-          //Do I need to confirm image is loaded first?
           return imageEl.width / imageEl.height;
         })()}
 
@@ -132,7 +164,7 @@
   <div
     class="flex flex-row justify-between gap-5 max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] max-lg:px-4 mx-auto"
   >
-    <div class=" font-utility-meta-reg-02 text-text-secondary">
+    <div class="font-utility-meta-reg-02 text-text-secondary">
       {paddedImgs[activeIndex].caption}
     </div>
 
