@@ -36,6 +36,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
   import Image from "../Image/Image.svelte";
+  import Gallery from "../Image/Gallery.svelte";
   import ScrollySection from "../Scrolly/ScrollySection.svelte";
 
   let innerWidth = $state(0);
@@ -70,6 +71,10 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
       ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
       exercitationem. Fugit, consequatur!</Paragraph
     >
+  </GridRow>
+
+  <GridRow variant="fullBleed">
+    <Gallery />
   </GridRow>
 
   <GridRow variant={"fullBleed"}>
