@@ -21,7 +21,7 @@ Accepts the optional property additionalClasses for customization.
 <!-- ignoring svelte a11y checking since this component is the direct child of a <figure> tag once imported inside the Image component -->
 <!-- svelte-ignore a11y_figcaption_parent -->
 <figcaption
-  class="font-utility-meta-reg-02 text-text-secondary {additionalClasses}"
+  class="font-utility-meta-reg-02 text-text-secondary text-center max-w-[450px] mx-auto {additionalClasses}"
 >
   {@render children?.()}
 </figcaption>
