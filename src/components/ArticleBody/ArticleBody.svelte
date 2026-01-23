@@ -9,8 +9,8 @@ Documentation included with those components and accessed by VSCode tooltip expl
 #### State in this component
 - innerWidth: int - pixel width of the viewport.
 - isMobile: boolean - derived from innerWidth, true if less than 768 pixels
-- isTablet: boolean - derived from innerWidth, true if between 768 pixels inclusive and 1024 pixels exclusive
-- isDesktop: boolean - derived from innerWidth, true if greater than 1024 pixels inclusive
+- isTablet: boolean - derived from innerWidth, true if between 768 pixels inclusive and 1160 pixels exclusive
+- isDesktop: boolean - derived from innerWidth, true if greater than 1160 pixels inclusive
 
 #### Using state in this component
 You can use any of the three derived states to render different variants of a GridRow component reactively.
@@ -41,8 +41,8 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 
   let innerWidth = $state(0);
   let isMobile = $derived(innerWidth < 768);
-  let isTablet = $derived(innerWidth >= 768 && innerWidth < 1024);
-  let isDesktop = $derived(innerWidth >= 1024);
+  let isTablet = $derived(innerWidth >= 768 && innerWidth < 1160);
+  let isDesktop = $derived(innerWidth >= 1160);
 </script>
 
 <svelte:window bind:innerWidth />
