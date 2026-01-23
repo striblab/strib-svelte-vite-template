@@ -52,6 +52,16 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 
 
   <GridRow variant="inline" additionalClasses={"gap-y-5"}>
+
+<div class="block">
+
+<div class="rt-Box flex items-center w-full gap-x-2 mb-2"><div class="rt-Box"><a role="link" data-testid="link-button" aria-label="More about Laura Yuen" class="flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb rounded-full ml-0" href="/author/laura-yuen/8127999"><div class="rt-Box flex items-center gap-0.5"><img alt="Columnist Icon" data-chromatic="ignore" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" class="object-cover size-16 aspect-square pr-1" src="https://author-service-images-prod-us-east-1.publishing.aws.arc.pub/startribunemedia/4305b8ae-af61-455f-a4eb-5cb7e3c853e1.png" style="color: transparent;"></div></a></div><div class="rt-Box flex flex-col gap-y-0.5"><div class="rt-Box flex"><a role="link" data-testid="link-button" class="flex Button_button__9QGZa link large-size w-fit h-fit Button_button-link__auMnb" href="/author/laura-yuen/8127999"><div class="rt-Box flex items-center gap-0.5"><p data-testid="Laura Yuen" class="rt-Text !text-[.875rem] font-utility-label-bold-02 text-text-primary relative">By Laura Yuen</p></div></a></div><span class="rt-Text text-text-secondary font-utility-label-reg-02 mb-1 !text-[.875rem]">The Minnesota Star Tribune</span>
+<span class="!text-[#666666]  !text-[.75rem] tracking-[1px] rt-Text font-utility-label-reg-caps-03 text-text-secondary">January 25, 2026</span></div></div>
+
+</div>
+
+
+
 <Paragraph>
 They are leading student walkouts, delivering groceries to frightened families and checking in on friends who are no longer going to school.
 </Paragraph>
@@ -61,7 +71,7 @@ Some are the children of undocumented immigrants, putting food on the table beca
 </Paragraph>
 
 <Paragraph>
-As President Trump’s ICE crackdown intensifies in Minnesota, a new generation of activists is taking a stand and showing up for the immigrants in their lives in ways both big and small — much like the students who sat at segregated lunch counters in the 1960s or the teens who were politically awakened after school shootings. 
+As President Donald Trump’s ICE crackdown intensifies in Minnesota, a new generation of activists is taking a stand and showing up for the immigrants in their lives in ways both big and small — much like the students who sat at segregated lunch counters in the 1960s or the teens who were politically awakened after school shootings.
 </Paragraph>
 
 <Paragraph>
@@ -72,25 +82,24 @@ Here are some of their stories:
 <GridRow variant="inline" additionalClasses={"md:w-[120%] md:ml-[-10%] pt-8"}>
     <Image
       src="https://arc.stimg.co/startribunemedia/PUIFGQS5BBGVTD3AIABEO4AFZQ.jpg?&amp;w=1080"
-      alt="Ariel Jimenez, 17, said he found his courage to speak up about how ICE is reshaping families like his. The son of undocumented parents who are afraid to leave the house, he works to support the family. (Renée Jones Schneider/The Minnesota Star Tribune)"
-      caption="Ariel Jimenez, 17, said he found his courage to speak up about how ICE is reshaping families like his. The son of undocumented parents who are afraid to leave the house, he works to support the family."
+      alt="Ariel Jimenez, 17, said he found his courage to speak up about how ICE is reshaping families like his. The son of undocumented parents who are afraid to leave the house, he works to support the family."
+      caption="Ariel Jimenez, 17, said he found his courage to speak up about how ICE is reshaping families like his. The son of undocumented parents who are afraid to leave the house, he works to support the family. (Renée Jones Schneider/The Minnesota Star Tribune)"
     />
 </GridRow>
 
   <GridRow variant="inline" additionalClasses={"gap-y-5"}>
 <Subhead>Ariel Jimenez, Roseville Area High School</Subhead>
 
-
 <Paragraph>
-How fast can a kid grow? 
+How fast can a kid grow?
 </Paragraph>
 
 <Paragraph>
-Ariel Jimenez is just 17. For more than six months last year, his father was detained by ICE, forcing Ariel to become family breadwinner and court navigator. 
+Ariel Jimenez is just 17. For more than six months last year, his father was detained by ICE, forcing Ariel to become the family breadwinner and court navigator.
 </Paragraph>
 
 <Paragraph>
-Agents scooped up his dad early last summer after he went to work on a construction site. While in ICE custody, he called his only child, crying and apologizing over the phone. 
+Agents scooped up his dad early last summer after he went to work on a construction site. While in ICE custody, he called his only child, crying and apologizing over the phone.
 </Paragraph>
 
 <Paragraph>
@@ -98,7 +107,7 @@ Agents scooped up his dad early last summer after he went to work on a construct
 </Paragraph>
 
 <Paragraph>
-His dad’s attorneys filed a lawsuit challenging his detention. Last month, a judge ruled that his father could be freed on bond while his immigration case works its way through the courts. It was Ariel who received the coldly worded email from the federal government that nonetheless filled him with joy:<i> "</i>The alien is ready for release<i>." </i>It was Ariel who<i> </i>drove more than nine hours to a Nebraska detention center to pick up his dad.
+His dad’s attorneys filed a lawsuit challenging his detention. Last month, a judge ruled that his father could be freed on bond while his immigration case works its way through the courts. It was Ariel who received the coldly worded email from the federal government that nonetheless filled him with joy: “The alien is ready for release.”It was Ariel who drove more than nine hours to a Nebraska detention center to pick up his dad.
 </Paragraph>
 
 <Paragraph>
@@ -114,12 +123,13 @@ His mom and dad pray for him each time he leaves the house. He wishes he could j
 </Paragraph>
 
 <Paragraph>
-Ariel’s classmates at Roseville Area High School urged him to lead a student walkout protesting ICE’s actions. At first he demurred, saying it wasn’t worth the risk of ICE showing up. But after the killing of Renee Good, he said, he found his courage. Ariel felt the backing of several hundred students and friends who joined him in the protest. 
+Ariel’s classmates at Roseville High School urged him to lead a student walkout protesting ICE’s actions. At first, he demurred, saying it wasn’t worth the risk of ICE showing up. But after the killing of Renee Good, he said, he found his courage. Ariel felt the backing of several hundred students and friends who joined him in the protest.
 </Paragraph>
 
 <Paragraph>
-“We’re making some very good noise,” he said. 
+“We’re making some very good noise,” he said.
 </Paragraph>
+
 
 <StoryPause></StoryPause>
 </GridRow>
@@ -127,8 +137,8 @@ Ariel’s classmates at Roseville Area High School urged him to lead a student w
 <GridRow variant="inline" additionalClasses={"md:w-[120%] md:ml-[-10%]"}>
     <Image
       src="https://arc.stimg.co/startribunemedia/IXBJHDSP4ZGT5H6DXAI736VHYA.jpg?&amp;w=1080"
-      alt="Ricaya Whitmore, a sophomore at Roosevelt High School in Minneapolis, believes immigration will be a defining cause for her generation. She wants to use her Spanish-language skills in a career that helps immigrants. (Renée Jones Schneider/The Minnesota Star Tribune)"
-      caption="Ricaya Whitmore, a sophomore at Roosevelt High School in Minneapolis, believes immigration will be a defining cause for her generation. She wants to use her Spanish-language skills in a career that helps immigrants."
+      alt="Ricaya Whitmore, a sophomore at Roosevelt High School in Minneapolis, believes immigration will be a defining cause for her generation. She wants to use her Spanish-language skills in a career that helps immigrants."
+      caption="Ricaya Whitmore, a sophomore at Roosevelt High School in Minneapolis, believes immigration will be a defining cause for her generation. She wants to use her Spanish-language skills in a career that helps immigrants. (Renée Jones Schneider/The Minnesota Star Tribune)"
     />
 </GridRow>
 
@@ -138,7 +148,7 @@ Ariel’s classmates at Roseville Area High School urged him to lead a student w
 <Subhead>Ricaya Whitmore, Roosevelt High School</Subhead>
 
 <Paragraph>
-Ricaya, 15, says school feels lonely and strangely quiet now, with so many classmates staying home in fear of being targeted by ICE. She’s in a Spanish language immersion program, which has been popular with Latino students. In one of Ricaya’s classes, now only eight of about 45 students typically show up.
+Ricaya Whitmore, 15, says school feels lonely and strangely quiet now, with so many classmates staying home in fear of being targeted by ICE. She’s in a Spanish language immersion program, which has been popular with Latino students. In one of Ricaya’s classes, now only eight of about 45 students typically show up.
 </Paragraph>
 
 <Paragraph>
@@ -146,7 +156,7 @@ Ricaya, who is white, says she’s been texting her friends of all races and eth
 </Paragraph>
 
 <Paragraph>
-She was shocked that federal agents would come to her school, just a couple miles from where Good was shot, release chemical irritants and tackle people to the ground, according to witnesses. The <a href="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" target="_blank" rel="" title="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" data-mrf-link="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" cmp-ltrk="Article Links" cmp-ltrk-idx="0" mrfobservableid="51d55231-3d17-4036-9ac8-18b31b7699da">clashes</a> with teachers and protesters led the district to cancel school for two days and offer students the option of online learning. 
+She was shocked that federal agents would go to her school, just a couple of miles from where Good was shot, release chemical irritants and tackle people to the ground, according to witnesses. The <a href="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" target="_blank" rel="" title="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" data-mrf-link="https://www.startribune.com/what-happened-when-border-patrol-agents-showed-up-at-minneapolis-roosevelt-high-school/601561137" cmp-ltrk="Article Links" cmp-ltrk-idx="0" mrfobservableid="65c24b7e-3e01-4a9a-ad96-067ab61cc2bf">clashes</a> with teachers and protesters led the district to cancel school for two days and offer students the option of online learning.
 </Paragraph>
 
 <Paragraph>
@@ -159,8 +169,8 @@ She was shocked that federal agents would come to her school, just a couple mile
   <GridRow variant={isMobile ? "fullBleed" : "default"} additionalClasses={""}>
     <Image
       src="https://arc.stimg.co/startribunemedia/B2B6FHY4A5FRTPUJ2X7AKXMG2Y.jpg?&amp;w=1080"
-      alt="Student activist Muno Abdullahi poses for a photo at Juxtaposition in Minneapolis on Wednesday, Jan. 21.(Renée Jones Schneider/The Minnesota Star Tribune)"
-      caption="Student activist Muno Abdullahi poses for a photo at Juxtaposition in Minneapolis on Wednesday, Jan. 21."
+      alt="Student activist Muno, photographed at Juxtaposition in Minneapolis, Minn., on Jan. 21, wants to hold onto normalcy but said, &ldquo;It's so hard. You just can't look away.&rdquo;"
+      caption="Student activist Muno, photographed at Juxtaposition in Minneapolis, Minn., on Jan. 21, wants to hold onto normalcy but said, &ldquo;It's so hard. You just can't look away.&rdquo; (Renée Jones Schneider/The Minnesota Star Tribune)"
     />
   </GridRow>
 
@@ -172,11 +182,11 @@ Muno, 18, asked me to withhold her last name because of fear of retaliation. (So
 </Paragraph>
 
 <Paragraph>
-She shared three recent stories she can’t shake from her mind. 
+She shared three recent stories she can’t shake from her mind.
 </Paragraph>
 
 <Paragraph>
-One: Craving carne asada, Muno pulls up to a taco shop in West St. Paul, where she spots a a Latino boy about her age, sizing her up from the store window. He apparently is the store’s makeshift security guard, there to prevent ICE agents from entering. He unlocks the door to let Muno in and quickly locks it after her. 
+One: Craving carne asada, Muno pulls up to a taco shop in West St. Paul, where she spots a Latino boy about her age, sizing her up from the store window. He apparently is the store’s makeshift security guard, there to prevent ICE agents from entering. He unlocks the door to let Muno in and quickly locks it after her.
 </Paragraph>
 
 <Paragraph>
@@ -188,7 +198,7 @@ We’ve heard a lot of stories alleging ICE is racially profiling residents, but
 </Paragraph>
 
 <Paragraph>
-Two: Muno is getting ready to go her friend’s house, where she and several girls plan to bake cinnamon rolls and post selfies on TikTok in their matching pajamas. Then her friend sends a warning to the group chat: ICE agents just detained a construction worker in her neighborhood. 
+Two: Muno is getting ready to go to her friend’s house, where she and several girls plan to bake cinnamon rolls and post selfies on TikTok in their matching pajamas. Then her friend sends a warning to the group chat: ICE agents just detained a construction worker in her neighborhood.
 </Paragraph>
 
 <Paragraph>
@@ -204,7 +214,7 @@ She said immigrants and their children won’t stop enduring or giving back to t
 </Paragraph>
 
 <Paragraph>
-“Yes, ICE is still happening, but I still have dinner plans Friday. I still have band practice. I’m still going to college. I’m still making my parents proud.” 
+“Yes, ICE is still happening, but I still have dinner plans Friday. I still have band practice. I’m still going to college. I’m still making my parents proud.”
 </Paragraph>
 <StoryPause></StoryPause>
 
@@ -213,8 +223,8 @@ She said immigrants and their children won’t stop enduring or giving back to t
   <GridRow variant={isMobile ? "fullBleed" : "default"} additionalClasses={""}>
     <Image
       src="https://arc.stimg.co/startribunemedia/TKXDJLMGKJGLHFXGZ6EHMACWLU.jpg?&amp;w=1080"
-      alt="Sofia Gonzalez, a senior at Como Park Senior High School in St. Paul, led a student walkout protest on Jan. 14, days after comforting a neighbor family targeted by ICE. (Renée Jones Schneider/The Minnesota Star Tribune)"
-      caption="Sofia Gonzalez, a senior at Como Park Senior High School in St. Paul, led a student walkout protest on Jan. 14, days after comforting a neighbor family targeted by ICE."
+      alt="Sofia Gonzalez, a senior at Como Park Senior High School in St. Paul, led a student walkout protest on Jan. 14, days after comforting a neighbor family targeted by ICE."
+      caption="Sofia Gonzalez, a senior at Como Park Senior High School in St. Paul, led a student walkout protest on Jan. 14, days after comforting a neighbor family targeted by ICE. (Renée Jones Schneider/The Minnesota Star Tribune)"
     />
   </GridRow>
 
@@ -224,19 +234,19 @@ She said immigrants and their children won’t stop enduring or giving back to t
  <Subhead>Sofia Gonzalez, Como Park Senior High </Subhead>
 
 <Paragraph>
-Sofia, 17, says her Mexican-born father is stressed about being stopped by ICE, even though he’s a U.S. citizen. He carries his papers everywhere.
+Sofia Gonzalez, 17, says her Mexican-born father is stressed about being stopped by ICE, even though he’s a U.S. citizen. He carries his Social Security card and a picture of his passport everywhere.
 </Paragraph>
 
 <Paragraph>
-She learned from social media that ICE agents had been spotted at a house in St. Paul. When Sofia checked the address, it dawned on her that it was the home across the street, inhabited by a Mexican mom and her two daughters. Sofia and her mother knocked on their door. The family appeared shaken when they answered. The elder daughter, who is Sofia’s age, sobbed as Sofia gave her a hug.
+She learned from social media that ICE agents had been spotted at a house in St. Paul. When Sofia checked the address, it dawned on her that it was the home across the street, where a Mexican mom and her two daughters live. Sofia and her mother knocked on their door. The family appeared shaken when they answered. The elder daughter, who is Sofia’s age, sobbed as Sofia gave her a hug.
 </Paragraph>
 
 <Paragraph>
-Sofia and her mom invited the family to come to their house and share a meal. “We basically hid them,” she said. “It hit close to home because it <i>was </i>close to home.” 
+Sofia and her mom invited the family to go to their house and share a meal. “We basically hid them,” she said. “It hit close to home because it <i>was</i> close to home.”
 </Paragraph>
 
 <Paragraph>
-That’s why, on a blindingly bright, frigid afternoon a few days later, Sofia took a stand. In a stocking cap and neon vest, led her fellow students from Como Park on a protest march. The massive crowd chanted, “Renee Good!” and “No hate, no fear, immigrants are welcome here!” They jumped and cheered when they finally arrived on the Capitol grounds.
+That’s why, on a blindingly bright, frigid afternoon a few days later, Sofia took a stand. In a stocking cap and neon vest, led her fellow students from Como Park on a protest march. The massive crowd chanted, “Renee Good!” and “No hate, no fear, immigrants are welcome here!” They jumped and cheered when they finally arrived on the State Capitol grounds.
 </Paragraph>
 
 <Paragraph>
@@ -250,7 +260,7 @@ It’s easy to feel hopeless, Sofia says, but speaking out lifts her spirits. Sh
     <Image
       src="https://arc.stimg.co/startribunemedia/Q5TQEWZJJJH2TFPMZGQIHSSENY.jpg?&amp;w=1080"
       alt="Shiya Murphy, a senior at Hopkins High School, participated in a recent student walkout. He says people in his Minneapolis neighborhood give him hope. &ldquo;We’re very loud in the way we make sure everyone is safe.&rdquo;  (Renée Jones Schneider/The Minnesota Star Tribune)"
-      caption="Shiya Murphy, a senior at Hopkins High School, participated in a recent student walkout. He says people in his Minneapolis neighborhood give him hope. &ldquo;We’re very loud in the way we make sure everyone is safe.&rdquo;"
+      caption="Shiya Murphy, a senior at Hopkins High School, participated in a recent student walkout. He says people in his Minneapolis neighborhood give him hope. &ldquo;We’re very loud in the way we make sure everyone is safe.&rdquo; (Renée Jones Schneider/The Minnesota Star Tribune)"
     />
   </GridRow>
 
@@ -259,11 +269,11 @@ It’s easy to feel hopeless, Sofia says, but speaking out lifts her spirits. Sh
 <Subhead>Shiya Murphy, Hopkins High School</Subhead>
 
 <Paragraph>
-Shiya’s home is surrounded by signs of ICE activity. The 18-year-old lives in a south Minneapolis neighborhood where the sounds of activists blowing their whistles or honking their car horns constantly pierce the winter quiet. While ICE supporters might describe those actions as agitators impeding investigations, Shiya has a different reaction. When he hears the whistles, he thinks: “Those are my neighbors keeping people safe<i>."</i>
+Shiya Murphy’s home is surrounded by signs of ICE activity. The 18-year-old lives in a south Minneapolis neighborhood where the sounds of activists blowing their whistles or honking their car horns constantly pierce the winter quiet. While ICE supporters might describe those actions as agitators impeding investigations, Shiya has a different reaction. When he hears the whistles, he thinks: “Those are my neighbors keeping people safe.”
 </Paragraph>
 
 <Paragraph>
-Shiya identifies as biracial , and his white mother worries he could be racially profiled while driving. She insists he keeps his cell phone charged and makes him share his location with her. A male relative was recently pulled over by ICE after tracking agents’ whereabouts. 
+Shiya identifies as biracial Black, and his white mother worries he could be racially profiled while driving. She insists he keep his cell phone charged and makes him share his location with her. A male relative was recently pulled over by ICE after tracking agents’ whereabouts.
 </Paragraph>
 
 <Paragraph>
@@ -271,16 +281,23 @@ Shiya identifies as biracial , and his white mother worries he could be racially
 </Paragraph>
 
 <Paragraph>
-“I’ve always been careful around local police,” Shiya said, adding that it’s gotten scarier since Good’s killing. ”That was a moment of realizing how out of control it’s gotten.”
+“I’ve always been careful around local police,” Shiya said, adding that it’s gotten scarier since Good’s killing. “That was a moment of realizing how out of control it’s gotten.”
 </Paragraph>
 
 <Paragraph>
-Shiya was happy to do one small thing for a teen friend whose aunt owns a Mexican clothing store in Richfield. The aunt didn’t feel comfortable venturing out, so her nephew minded the store — and Shiya was right there with him, keeping him company. 
+Shiya was happy to do one small thing for a teen friend whose aunt owns a Mexican clothing store in Richfield. The aunt didn’t feel comfortable venturing out, so her nephew minded the store — and Shiya was right there with him, keeping him company.
 </Paragraph>
 
 <Paragraph>
 “I wanted to make sure he was safe,” Shiya said. “He’s my friend.”
 </Paragraph>
+  </GridRow>
+
+  <GridRow variant="inline" additionalClasses={"pt-6 italic"}>
+<Paragraph>
+<a href="https://link.email.startribune.com/join/7v1/signup-optin-sv-laura-yuen">Sign up here</a> to follow Laura’s columns by email.
+</Paragraph>
+
 
   </GridRow>
 
@@ -295,5 +312,9 @@ Shiya was happy to do one small thing for a teen friend whose aunt owns a Mexica
 
   a:hover {
     color: #00854b;
+  }
+
+  i {
+ font-style: italic !important;
   }
 </style>
