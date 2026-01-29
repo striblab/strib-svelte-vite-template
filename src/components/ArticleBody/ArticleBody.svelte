@@ -38,6 +38,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import Image from "../Image/Image.svelte";
   import Gallery from "../Image/Gallery.svelte";
   import ScrollySection from "../Scrolly/ScrollySection.svelte";
+  import JWPlayer from "../Video/JWPlayer.svelte";
 
   let innerWidth = $state(0);
   let isMobile = $derived(innerWidth < 768);
@@ -153,6 +154,20 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
       suscipit omnis asperiores cupiditate, a eos, aliquid libero, reprehenderit
       rerum excepturi ex. Eius perferendis rem fugit nostrum eveniet magnam.</Paragraph
     >
+
+    <JWPlayer
+      mediaid={"hvh0xHRH"}
+      aspectRatio="9:16"
+      showOverlay={true}
+      loop={false}
+    />
+
+    <JWPlayer
+      mediaid={"0CljWbDv"}
+      aspectRatio="1:1"
+      showOverlay={true}
+      loop={false}
+    />
 
     <Paragraph
       >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non quam
