@@ -5,7 +5,7 @@ Renders a configurable video player that will autoplay when it enters the viewpo
 
 #### Optional properties
 - mediaid: String;
-- aspectRatio: "16:9" | "9:16" | "4:3" | "1:1";
+- aspectRatio: "2:1" | "16:9" | "5:3" | "4:3" | "1:1" | "9:13" | "2:3" | "9:16";
 - credit: String;
 - showOverlay: Boolean
 - loop: Boolean
@@ -32,7 +32,7 @@ You will need an account to upload video.
   import Overlay from "./_Overlay.svelte";
   import ImageCaption from "../Image/_ImageCaption.svelte";
 
-  /** @type {{mediaid?: String; aspectRatio?: "16:9" | "9:16" | "4:3" | "1:1"; credit?: String; showOverlay?: Boolean; loop?: Boolean;}} */
+  /** @type {{mediaid?: String; aspectRatio?: "2:1" | "16:9" | "5:3" | "4:3" | "1:1" | "9:13" | "2:3" | "9:16"; credit?: String; showOverlay?: Boolean; loop?: Boolean;}} */
   let {
     mediaid = "",
     aspectRatio = "16:9",
