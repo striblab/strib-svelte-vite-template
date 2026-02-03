@@ -36,7 +36,7 @@ Just import the ScrollySection component and include it as follows inside of the
 
   let scrollIndex = $state(null);
   let activeColor = $derived(
-    typeof scrollIndex === "number" ? data[scrollIndex].color : "#F2F2F2"
+    typeof scrollIndex === "number" ? data[scrollIndex].color : "#F2F2F2",
   );
 </script>
 
@@ -45,7 +45,7 @@ Just import the ScrollySection component and include it as follows inside of the
     class="sticky top-0 w-full h-svh"
     style:background-color={activeColor}
   ></div>
-  <Grid additionalClasses="relative px-4">
+  <Grid additionalClasses="relative px-4 md:px-6 min-[1080px]:px-0">
     <GridRow variant="inline">
       <Scrolly
         bind:value={scrollIndex}
