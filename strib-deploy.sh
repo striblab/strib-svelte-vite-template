@@ -30,16 +30,6 @@ if [ "$DEPLOY_PATH" != "" ]; then
 
     FONTS_PATH="$DEPLOY_PATH/fonts/"
 
-    # Check if the fonts directory exists in the S3 bucket
-    if ! (aws s3 ls "$FONTS_PATH" --profile default | { grep -q 'PRE' || true; }
-); then
-      echo "Fonts directory not found in S3. Syncing now..."
-      aws s3 sync ./dist/fonts $FONTS_PATH \
-        --profile default
-    else
-      echo "Fonts directory already exists in S3. No action taken."
-    fi
-
     echo "Syncing general assets..."
     aws s3 sync ./dist/ $DEPLOY_PATH \
       --profile default \
@@ -48,29 +38,12 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --exclude "assets/*" \
       --exclude "assets/fonts/*"
 
-
-    echo "Syncing JavaScript .gz files..."
-    aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
-      --exclude "*" \
-      --include "*.js.gz" \
-      --profile default \
-      --content-encoding "gzip" \
-      --content-type "application/javascript" \
-
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
       --exclude "*" \
       --include "*.js" \
       --profile default \
       --content-type "application/javascript" \
-
-    echo "Syncing CSS .gz files..."
-    aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
-      --exclude "*" \
-      --include "*.css.gz" \
-      --profile default \
-      --content-encoding "gzip" \
-      --content-type "text/css" \
 
     echo "Syncing CSS files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -79,8 +52,8 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-type "text/css" \
 
-    JS_BUNDLE=$(basename dist/assets/index-*.js.gz)
-    CSS_BUNDLE=$(basename dist/assets/index-*.css.gz)
+    JS_BUNDLE=$(basename dist/assets/index-*.js)
+    CSS_BUNDLE=$(basename dist/assets/index-*.css)
     echo "
     
     Deploy complete! Code block:
