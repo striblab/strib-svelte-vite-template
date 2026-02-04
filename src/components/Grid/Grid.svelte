@@ -12,7 +12,7 @@ Grid accepts the optional property additionalClasses for customization.
 
 #### Variants
 - default: Renders a grid that renders eight columns for mobile and tablet viewports and twelve columns for desktop viewports with column spacing consistent with grids used in startribune-com's immersive template
-- immersiveWrapper: This variant renders the same styles as the default template but with outer padding and row spacing styles. Intended to wrap your entire design if seeking to replicate exactly the immersive template's element spacing.$$render
+- immersiveWrapper: This variant renders the same styles as the default template but with outer padding and row spacing styles. Intended to wrap your entire design if seeking to replicate exactly the immersive template's element spacing.
 
 #### immersiveWrapper example
 ```svelte
