@@ -35,6 +35,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import GridRow from "../Grid/_GridRow.svelte";
   import Subhead from "./_Subhead.svelte";
   import Paragraph from "./_Paragraph.svelte";
+  import Dropcap from "./_Dropcap.svelte";
   import Image from "../Image/Image.svelte";
   import Gallery from "../Image/Gallery.svelte";
   import ScrollySection from "../Scrolly/ScrollySection.svelte";
@@ -49,11 +50,11 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 <svelte:window bind:innerWidth />
 <Grid additionalClasses={"gap-y-5"}>
   <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
-    <Paragraph dropCap={true} dropCapLines={3}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. <a
-        href="https://www.startribune.com/"
-        target="_blank"
-        rel="noreferrer">Debitis quas</a
+    <Paragraph>
+      <Dropcap dropCapLines={3}>L</Dropcap>orem ipsum dolor sit amet consectetur
+      adipisicing elit.
+      <a href="https://www.startribune.com/" target="_blank" rel="noreferrer"
+        >Debitis quas</a
       >, facilis itaque minus totam repudiandae magnam esse asperiores
       temporibus sed laborum nisi ut corporis ab officiis dolorum odio, porro
       eveniet. Quis quaerat tempore adipisci nostrum quia non.</Paragraph
