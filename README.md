@@ -1,10 +1,8 @@
-# Star Tribune Svelte + Vite Template
+# Minnesota Star Tribune Svelte + Vite Template
 
-This is a template for building Svelte apps at the Star Tribune. It includes some basic components and documentation for configuring and building pages, as well as Tailwind support for styling and a host of AWS scripts to assist with deployment.
+A starter template for building Svelte apps at the Minnesota Star Tribune. Includes reusable components, Tailwind for styling and AWS deploy scripts.
 
-The code in this template is intended as a starting point and guide for designers; you're encouraged to modify existing components and write your own!
-
-To that end, please use the documentation included with this template's default components and [Svelte's interactive tutorial](https://svelte.dev/tutorial/svelte/welcome-to-svelte) to start building stateful, component-based pages.
+You're encouraged to modify the included components and write your own. The documentation bundled with each component and [Svelte's interactive tutorial](https://svelte.dev/tutorial/svelte/welcome-to-svelte) are good places to start.
 
 ## Starting a project
 
@@ -12,10 +10,9 @@ To start a new project based on this template, click the green `Use this templat
 
 On the following page, make sure the new repository's owner is `striblab` and that the repository is `private`. Click `Create repository` to create your new project.
 
-Now you've created a new repository from the template's code. Find your new template's repository, click the green `Code` button and select `Open with Github Desktop` from the dropdown to pull of your new repository's starter code down to your machine. Or, if you prefer to
-use git on the command line, copy the SSH url and run `git clone <ssh url>` in your terminal.
+Now you've created a new repository from the template's code. Find your new template's repository, click the green `Code` button and select `Open with Github Desktop` from the dropdown to pull the starter code down to your machine. Or, if you prefer the command line, copy the SSH URL and run `git clone <ssh url>` in your terminal.
 
-The code in this repository requires [node.js](https://nodejs.org) to be installed on your machine. It is recommended that you use [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) to install node to allow for multiple versions.
+This project requires [Node.js](https://nodejs.org) **22** or later. [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) is recommended for managing multiple versions.
 
 After cloning the project to your machine, use the terminal to navigate into the project directory:
 
@@ -23,7 +20,9 @@ After cloning the project to your machine, use the terminal to navigate into the
 cd path/to/project-directory
 ```
 
-and run
+If you're using nvm, run `nvm use` to automatically switch to the correct Node version. The `.nvmrc` file in the project root tells nvm which version to use, so you don't need to remember it. If you don't have that version installed yet, run `nvm install` first.
+
+Then run
 
 ```bash
 npm install
@@ -37,11 +36,11 @@ To build for deployment, run `npm run build`.
 
 ## Using static assets
 
-You can place static assets you wish to exclude from your JS bundle (images, svgs, pngs, etc.) in the `public` directory of your Svelte project and reference them with root-relative paths. For example: `<img src="/your_image.jpg"/>`.
+Static assets (images, SVGs, etc.) can go in the `public` directory and be referenced with root-relative paths, e.g. `<img src="/your_image.jpg"/>`.
 
-However, this kind of relative pathing won't be suitable when you eventually build and upload your app to `static.startribune.com` for inclusion on a `startribune.com` article page. That's because the browser requests relative paths from a page's root domain, so an image tag `<img src="/your_image.jpg"/>` included on a `startribune.com` article page is actually pointing to `https://startribune.com/your_image.jpg` instead of its actual location on `static.startribune.com`.
+However, root-relative paths won't work once the app is embedded on a `startribune.com` article page — the browser will resolve `/your_image.jpg` against `startribune.com`, not `static.startribune.com`.
 
-You will need to use absolute paths to correct this. An absolute path is a full URL that starts from a domain's root. Upload your static assets to `static.startribune.com`, either through this project's included deploy scripts, Yarkon or manually, and revise your relative URLs to the absolute URLs on the static server. A recommended absolute path might look like `https://static.startribune.com/news/projects/all/yourRepoName/assets/your_image.jpg`
+To fix this, upload your assets to `static.startribune.com` (via the deploy scripts, Yarkon, or manually) and use absolute URLs, e.g. `https://static.startribune.com/news/projects/all/yourRepoName/assets/your_image.jpg`
 
 ## Strib webfonts
 
@@ -58,9 +57,11 @@ If you use the design tokens defined in this template’s `editorial.css` and `u
 
 ## Deploying
 
-Deployment is currently handled by a shell script (`strib-deploy.sh`). You need to have
-the [AWS CLI](https://aws.amazon.com/cli/) installed with credentials for the
-static.startribune.com bucket using the 'default' profile.
+Deployment is handled by a shell script (`strib-deploy.sh`). You need:
+
+1. The [AWS CLI](https://aws.amazon.com/cli/) installed.
+2. A valid SSO session — tokens expire daily, so you may need to re-authenticate before deploying. See the [Access AWS via SSO](https://minneapolisstartribune.atlassian.net/wiki/spaces/PD/pages/3205562375/Access+AWS+via+SSO) guide for setup instructions.
+3. Name your CLI profile `default` for seamless compatibility with `strib-deploy.sh`.
 
 To deploy to staging, run `npm run deploy-staging`. For production, run
 `npm run deploy-production`. This will upload to a typical path using your
@@ -68,4 +69,4 @@ project's name, which is read from the root directory of your project
 (where `package.json` is located).
 
 Alternatively, you can use Yarkon to upload bundled assets in the dist folder to the
-static.startribune.com foder.
+static.startribune.com folder.
