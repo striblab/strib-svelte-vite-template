@@ -12,7 +12,7 @@ On the following page, make sure the new repository's owner is `striblab` and th
 
 Now you've created a new repository from the template's code. Find your new template's repository, click the green `Code` button and select `Open with Github Desktop` from the dropdown to pull the starter code down to your machine. Or, if you prefer the command line, copy the SSH URL and run `git clone <ssh url>` in your terminal.
 
-This project requires [Node.js](https://nodejs.org) **22** or later. [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) is recommended for managing multiple versions.
+This project requires the latest versions of [Node.js](https://nodejs.org) **20** or **22**. Node 22 is preferred. [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) is recommended for installing and managing multiple versions.
 
 After cloning the project to your machine, use the terminal to navigate into the project directory:
 
