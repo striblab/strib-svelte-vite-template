@@ -1,33 +1,34 @@
+@import "./typography.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import "../scss/local-webfonts.scss"; */
 
 .crisp-edges {
-  image-rendering: -moz-crisp-edges;
-  /* Firefox */
-  image-rendering: -o-crisp-edges;
-  /* Opera */
-  image-rendering: -webkit-optimize-contrast;
-  /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor;
-  /* IE (non-standard property) */
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    image-rendering: -webkit-optimize-contrast;
+    /* Webkit (non-standard naming) */
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    /* IE (non-standard property) */
 }
 @layer base {
-  html {
-    font-family: system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
+    html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
 }
 
 .hide-scrollbar {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 #speechify-api-paragraph-hover-button-container {
-  z-index: 1000 !important;
+    z-index: 1000 !important;
 }

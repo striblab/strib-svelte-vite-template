@@ -1,4 +1,3 @@
-import type { KeyValuePair, ResolvableTo } from "tailwindcss/types/config";
 import { keyframes as defaultKeyframes } from "tailwindcss/defaultTheme";
 
 export const keyframes = {
@@ -15,6 +14,4 @@ export const keyframes = {
       bottom: "-100%",
     },
   },
-} as const satisfies ResolvableTo<
-  KeyValuePair<string, KeyValuePair<string, KeyValuePair>>
->;
+};

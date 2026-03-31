@@ -1,4 +1,3 @@
-import type { KeyValuePair, ResolvableTo } from "tailwindcss/types/config";
 import { fontFamily as defaultFontFamily } from "tailwindcss/defaultTheme";
 
 const fallbackFont = "sans-serif";
@@ -83,19 +82,4 @@ export const fontFamily = {
   "barlow-condensed-semibold": ["barlow-condensed-semibold", fallbackFont],
   roboto: ["roboto", fallbackFont],
   sans: ["Helvetica", "Arial", "sans-serif"],
-} as const satisfies
-  | ResolvableTo<
-      KeyValuePair<
-        string,
-        | string
-        | string[]
-        | [
-            fontFamily: string | string[],
-            configuration: Partial<{
-              fontFeatureSettings: string;
-              fontVariationSettings: string;
-            }>,
-          ]
-      >
-    >
-  | undefined;
+};

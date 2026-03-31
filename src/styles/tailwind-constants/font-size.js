@@ -1,4 +1,3 @@
-import type { KeyValuePair, ResolvableTo } from "tailwindcss/types/config";
 import { fontSize as defaultFontSize } from "tailwindcss/defaultTheme";
 
 export const fontSize = {
@@ -41,20 +40,4 @@ export const fontSize = {
   85: "5.3125rem", //85px
   110: "6.875rem", // 110px
   120: "7.5rem", // 120px
-} as const satisfies
-  | ResolvableTo<
-      KeyValuePair<
-        string,
-        | string
-        | [fontSize: string, lineHeight: string]
-        | [
-            fontSize: string,
-            configuration: Partial<{
-              lineHeight: string;
-              letterSpacing: string;
-              fontWeight: string | number;
-            }>,
-          ]
-      >
-    >
-  | undefined;
+};
