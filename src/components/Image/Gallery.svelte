@@ -149,7 +149,7 @@ Swiper galleries will not loop correctly across all viewports if they contain fe
         })()}
 
         <swiper-slide
-          class="aspect-[3/2] flex items-center justify-center max-[389px]:w-[90%] max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] bg-surface-reversed"
+          class="aspect-3/2 flex items-center justify-center max-[389px]:w-[90%] max-w-89.5 md:max-w-133.75 lg:max-w-270 bg-surface-reversed"
         >
           <img
             class={aspectRatio > 1.5 ? "w-full" : "h-full"}
@@ -162,7 +162,7 @@ Swiper galleries will not loop correctly across all viewports if they contain fe
   </div>
 
   <div
-    class="flex flex-row justify-between gap-5 max-w-[22.375rem] md:max-w-[33.4375rem] lg:max-w-[67.5rem] max-lg:px-4 mx-auto"
+    class="flex flex-row justify-between gap-5 max-w-89.5 md:max-w-133.75 lg:max-w-270 max-lg:px-4 mx-auto"
   >
     <div class="font-utility-meta-reg-02 text-text-secondary">
       {paddedImgs[activeIndex].caption}

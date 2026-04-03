@@ -1,0 +1,455 @@
+@import "./fonts.css";
+@import "./utilities.css";
+@import "tailwindcss";
+
+@theme {
+    --font-*: initial;
+    --font-sans: Helvetica, Arial, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono:
+        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --font-popular-bold: popular-bold, sans-serif;
+    --font-popular-light: popular-light, sans-serif;
+    --font-popular-medium: popular-medium, sans-serif;
+    --font-popular-regular: popular-regular, sans-serif;
+    --font-graphik-regular: graphik-regular, sans-serif;
+    --font-graphik-medium: graphik-medium, sans-serif;
+    --font-graphik-italic: graphik-italic, sans-serif;
+    --font-graphik-semibold: graphik-semibold, sans-serif;
+    --font-graphik-bold: graphik-bold, sans-serif;
+    --font-graphik-bold-italic: graphik-bold-italic, sans-serif;
+    --font-graphik-condensed-medium: graphik-condensed-medium, sans-serif;
+    --font-publico-text-roman: publico-text-roman, sans-serif;
+    --font-publico-text-italic: publico-text-italic, sans-serif;
+    --font-publico-text-bold: publico-text-bold, sans-serif;
+    --font-publico-text-bold-italic: publico-text-bold-italic, sans-serif;
+    --font-publico-headline-roman: publico-headline-roman, sans-serif;
+    --font-publico-headline-medium: publico-headline-medium, sans-serif;
+    --font-publico-headline-italic: publico-headline-italic, sans-serif;
+    --font-publico-headline-light-italic:
+        publico-headline-light-italic, sans-serif;
+    --font-publico-headline-medium: publico-headline-medium, sans-serif;
+    --font-publico-headline-condensed-medium:
+        publico-headline-condensed-medium, sans-serif;
+    --font-publico-headline-condensed-black:
+        publico-headline-condensed-black, sans-serif;
+    --font-publico-headline-xcondensed-light:
+        publico-headline-xcondensed-light, sans-serif;
+    --font-publico-banner-light-italic: publico-banner-light-italic, sans-serif;
+    --font-publico-banner-light: publico-banner-light, sans-serif;
+    --font-publico-banner-condensed-medium:
+        publico-banner-condensed-medium, sans-serif;
+    --font-publico-banner-condensed-black:
+        publico-banner-condensed-black, sans-serif;
+    --font-publico-banner-xcondensed-light:
+        publico-banner-xcondensed-light, sans-serif;
+    --font-publico-banner-black: publico-banner-black, sans-serif;
+    --font-publico-headline-black: publico-headline-black, sans-serif;
+    --font-graphik-semibold-italic: graphik-semibold-italic, sans-serif;
+    --font-publico-headline-black-italic:
+        publico-headline-black-italic, sans-serif;
+    --font-barlow-italic: barlow-italic, sans-serif;
+    --font-barlow-regular: barlow-regular, sans-serif;
+    --font-barlow-semibold: barlow-semibold, sans-serif;
+    --font-barlow-semibold-italic: barlow-semibold-italic, sans-serif;
+    --font-barlow-condensed-medium: barlow-condensed-medium, sans-serif;
+    --font-barlow-condensed-semibold: barlow-condensed-semibold, sans-serif;
+    --font-roboto: roboto, sans-serif;
+
+    --breakpoint-xs: 320px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1160px;
+    --breakpoint-xl: 1440px;
+
+    --color-none: none;
+    --color-transparent: transparent;
+    --color-linear-gradient-black: rgba(0, 0, 0, 0.6);
+    --color-adhesion-green: rgba(116, 158, 81, 0.4);
+    --color-layover-gray: rgba(34, 34, 34, 0.6);
+    --color-custom-gray: rgba(34, 34, 34, 0.3);
+    --color-article-heading: #222222;
+
+    --color-text-primary: #0d0d0d;
+    --color-text-secondary: #434343;
+    --color-text-tertiary: #666666;
+    --color-text-disabled: #afafaf;
+    --color-text-reversed: #ffffff;
+    --color-text-color-01: #00854b;
+    --color-text-color-02: #05442e;
+    --color-text-color-03: #baec31;
+
+    --color-border-subtle-01: #e1e1e1;
+    --color-border-subtle-02: #afafaf;
+    --color-border-strong-01: #434343;
+    --color-border-strong-02: #0d0d0d;
+    --color-border-color: #65cc5c;
+    --color-border-color-01: #00854b;
+    --color-border-color-02: #4dc044;
+
+    --color-surface-primary: #ffffff;
+    --color-surface-secondary: #f2f2f2;
+    --color-surface-reversed: #0d0d0d;
+    --color-surface-color-01: #00854b;
+    --color-surface-color-02: #c8fa31;
+    --color-surface-panel: #f2f2f2;
+
+    --color-base-black: #000000;
+    --color-base-white: #ffffff;
+
+    --color-neutral-50: #f2f2f2;
+    --color-neutral-100: #e1e1e1;
+    --color-neutral-200: #cfcfcf;
+    --color-neutral-300: #afafaf;
+    --color-neutral-400: #969696;
+    --color-neutral-500: #7e7e7e;
+    --color-neutral-600: #666666;
+    --color-neutral-700: #434343;
+    --color-neutral-800: #282828;
+    --color-neutral-900: #0d0d0d;
+
+    --color-red-50: #fbe7e7;
+    --color-red-100: #f4bcbc;
+    --color-red-200: #ea8b8b;
+    --color-red-300: #e36363;
+    --color-red-400: #d65353;
+    --color-red-500: #cd2e2e;
+    --color-red-600: #bb2020;
+    --color-red-700: #a01c1c;
+    --color-red-800: #851414;
+    --color-red-900: #700000;
+
+    --color-orange-50: #fae4d1;
+    --color-orange-100: #f8d0b9;
+    --color-orange-200: #f6ba98;
+    --color-orange-300: #f3a87c;
+    --color-orange-400: #f19865;
+    --color-orange-500: #ec8244;
+    --color-orange-600: #dd7031;
+    --color-orange-700: #b95d27;
+    --color-orange-800: #944314;
+    --color-orange-900: #673112;
+
+    --color-yellow-50: #fff9d1;
+    --color-yellow-100: #fff2a3;
+    --color-yellow-200: #ffec74;
+    --color-yellow-300: #fae24b;
+    --color-yellow-400: #f3d620;
+    --color-yellow-500: #dec737;
+    --color-yellow-600: #c6b12e;
+    --color-yellow-700: #ac9928;
+    --color-yellow-800: #837520;
+    --color-yellow-900: #4e4613;
+
+    --color-lime-50: #f1fecc;
+    --color-lime-100: #e4fd98;
+    --color-lime-200: #d6fb65;
+    --color-lime-300: #c8fa31;
+    --color-lime-400: #b6e32b;
+    --color-lime-500: #a4cf26;
+    --color-lime-600: #8fb323;
+    --color-lime-700: #7a991e;
+    --color-lime-800: #647d19;
+    --color-lime-900: #3c4b0f;
+
+    --color-spring-50: #dcf7d9;
+    --color-spring-100: #b7efb3;
+    --color-spring-200: #9fe798;
+    --color-spring-300: #76d86e;
+    --color-spring-400: #65cc5c;
+    --color-spring-500: #4dc044;
+    --color-spring-600: #40a937;
+    --color-spring-700: #3a8f32;
+    --color-spring-800: #2e6c28;
+    --color-spring-900: #22441f;
+
+    --color-emerald-50: #e5f7ef;
+    --color-emerald-100: #aae3cb;
+    --color-emerald-200: #91d4b7;
+    --color-emerald-300: #66c29b;
+    --color-emerald-400: #32b87f;
+    --color-emerald-500: #00ac63;
+    --color-emerald-600: #009958;
+    --color-emerald-700: #00854b;
+    --color-emerald-800: #006b3d;
+    --color-emerald-900: #004a2b;
+
+    --color-forest-50: #e1f0eb;
+    --color-forest-100: #c4e3d7;
+    --color-forest-200: #a6d4c3;
+    --color-forest-300: #8ec1af;
+    --color-forest-400: #75af9b;
+    --color-forest-500: #50927b;
+    --color-forest-600: #2e725b;
+    --color-forest-700: #165a42;
+    --color-forest-800: #05442e;
+    --color-forest-900: #002e1d;
+
+    --color-light-blue-50: #e5f5fb;
+    --color-light-blue-100: #afe1f8;
+    --color-light-blue-200: #78cdf2;
+    --color-light-blue-300: #4fbded;
+    --color-light-blue-400: #26ade8;
+    --color-light-blue-500: #0098db;
+    --color-light-blue-600: #0089c5;
+    --color-light-blue-700: #0075a8;
+    --color-light-blue-800: #00608a;
+    --color-light-blue-900: #004666;
+
+    --color-dark-blue-50: #dbeaf5;
+    --color-dark-blue-100: #c1d6e6;
+    --color-dark-blue-200: #9bbbd4;
+    --color-dark-blue-300: #7ca6c5;
+    --color-dark-blue-400: #5489b2;
+    --color-dark-blue-500: #3e75a2;
+    --color-dark-blue-600: #1b5a8b;
+    --color-dark-blue-700: #0d4673;
+    --color-dark-blue-800: #003966;
+    --color-dark-blue-900: #002d52;
+
+    --color-purple-50: #e3dbf0;
+    --color-purple-100: #c8b9df;
+    --color-purple-200: #baa8d7;
+    --color-purple-300: #9d86c6;
+    --color-purple-400: #7f61b3;
+    --color-purple-500: #6e4baa;
+    --color-purple-600: #5e3e94;
+    --color-purple-700: #513286;
+    --color-purple-800: #482b78;
+    --color-purple-900: #3a2263;
+
+    --animate-adhesiveFadeInSlideUp: adhesiveFadeInSlideUp 1s ease-in-out;
+    --animate-adhesiveFadeOutSlideDown: adhesiveFadeOutSlideDown 1s ease-in-out;
+
+    --shadow-custom: 0px 0px 34px 0px rgba(0, 0, 0, 0.12);
+    --shadow-global: 0px 8px 24px 0px rgba(0, 0, 0, 0.08);
+
+    --text-11: 0.6875rem;
+    --text-12: 0.75rem;
+    --text-14: 0.875rem;
+    --text-15: 0.9375rem;
+    --text-16: 1rem;
+    --text-17: 1.0625rem;
+    --text-18: 1.125rem;
+    --text-19: 1.1875rem;
+    --text-20: 1.25rem;
+    --text-22: 1.375rem;
+    --text-23: 1.438rem;
+    --text-24: 1.5rem;
+    --text-26: 1.625rem;
+    --text-28: 1.75rem;
+    --text-30: 1.875rem;
+    --text-32: 2rem;
+    --text-34: 2.125rem;
+    --text-36: 2.25rem;
+    --text-38: 2.375rem;
+    --text-40: 2.5rem;
+    --text-42: 2.625rem;
+    --text-44: 2.75rem;
+    --text-45: 2.8125rem;
+    --text-46: 2.875rem;
+    --text-48: 3rem;
+    --text-52: 3.25rem;
+    --text-55: 3.375rem;
+    --text-56: 3.5rem;
+    --text-60: 3.75rem;
+    --text-64: 4rem;
+    --text-65: 4.0625rem;
+    --text-66: 4.125rem;
+    --text-72: 4.5rem;
+    --text-78: 4.875rem;
+    --text-82: 5.125rem;
+    --text-85: 5.3125rem;
+    --text-110: 6.875rem;
+    --text-120: 7.5rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: 1rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: 1.25rem;
+    --text-base: 1rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: 1.75rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: 1.75rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: 2rem;
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: 2.25rem;
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: 2.5rem;
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
+
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --font-weight-regular: 400;
+
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.01em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.01em;
+    --tracking-wider: 0.03em;
+    --tracking-widest: 0.1em;
+
+    --leading-3: 0.75rem;
+    --leading-4: 1rem;
+    --leading-5: 1.25rem;
+    --leading-6: 1.5rem;
+    --leading-7: 1.75rem;
+    --leading-8: 2rem;
+    --leading-9: 2.25rem;
+    --leading-10: 2.5rem;
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+    --leading-heading-extra-tight: 1.1;
+    --leading-heading-tight: 1.15;
+    --leading-rich-text: 1.0938rem;
+    --leading-article-body-tight: 1.4;
+    --leading-article-body-normal: 1.35;
+    --leading-description: 1.25;
+    --leading-heading: 1.2;
+    --leading-input: 0.9;
+    --leading-link: 1.3;
+    --leading-title: 1.05;
+
+    --radius-12: 1.2rem;
+    --radius-24: 2.4rem;
+    --radius-25: 2.5rem;
+    --radius-none: 0rem;
+    --radius-sm: 0.125rem;
+    --radius: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --radius-full: 9999rem;
+
+    --border-width-0: 0;
+    --border-width-2: 2px;
+    --border-width-3: 3px;
+    --border-width-4: 4px;
+    --border-width-6: 6px;
+    --border-width-8: 8px;
+    --default-border-width: 1px;
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes ping {
+        75%,
+        100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+    @keyframes pulse {
+        50% {
+            opacity: 0.5;
+        }
+    }
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(-25%);
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+            transform: none;
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+    @keyframes adhesiveFadeInSlideUp {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, 100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+    @keyframes adhesiveFadeOutSlideDown {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+            bottom: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, 100%);
+            bottom: -100%;
+        }
+    }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
+
+@layer utilities {
+    .crisp-edges {
+        image-rendering: -moz-crisp-edges;
+        /* Firefox */
+        image-rendering: -o-crisp-edges;
+        /* Opera */
+        image-rendering: -webkit-optimize-contrast;
+        /* Webkit (non-standard naming) */
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor;
+        /* IE (non-standard property) */
+    }
+}
+@layer base {
+    html {
+        font-family: system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
+}
+
+.hide-scrollbar {
+    scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+#speechify-api-paragraph-hover-button-container {
+    z-index: 1000 !important;
+}

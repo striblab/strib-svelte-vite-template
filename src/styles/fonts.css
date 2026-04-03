@@ -1,8 +1,4 @@
-@import "./utility.css";
-@import "./editorial.css";
-
 /* Popular fonts */
-
 @font-face {
     font-family: "popular-bold";
     src: url("https://static.startribune.com/fonts/PopularBold/Popular-Bold.woff2")

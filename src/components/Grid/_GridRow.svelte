@@ -26,21 +26,21 @@ Wrap this component around additional markup to control that markup's width and 
 -->
 
 <script>
-  /** @type {{variant?: "default" | "inline" | "fullBleed"; additionalClasses?: string; children?: function}} */
-  let { variant = "default", additionalClasses = "", children } = $props();
+    /** @type {{variant?: "default" | "inline" | "fullBleed"; additionalClasses?: string; children?: function}} */
+    let { variant = "default", additionalClasses = "", children } = $props();
 
-  let variantStyles = $derived.by(() => {
-    switch (variant) {
-      case "default":
-        return "col-span-full";
-      case "inline":
-        return "col-span-full grid md:col-start-2 md:col-span-6 lg:col-start-4";
-      case "fullBleed":
-        return "col-span-full w-screen relative left-1/2 -translate-x-1/2 max-w-[1800px]";
-    }
-  });
+    let variantStyles = $derived.by(() => {
+        switch (variant) {
+            case "default":
+                return "col-span-full";
+            case "inline":
+                return "col-span-full grid md:col-start-2 md:col-span-6 lg:col-start-4";
+            case "fullBleed":
+                return "col-span-full full-bleed";
+        }
+    });
 </script>
 
 <div class="{variantStyles} {additionalClasses}">
-  {@render children?.()}
+    {@render children?.()}
 </div>

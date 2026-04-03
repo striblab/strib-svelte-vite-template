@@ -27,36 +27,34 @@ variant="captionCentered"
 -->
 
 <script>
-  import ImageCaption from "./_ImageCaption.svelte";
+    import ImageCaption from "./_ImageCaption.svelte";
 
-  /** @type {{src?: string; alt?: string; caption?: string; variant?: "default" | "captionCentered", additionalClasses?: String}} */
-  let {
-    src = "",
-    alt = "",
-    caption = "Caption tk tk tk",
-    variant = "default",
-    additionalClasses = "",
-  } = $props();
+    /** @type {{src?: string; alt?: string; caption?: string; variant?: "default" | "captionCentered", additionalClasses?: String}} */
+    let {
+        src = "",
+        alt = "",
+        caption = "Caption tk tk tk",
+        variant = "default",
+        additionalClasses = "",
+    } = $props();
 
-  let variantStylesFigure = $state("");
-  let variantStylesImg = $state("");
-  let variantStylesCaption = $state("");
-
-  switch (variant) {
-    case "default":
-      variantStylesCaption = "md:px-0";
-      break;
-    case "captionCentered":
-      variantStylesCaption = "md:text-center";
-      break;
-  }
+    let variantStylesFigure = $state("");
+    let variantStylesImg = $state("");
+    let variantStylesCaption = $derived.by(() => {
+        switch (variant) {
+            case "default":
+                return "md:px-0";
+            case "captionCentered":
+                return "md:text-center";
+        }
+    });
 </script>
 
 <figure class="pt-5 {variantStylesFigure} {additionalClasses}">
-  {#if src}
-    <img {src} {alt} class="{variantStylesImg} w-full mb-2" />
-  {/if}
-  <ImageCaption additionalClasses="px-4 {variantStylesCaption}">
-    {caption}
-  </ImageCaption>
+    {#if src}
+        <img {src} {alt} class="{variantStylesImg} w-full mb-2" />
+    {/if}
+    <ImageCaption additionalClasses="px-4 {variantStylesCaption}">
+        {caption}
+    </ImageCaption>
 </figure>

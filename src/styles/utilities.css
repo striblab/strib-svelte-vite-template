@@ -1,0 +1,606 @@
+@utility full-bleed {
+    --full-bleed-max: 1800px;
+    width: min(100vw, var(--full-bleed-max));
+    margin-left: max(calc(50% - 50vw), calc(50% - var(--full-bleed-max) / 2));
+}
+
+@utility font-editorial-display-brand-uppercase-01 {
+    /* Display */
+    /* Popular Font */
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-82 text-45;
+}
+
+@utility font-editorial-display-brand-uppercase-02 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-65 text-34;
+}
+
+@utility font-editorial-display-brand-uppercase-03 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-42 text-28;
+}
+
+@utility font-editorial-display-brand-uppercase-04 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-34 text-24;
+}
+
+@utility font-editorial-display-brand-uppercase-05 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-24 text-20;
+}
+
+@utility font-editorial-display-brand-uppercase-06 {
+    @apply font-popular-bold font-bold leading-heading-extra-tight uppercase md:text-20 text-18;
+}
+
+@utility font-editorial-display-serif-01 {
+    /* Publico Headline Font */
+    @apply font-publico-headline-roman font-regular leading-title md:text-110 text-72;
+}
+
+@utility font-editorial-display-serif-02 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-85 text-64;
+}
+
+@utility font-editorial-display-serif-03 {
+    @apply font-publico-headline-roman font-regular leading-title md:text-72 text-56;
+}
+
+@utility font-editorial-news-heading-01 {
+    /* Heading News */
+    /* Publico Headline Condensed*/
+    @apply font-publico-headline-condensed-medium md:font-publico-banner-condensed-medium font-medium leading-title text-42 md:text-48 lg:text-66;
+}
+
+@utility font-editorial-news-heading-02 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight md:leading-title tracking-normal lg:text-46 text-32;
+}
+
+@utility font-editorial-news-heading-03 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight tracking-normal md:text-32 text-28;
+}
+
+@utility font-editorial-news-heading-04 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-extra-tight tracking-normal text-24;
+}
+
+@utility font-editorial-news-heading-05 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-tight tracking-normal text-20;
+}
+
+@utility font-editorial-news-heading-06 {
+    @apply font-publico-headline-condensed-medium font-medium leading-heading-tight tracking-wide text-18;
+}
+
+@utility font-editorial-non-news-heading-01 {
+    /* Heading Non-News */
+    /* Publico Headline */
+    @apply font-publico-headline-roman font-regular leading-title md:text-66 text-42;
+}
+
+@utility font-editorial-non-news-heading-02 {
+    @apply font-publico-headline-roman font-regular leading-title md:leading-title text-44;
+}
+
+@utility font-editorial-non-news-heading-03 {
+    @apply font-publico-headline-roman font-regular leading-heading-extra-tight md:text-32 text-28;
+}
+
+@utility font-editorial-non-news-heading-04 {
+    @apply font-publico-headline-roman font-regular leading-heading-extra-tight text-22;
+}
+
+@utility font-editorial-non-news-heading-05 {
+    @apply font-publico-headline-roman font-regular leading-heading-tight text-19;
+}
+
+@utility font-editorial-non-news-heading-06 {
+    @apply font-publico-headline-roman font-regular leading-heading-tight text-17;
+}
+
+@utility font-editorial-voice-heading-01 {
+    /* Heading Voice */
+    /* Publico Headline */
+    @apply font-publico-banner-light-italic font-light leading-title tracking-normal md:text-66 text-42;
+}
+
+@utility font-editorial-voice-heading-02 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight md:leading-title tracking-normal md:text-46 text-32;
+}
+
+@utility font-editorial-voice-heading-03 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight tracking-normal md:text-32 text-28;
+}
+
+@utility font-editorial-voice-heading-04 {
+    @apply font-publico-headline-light-italic font-light leading-heading-extra-tight tracking-normal text-24;
+}
+
+@utility font-editorial-voice-heading-05 {
+    @apply font-publico-headline-italic font-regular leading-heading-tight tracking-normal text-20;
+}
+
+@utility font-editorial-voice-heading-06 {
+    @apply font-publico-headline-italic font-regular leading-heading-tight tracking-wide text-18;
+}
+
+@utility font-editorial-enterprise-heading-01 {
+    /* Heading Enterprise */
+    /* Publico Headline Condensed*/
+    @apply font-publico-banner-condensed-medium font-black leading-title tracking-normal md:text-66 text-42;
+}
+
+@utility font-editorial-enterprise-heading-02 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight md:leading-title tracking-normal md:text-46 text-32;
+}
+
+@utility font-editorial-enterprise-heading-03 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight tracking-normal md:text-34 text-28;
+}
+
+@utility font-editorial-enterprise-heading-04 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-extra-tight tracking-normal text-24;
+}
+
+@utility font-editorial-enterprise-heading-05 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-tight tracking-normal text-20;
+}
+
+@utility font-editorial-enterprise-heading-06 {
+    @apply font-publico-headline-condensed-medium font-black leading-heading-tight tracking-wide text-18;
+}
+
+@utility font-editorial-section-heading-01 {
+    /* Heading Section */
+    /* Popular*/
+    @apply font-popular-bold leading-none md:text-48 text-34;
+}
+
+@utility font-editorial-section-heading-02 {
+    @apply font-popular-bold leading-none md:text-36 text-28;
+}
+
+@utility font-editorial-section-heading-03 {
+    @apply font-popular-bold leading-heading-extra-tight md:leading-none md:text-28 text-22;
+}
+
+@utility font-editorial-section-heading-04 {
+    @apply font-popular-bold leading-heading-extra-tight md:leading-none text-18 md:text-22;
+}
+
+@utility font-editorial-article-header-01 {
+    /* Heading Article */
+    /* Publico Headline */
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-28;
+}
+
+@utility font-editorial-article-header-02 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-24 tracking-normal;
+}
+
+@utility font-editorial-article-header-03 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-20;
+}
+
+@utility font-editorial-article-header-04 {
+    @apply font-publico-headline-medium font-medium leading-heading-tight text-18;
+}
+
+@utility font-editorial-body-reg-01 {
+    /* Body */
+    /* Publico Text */
+    @apply font-publico-text-roman font-regular leading-description text-20;
+}
+
+@utility font-editorial-body-italic-01 {
+    @apply font-publico-text-italic font-regular leading-description text-20;
+}
+
+@utility font-editorial-body-bold-01 {
+    @apply font-publico-text-bold font-bold leading-description text-20;
+}
+
+@utility font-editorial-body-bold-italic-01 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-20;
+}
+
+@utility font-editorial-body-reg-02 {
+    @apply font-publico-text-roman font-regular leading-description text-18;
+}
+
+@utility font-editorial-body-italic-02 {
+    @apply font-publico-text-italic font-regular leading-description text-18;
+}
+
+@utility font-editorial-body-bold-02 {
+    @apply font-publico-text-bold font-bold leading-description text-18;
+}
+
+@utility font-editorial-body-bold-italic-02 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-18;
+}
+
+@utility font-editorial-body-reg-03 {
+    @apply font-publico-text-roman font-regular leading-description text-16;
+}
+
+@utility font-editorial-body-italic-03 {
+    @apply font-publico-text-italic font-regular leading-description text-16;
+}
+
+@utility font-editorial-body-bold-03 {
+    @apply font-publico-text-bold font-bold leading-description text-16;
+}
+
+@utility font-editorial-body-bold-italic-03 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-16;
+}
+
+@utility font-editorial-body-reg-04 {
+    @apply font-publico-text-roman font-regular leading-description text-14;
+}
+
+@utility font-editorial-body-italic-04 {
+    @apply font-publico-text-italic font-regular leading-description text-14;
+}
+
+@utility font-editorial-body-bold-04 {
+    @apply font-publico-text-bold font-bold leading-description text-14;
+}
+
+@utility font-editorial-body-bold-italic-04 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-14;
+}
+
+@utility font-editorial-body-reg-05 {
+    @apply font-publico-text-roman font-regular leading-description text-12;
+}
+
+@utility font-editorial-body-italic-05 {
+    @apply font-publico-text-italic font-regular leading-description text-12;
+}
+
+@utility font-editorial-body-bold-05 {
+    @apply font-publico-text-bold font-bold leading-description text-12;
+}
+
+@utility font-editorial-body-bold-italic-05 {
+    @apply font-publico-text-bold-italic font-bold leading-description text-12;
+}
+
+@utility font-editorial-quote-01 {
+    /* Quote */
+    @apply font-publico-headline-italic leading-heading-tight md:text-32 text-28;
+}
+
+@utility font-editorial-quote-03 {
+    /* adding important here since article-body-rich-text class is overriding the quote styles */
+    @apply font-publico-headline-italic! italic! leading-heading-tight! text-22! md:text-24!;
+}
+
+@utility font-editorial-number-01 {
+    /* Number */
+    @apply font-publico-headline-condensed-medium font-light leading-title text-78;
+}
+
+@utility font-editorial-number-02 {
+    @apply font-publico-headline-condensed-medium font-light leading-title;
+}
+
+@utility font-sponsored-heading-01 {
+    /* Sponsored Heading */
+    /* Barlow Font */
+    @apply font-barlow-condensed-medium font-medium text-42 md:text-66 leading-title md:leading-title tracking-tight;
+}
+
+@utility font-sponsored-heading-02 {
+    @apply font-barlow-condensed-medium font-medium text-32 md:text-46 leading-heading-extra-tight md:leading-title tracking-tight;
+}
+
+@utility font-sponsored-heading-03 {
+    @apply font-barlow-condensed-medium font-medium text-28 md:text-34 leading-heading-extra-tight md:tracking-tight;
+}
+
+@utility font-sponsored-heading-04 {
+    @apply font-barlow-condensed-medium font-medium text-24 leading-heading-extra-tight;
+}
+
+@utility font-sponsored-heading-05 {
+    @apply font-barlow-condensed-medium font-medium text-20 leading-heading-extra-tight;
+}
+
+@utility font-sponsored-heading-06 {
+    @apply font-barlow-condensed-medium font-medium text-18 leading-heading-extra-tight;
+}
+
+@utility font-sponsored-article-header-01 {
+    /* Sponsored Article Heading */
+    @apply font-barlow-condensed-semibold font-semibold text-28 leading-heading-tight;
+}
+
+@utility font-sponsored-article-header-02 {
+    @apply font-barlow-condensed-semibold font-semibold text-24 leading-heading-tight;
+}
+
+@utility font-sponsored-article-header-03 {
+    @apply font-barlow-condensed-semibold font-semibold text-20 leading-heading-tight;
+}
+
+@utility font-sponsored-article-header-04 {
+    @apply font-barlow-condensed-semibold font-semibold text-18 leading-heading-tight;
+}
+
+@utility font-sponsored-body-reg-01 {
+    /* Sponsored Body */
+    @apply font-barlow-regular font-normal text-20 leading-description;
+}
+
+@utility font-sponsored-heading-large-06 {
+    @apply font-barlow-condensed-semibold text-19 leading-heading-extra-tight;
+}
+
+@utility font-sponsored-body-reg-02 {
+    @apply font-barlow-regular font-normal text-18 leading-description;
+}
+
+@utility font-sponsored-body-reg-03 {
+    @apply font-barlow-regular font-normal text-16 leading-description;
+}
+
+@utility font-sponsored-body-reg-04 {
+    @apply font-barlow-regular font-normal text-14 leading-description;
+}
+
+@utility font-sponsored-body-reg-05 {
+    @apply font-barlow-regular font-normal text-12 leading-description;
+}
+
+@utility font-sponsored-body-bold-01 {
+    @apply font-barlow-semibold font-semibold text-20 leading-description;
+}
+
+@utility font-sponsored-body-bold-02 {
+    @apply font-barlow-semibold font-semibold text-18 leading-description;
+}
+
+@utility font-sponsored-body-bold-03 {
+    @apply font-barlow-semibold font-semibold text-16 leading-description;
+}
+
+@utility font-sponsored-body-bold-04 {
+    @apply font-barlow-semibold font-semibold text-14 leading-description;
+}
+
+@utility font-sponsored-body-bold-05 {
+    @apply font-barlow-semibold font-semibold text-12 leading-description;
+}
+
+@utility font-sponsored-body-italic-01 {
+    @apply font-barlow-italic font-normal text-20 leading-description;
+}
+
+@utility font-sponsored-body-italic-02 {
+    @apply font-barlow-italic font-normal text-18 leading-description;
+}
+
+@utility font-sponsored-body-italic-03 {
+    @apply font-barlow-italic font-normal text-16 leading-description;
+}
+
+@utility font-sponsored-body-italic-04 {
+    @apply font-barlow-italic font-normal text-14 leading-description;
+}
+
+@utility font-sponsored-body-italic-05 {
+    @apply font-barlow-italic font-normal text-12 leading-description;
+}
+
+@utility font-sponsored-body-bold-italic-01 {
+    @apply font-barlow-semibold-italic font-semibold text-20 leading-description;
+}
+
+@utility font-sponsored-body-bold-italic-02 {
+    @apply font-barlow-semibold-italic font-semibold text-18 leading-description;
+}
+
+@utility font-sponsored-body-bold-italic-03 {
+    @apply font-barlow-semibold-italic font-semibold text-16 leading-description;
+}
+
+@utility font-sponsored-body-bold-italic-04 {
+    @apply font-barlow-semibold-italic font-semibold text-14 leading-description;
+}
+
+@utility font-sponsored-body-bold-italic-05 {
+    @apply font-barlow-semibold-italic font-semibold text-12 leading-description;
+}
+
+@utility font-utility-heading-01 {
+    /* Heading */
+    @apply font-graphik-bold leading-title text-36;
+}
+
+@utility font-utility-heading-02 {
+    @apply font-graphik-bold leading-title text-30;
+}
+
+@utility font-utility-heading-03 {
+    @apply font-graphik-bold leading-title text-24;
+}
+
+@utility font-utility-heading-04 {
+    @apply font-graphik-bold leading-title text-20;
+}
+
+@utility font-utility-heading-05 {
+    @apply font-graphik-bold leading-title text-18;
+}
+
+@utility font-utility-heading-06 {
+    @apply font-graphik-bold leading-heading-tight text-16;
+}
+
+@utility font-utility-heading-07 {
+    @apply font-graphik-bold leading-heading-tight text-14;
+}
+
+@utility font-utility-body-reg-01 {
+    /* Body */
+    @apply font-graphik-regular font-regular leading-tight text-20;
+}
+
+@utility font-utility-body-bold-01 {
+    @apply font-graphik-semibold leading-tight text-20;
+}
+
+@utility font-utility-body-italic-01 {
+    @apply font-graphik-italic font-regular leading-tight text-20;
+}
+
+@utility font-utility-body-bold-italic-01 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-20;
+}
+
+@utility font-utility-body-reg-02 {
+    @apply font-graphik-regular leading-tight font-regular text-18;
+}
+
+@utility font-utility-body-bold-02 {
+    @apply font-graphik-semibold leading-tight text-18;
+}
+
+@utility font-utility-body-italic-02 {
+    @apply font-graphik-italic font-regular leading-tight text-18;
+}
+
+@utility font-utility-body-bold-italic-02 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-18;
+}
+
+@utility font-utility-body-reg-03 {
+    @apply font-graphik-regular font-regular leading-tight text-16;
+}
+
+@utility font-utility-body-bold-03 {
+    @apply font-graphik-semibold leading-tight text-16;
+}
+
+@utility font-utility-body-italic-03 {
+    @apply font-graphik-italic font-regular leading-tight text-16;
+}
+
+@utility font-utility-body-bold-italic-03 {
+    @apply font-graphik-bold-italic font-semibold leading-tight text-16;
+}
+
+@utility font-utility-body-reg-04 {
+    @apply font-graphik-regular font-regular leading-link text-14;
+}
+
+@utility font-utility-body-bold-04 {
+    @apply font-graphik-semibold leading-link text-14;
+}
+
+@utility font-utility-body-italic-04 {
+    @apply font-graphik-italic font-regular leading-link text-14;
+}
+
+@utility font-utility-body-bold-italic-04 {
+    @apply font-graphik-bold-italic font-semibold leading-link text-14;
+}
+
+@utility font-utility-body-reg-05 {
+    @apply font-graphik-regular font-regular leading-link text-12;
+}
+
+@utility font-utility-body-bold-05 {
+    @apply font-graphik-semibold leading-link text-12;
+}
+
+@utility font-utility-body-italic-05 {
+    @apply font-graphik-italic font-regular leading-link text-12;
+}
+
+@utility font-utility-body-bold-italic-05 {
+    @apply font-graphik-bold-italic font-semibold leading-link text-12;
+}
+
+@utility font-utility-button-01 {
+    /* Button */
+    @apply font-graphik-semibold leading-heading tracking-wide text-14;
+}
+
+@utility font-utility-button-02 {
+    @apply font-graphik-semibold leading-heading tracking-wide text-12;
+}
+
+@utility font-utility-button-link-01 {
+    @apply font-graphik-medium leading-heading-tight text-14 font-medium;
+}
+
+@utility font-utility-button-link-02 {
+    @apply font-graphik-medium leading-heading-tight text-12 font-medium;
+}
+
+@utility font-utility-label-bold-01 {
+    /* Label */
+    @apply font-graphik-semibold leading-heading text-16;
+}
+
+@utility font-utility-label-reg-01 {
+    @apply font-graphik-regular font-regular leading-heading text-16;
+}
+
+@utility font-utility-label-reg-caps-01 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wide text-16;
+}
+
+@utility font-utility-label-bold-caps-01 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wide text-16;
+}
+
+@utility font-utility-label-bold-02 {
+    @apply font-graphik-semibold leading-heading text-14;
+}
+
+@utility font-utility-label-reg-02 {
+    @apply font-graphik-regular font-regular leading-heading text-14;
+}
+
+@utility font-utility-label-reg-caps-02 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wide text-14;
+}
+
+@utility font-utility-label-bold-caps-02 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wide text-14;
+}
+
+@utility font-utility-label-bold-03 {
+    @apply font-graphik-semibold leading-heading text-11;
+}
+
+@utility font-utility-label-reg-03 {
+    @apply font-graphik-regular font-regular leading-heading tracking-wide text-11;
+}
+
+@utility font-utility-label-reg-caps-03 {
+    @apply font-graphik-regular font-regular uppercase leading-heading tracking-wider text-11;
+}
+
+@utility font-utility-label-bold-caps-03 {
+    @apply font-graphik-semibold uppercase leading-heading tracking-wider text-11;
+}
+
+@utility font-utility-meta-reg-01 {
+    /* Meta */
+    @apply font-graphik-regular font-regular leading-heading text-14;
+}
+
+@utility font-utility-meta-bold-01 {
+    @apply font-graphik-semibold leading-heading text-14;
+}
+
+@utility font-utility-meta-reg-02 {
+    @apply font-graphik-regular font-regular leading-heading text-12;
+}
+
+@utility font-utility-meta-bold-02 {
+    @apply font-graphik-semibold leading-heading text-12;
+}

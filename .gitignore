@@ -23,6 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Do not commit actual webfonts to source control -- license restrictions
-*/fonts/
