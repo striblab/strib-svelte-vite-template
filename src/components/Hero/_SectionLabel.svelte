@@ -19,14 +19,14 @@ Render a section label in the style of the Immersive Template with an optional l
 {#if href}
   <a target="_blank" rel="noreferrer" {href}>
     <span
-      class="break-words text-text-color-01 uppercase font-utility-label-bold-caps-02"
+      class="wrap-break-word text-text-color-01 uppercase font-utility-label-bold-caps-02"
     >
       {@render children?.()}
     </span>
   </a>
 {:else}
   <span
-    class="break-words text-text-color-01 uppercase font-utility-label-bold-caps-02"
+    class="wrap-break-word text-text-color-01 uppercase font-utility-label-bold-caps-02"
   >
     {@render children?.()}
   </span>

@@ -1,4 +1,4 @@
-import "./styles/tailwind/tailwind.css";
+import "./styles/tailwind.css";
 
 import { mount, unmount } from "svelte";
 import App from "./App.svelte";
