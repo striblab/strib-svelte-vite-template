@@ -440,6 +440,7 @@
     html {
         font-family: system-ui, sans-serif;
         scroll-behavior: smooth;
+        overflow-x: clip;
     }
 }
 
