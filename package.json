@@ -1,30 +1,30 @@
 {
-  "name": "strib-svelte-vite-template",
-  "private": true,
-  "version": "0.3.1",
-  "type": "module",
-  "engines": {
-    "node": "^20.19 || >=22.12"
-  },
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "svelte-check": "svelte-check",
-    "deploy-staging": "./strib-deploy.sh --environment staging",
-    "deploy-production": "./strib-deploy.sh --environment production"
-  },
-  "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^6.2.4",
-    "@tailwindcss/postcss": "^4.2.2",
-    "postcss": "^8.4.39",
-    "postcss-prefix-selector": "^2.1.0",
-    "svelte": "^5.2.9",
-    "svelte-check": "^4.2.2",
-    "tailwindcss": "^4.2.2",
-    "vite": "^7.3.1"
-  },
-  "dependencies": {
-    "swiper": "^12.0.3"
-  }
+    "name": "strib-svelte-vite-template",
+    "private": true,
+    "version": "0.4.0",
+    "type": "module",
+    "engines": {
+        "node": "^20.19 || >=22.12"
+    },
+    "scripts": {
+        "dev": "vite --host",
+        "build": "vite build",
+        "preview": "vite preview",
+        "svelte-check": "svelte-check",
+        "deploy-staging": "./strib-deploy.sh --environment staging",
+        "deploy-production": "./strib-deploy.sh --environment production"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^6.2.4",
+        "@tailwindcss/postcss": "^4.2.2",
+        "postcss": "^8.4.39",
+        "postcss-prefix-selector": "^2.1.0",
+        "svelte": "^5.2.9",
+        "svelte-check": "^4.2.2",
+        "tailwindcss": "^4.2.2",
+        "vite": "^7.3.1"
+    },
+    "dependencies": {
+        "swiper": "^12.0.3"
+    }
 }
