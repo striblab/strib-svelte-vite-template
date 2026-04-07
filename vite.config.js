@@ -5,7 +5,7 @@ import prefixer from "postcss-prefix-selector";
 
 export default defineConfig({
     base: "",
-    plugins: [svelte()],
+    plugins: [svelte({ configFile: false })],
     build: {
         target: "es2020",
     },
