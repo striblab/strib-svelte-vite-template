@@ -16,7 +16,7 @@ export default defineConfig({
         postcss: {
             plugins: [
                 tailwind(),
-                /** @type {any} */ (prefixer({ prefix: "#proj-container" })),
+                /** @type {any} */ (prefixer({ prefix: ":is(#proj-hero, #proj-body)" })),
             ],
         },
     },

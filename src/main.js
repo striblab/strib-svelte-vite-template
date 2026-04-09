@@ -1,32 +1,55 @@
 import "./styles/tailwind.css";
 
-import { mount, unmount } from "svelte";
-import App from "./App.svelte";
+import { mount, unmount, hydrate } from "svelte";
+import Hero from "./Hero.svelte";
+import ArticleBody from "./ArticleBody.svelte";
 
-let app;
-let tgt = document.getElementById("proj-container");
-tgt.innerHTML = "";
-try {
-    app = mount(App, {
-        target: tgt,
-    });
-} catch {
-    app = undefined;
+// --- Hero: hydrate if prerendered, otherwise mount. No polling needed (stable CMS zone). ---
+const heroTarget = document.getElementById("proj-hero");
+if (heroTarget) {
+    if (heroTarget.innerHTML.trim()) {
+        hydrate(Hero, { target: heroTarget });
+    } else {
+        mount(Hero, { target: heroTarget });
+    }
+}
+
+// --- Body: hydrate initially if prerendered, then poll for Piano re-renders. ---
+let bodyApp;
+
+function mountBody(target) {
+    target.innerHTML = "";
+    target.dataset.svelteMounted = "true";
+    try {
+        bodyApp = mount(ArticleBody, { target });
+    } catch {
+        bodyApp = undefined;
+    }
+}
+
+const bodyTarget = document.getElementById("proj-body");
+if (bodyTarget) {
+    if (bodyTarget.innerHTML.trim()) {
+        try {
+            bodyApp = hydrate(ArticleBody, { target: bodyTarget });
+        } catch {
+            mountBody(bodyTarget);
+        }
+    } else {
+        mountBody(bodyTarget);
+    }
 }
 
 setInterval(() => {
-    // Need to refind target because a rerender would break the previous link
-    let tgt = document.getElementById("proj-container");
-    if (tgt.innerHTML === "") {
-        if (app) unmount(app);
-        try {
-            app = mount(App, {
-                target: tgt,
-            });
-        } catch {
-            app = undefined;
+    const tgt = document.getElementById("proj-body");
+    if (!tgt) return;
+
+    // Re-mount if the element lost Svelte's marker (DOM was blown away by Piano/CMS)
+    if (!tgt.dataset.svelteMounted) {
+        if (bodyApp) {
+            try { unmount(bodyApp); } catch { /* old node already gone */ }
+            bodyApp = undefined;
         }
+        mountBody(tgt);
     }
 }, 500);
-
-export default app;

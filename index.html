@@ -1,18 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Star Tribune svelte app</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex,nofollow" />
-  <title>Star Tribune svelte app</title>
+        <link
+            rel="icon"
+            href="https://www.startribune.com/icon.svg"
+            type="image/svg+xml"
+            sizes="any"
+        />
+    </head>
 
-  <link rel="icon" href="https://www.startribune.com/icon.svg" type="image/svg+xml" sizes="any" />
-</head>
+    <body id="top" style="margin: 0">
+        <div style="margin-bottom: 2rem" data-label="CMS Hero Code Block">
+            <div id="proj-hero"></div>
+        </div>
 
-<body id="top" style="margin: 0">
-  <div id="proj-container"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
+        <div data-label="CMS Body Code Block">
+            <div id="proj-body"></div>
+        </div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
 </html>

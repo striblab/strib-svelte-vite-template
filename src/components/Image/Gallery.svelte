@@ -143,6 +143,7 @@ Swiper galleries will not loop correctly across all viewports if they contain fe
     >
       {#each paddedImgs as img}
         {@const aspectRatio = (() => {
+          if (typeof window === "undefined") return 1.5;
           const imageEl = new Image();
           imageEl.src = img.src;
           return imageEl.width / imageEl.height;

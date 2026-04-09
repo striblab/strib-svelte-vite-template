@@ -36,7 +36,8 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --exclude ".DS_Store" \
       --exclude "strib-webfonts/*" \
       --exclude "assets/*" \
-      --exclude "assets/fonts/*"
+      --exclude "assets/fonts/*" \
+      --exclude "fragments/*"
 
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -54,17 +55,31 @@ if [ "$DEPLOY_PATH" != "" ]; then
 
     JS_BUNDLE=$(basename dist/assets/index-*.js)
     CSS_BUNDLE=$(basename dist/assets/index-*.css)
+    ASSET_BASE="${DEPLOY_PATH/s3:/https:}"
+
+    HERO_HTML=""
+    BODY_HTML=""
+    if [ -f "dist/fragments/hero.html" ]; then
+      HERO_HTML=$(cat dist/fragments/hero.html)
+    fi
+    if [ -f "dist/fragments/body.html" ]; then
+      BODY_HTML=$(cat dist/fragments/body.html)
+    fi
+
     echo "
-    
-    Deploy complete! Code block:
 
+    Deploy complete!
 
-    <div id=\"proj-container\"></div>
-    <link rel=\"stylesheet\" href=\"${DEPLOY_PATH/s3:/https:}/assets/$CSS_BUNDLE\">
-    <script type=\"module\" crossorigin src=\"${DEPLOY_PATH/s3:/https:}/assets/$JS_BUNDLE\"></script>
-    
-    
-    
+    === HERO CODE BLOCK (paste into CMS hero area) ===
+
+    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">
+    <div id=\"proj-hero\">$HERO_HTML</div>
+    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>
+
+    === BODY CODE BLOCK (paste into CMS body area) ===
+
+    <div id=\"proj-body\">$BODY_HTML</div>
+
     "
 
   else
