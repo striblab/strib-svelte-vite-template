@@ -31,6 +31,8 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 -->
 
 <script>
+    import { globalState } from "./state.svelte.js";
+
     import Grid from "./components/Grid/Grid.svelte";
     import GridRow from "./components/Grid/_GridRow.svelte";
     import Subhead from "./components/ArticleBody/_Subhead.svelte";
@@ -40,6 +42,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
     import Gallery from "./components/Image/Gallery.svelte";
     import ScrollySection from "./components/Scrolly/ScrollySection.svelte";
     import JWPlayer from "./components/Video/JWPlayer.svelte";
+    import Counter from "./components/Counter/Counter.svelte";
 
     let innerWidth = $state(0);
     let isMobile = $derived(innerWidth < 768);
@@ -75,6 +78,18 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
             excepturi ratione laborum ab omnis quibusdam, accusamus vel eum
             culpa repellendus exercitationem. Fugit, consequatur!</Paragraph
         >
+    </GridRow>
+
+    <GridRow>
+        <Counter
+            count={globalState.count}
+            handleIncrement={() => {
+                globalState.count++;
+            }}
+            handleDecrement={() => {
+                globalState.count--;
+            }}
+        />
     </GridRow>
 
     <GridRow variant="fullBleed">

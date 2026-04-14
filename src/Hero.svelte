@@ -31,6 +31,8 @@ Renders a visual replica of the Immersive Template hero.
 -->
 
 <script>
+    import { globalState } from "./state.svelte.js";
+
     import Grid from "./components/Grid/Grid.svelte";
     import GridRow from "./components/Grid/_GridRow.svelte";
     import SectionLabel from "./components/Hero/_SectionLabel.svelte";
@@ -39,6 +41,7 @@ Renders a visual replica of the Immersive Template hero.
     import Image from "./components/Image/Image.svelte";
     import Dek from "./components/Hero/_Dek.svelte";
     import Byline from "./components/Hero/_Byline.svelte";
+    import Counter from "./components/Counter/Counter.svelte";
 
     /** @type {{sectionLabel?: string; headline?: string; timestamp?: string; heroImageUrl?: string; heroImageCaption?: string; heroImageAltText?: string; dek?: string; authorName?: string; authorBioUrl?: string;}} */
     let {
@@ -76,6 +79,18 @@ Renders a visual replica of the Immersive Template hero.
             />
         </GridRow>
     {/if}
+
+    <GridRow>
+        <Counter
+            count={globalState.count}
+            handleIncrement={() => {
+                globalState.count++;
+            }}
+            handleDecrement={() => {
+                globalState.count--;
+            }}
+        />
+    </GridRow>
 
     <GridRow
         additionalClasses="justify-self-center md:max-w-[535px] md:text-center lg:max-w-[712px]"
