@@ -31,20 +31,6 @@ if (heroTarget) {
     }
 }
 
-setInterval(() => {
-    const tgt = document.getElementById("proj-hero");
-    if (!tgt) return;
-
-    // Re-mount if the element lost Svelte's marker (DOM was blown away by Piano/CMS)
-    if (!tgt.dataset.svelteMounted) {
-        if (heroApp) {
-            try { unmount(heroApp); } catch { /* old node already gone */ }
-            heroApp = undefined;
-        }
-        mountHero(tgt);
-    }
-}, 500);
-
 // --- Body: hydrate initially if prerendered, then poll for Piano re-renders. ---
 let bodyApp;
 
@@ -63,6 +49,7 @@ if (bodyTarget) {
     if (bodyTarget.innerHTML.trim()) {
         try {
             bodyApp = hydrate(ArticleBody, { target: bodyTarget });
+            bodyTarget.dataset.svelteMounted = "true";
         } catch {
             mountBody(bodyTarget);
         }
@@ -71,16 +58,23 @@ if (bodyTarget) {
     }
 }
 
+// --- Shared interval: re-mount either app if the CMS blows away the DOM node. ---
 setInterval(() => {
-    const tgt = document.getElementById("proj-body");
-    if (!tgt) return;
+    const heroTgt = document.getElementById("proj-hero");
+    if (heroTgt && !heroTgt.dataset.svelteMounted) {
+        if (heroApp) {
+            try { unmount(heroApp); } catch { /* old node already gone */ }
+            heroApp = undefined;
+        }
+        mountHero(heroTgt);
+    }
 
-    // Re-mount if the element lost Svelte's marker (DOM was blown away by Piano/CMS)
-    if (!tgt.dataset.svelteMounted) {
+    const bodyTgt = document.getElementById("proj-body");
+    if (bodyTgt && !bodyTgt.dataset.svelteMounted) {
         if (bodyApp) {
             try { unmount(bodyApp); } catch { /* old node already gone */ }
             bodyApp = undefined;
         }
-        mountBody(tgt);
+        mountBody(bodyTgt);
     }
 }, 500);
