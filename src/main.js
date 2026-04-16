@@ -58,23 +58,46 @@ if (bodyTarget) {
     }
 }
 
-// --- Shared interval: re-mount either app if the CMS blows away the DOM node. ---
+// --- Shared interval: re-hydrate either hero or body if the CMS re-renders the code block. ---
 setInterval(() => {
     const heroTgt = document.getElementById("proj-hero");
     if (heroTgt && !heroTgt.dataset.svelteMounted) {
         if (heroApp) {
-            try { unmount(heroApp); } catch { /* old node already gone */ }
+            try {
+                unmount(heroApp);
+            } catch {
+                /* old node already gone */
+            }
             heroApp = undefined;
         }
-        mountHero(heroTgt);
+        try {
+            console.log("rehydrating hero");
+            heroApp = hydrate(Hero, { target: heroTgt });
+            heroTgt.dataset.svelteMounted = "true";
+        } catch {
+            console.log("remounting hero from scratch");
+            mountHero(heroTgt);
+        }
     }
 
     const bodyTgt = document.getElementById("proj-body");
     if (bodyTgt && !bodyTgt.dataset.svelteMounted) {
         if (bodyApp) {
-            try { unmount(bodyApp); } catch { /* old node already gone */ }
+            try {
+                unmount(bodyApp);
+            } catch {
+                /* old node already gone */
+            }
             bodyApp = undefined;
         }
-        mountBody(bodyTgt);
+        try {
+            console.log("rehydrating body");
+
+            bodyApp = hydrate(ArticleBody, { target: bodyTgt });
+            bodyTgt.dataset.svelteMounted = "true";
+        } catch {
+            console.log("remounting body from scratch");
+            mountBody(bodyTgt);
+        }
     }
 }, 500);
