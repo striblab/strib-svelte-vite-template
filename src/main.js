@@ -4,100 +4,49 @@ import { mount, unmount, hydrate } from "svelte";
 import Hero from "./Hero.svelte";
 import ArticleBody from "./ArticleBody.svelte";
 
-// --- Hero: hydrate if prerendered, then poll for CMS re-renders. ---
-let heroApp;
+let heroApp = null;
+let bodyApp = null;
 
-function mountHero(target) {
-    target.innerHTML = "";
-    target.dataset.svelteMounted = "true";
+function instantiateComponent(Component, target) {
+    if (!target) return null;
     try {
-        heroApp = mount(Hero, { target });
+        const app = target.innerHTML.trim()
+            ? hydrate(Component, { target })
+            : mount(Component, { target });
+        target.dataset.svelteMounted = "true";
+        return app;
     } catch {
-        heroApp = undefined;
+        return null;
     }
 }
 
-const heroTarget = document.getElementById("proj-hero");
-if (heroTarget) {
-    if (heroTarget.innerHTML.trim()) {
-        try {
-            heroApp = hydrate(Hero, { target: heroTarget });
-            heroTarget.dataset.svelteMounted = "true";
-        } catch {
-            mountHero(heroTarget);
-        }
-    } else {
-        mountHero(heroTarget);
-    }
-}
+heroApp = instantiateComponent(Hero, document.getElementById("proj-hero"));
+bodyApp = instantiateComponent(
+    ArticleBody,
+    document.getElementById("proj-body"),
+);
 
-// --- Body: hydrate initially if prerendered, then poll for Piano re-renders. ---
-let bodyApp;
-
-function mountBody(target) {
-    target.innerHTML = "";
-    target.dataset.svelteMounted = "true";
-    try {
-        bodyApp = mount(ArticleBody, { target });
-    } catch {
-        bodyApp = undefined;
-    }
-}
-
-const bodyTarget = document.getElementById("proj-body");
-if (bodyTarget) {
-    if (bodyTarget.innerHTML.trim()) {
-        try {
-            bodyApp = hydrate(ArticleBody, { target: bodyTarget });
-            bodyTarget.dataset.svelteMounted = "true";
-        } catch {
-            mountBody(bodyTarget);
-        }
-    } else {
-        mountBody(bodyTarget);
-    }
-}
-
-// --- Shared interval: re-hydrate either hero or body if the CMS re-renders the code block. ---
 setInterval(() => {
-    const heroTgt = document.getElementById("proj-hero");
-    if (heroTgt && !heroTgt.dataset.svelteMounted) {
-        if (heroApp) {
-            try {
-                unmount(heroApp);
-            } catch {
-                /* old node already gone */
-            }
-            heroApp = undefined;
-        }
+    const hero = document.getElementById("proj-hero");
+    const body = document.getElementById("proj-body");
+
+    if (hero && hero.dataset.svelteMounted !== "true") {
+        console.log("remounting custom hero...");
         try {
-            console.log("rehydrating hero");
-            heroApp = hydrate(Hero, { target: heroTgt });
-            heroTgt.dataset.svelteMounted = "true";
+            unmount(heroApp);
         } catch {
-            console.log("remounting hero from scratch");
-            mountHero(heroTgt);
+            /* node already gone */
         }
+        heroApp = instantiateComponent(Hero, hero);
     }
+    if (body && body.dataset.svelteMounted !== "true") {
+        console.log("remounting custom body...");
 
-    const bodyTgt = document.getElementById("proj-body");
-    if (bodyTgt && !bodyTgt.dataset.svelteMounted) {
-        if (bodyApp) {
-            try {
-                unmount(bodyApp);
-            } catch {
-                /* old node already gone */
-            }
-            bodyApp = undefined;
-        }
         try {
-            console.log("rehydrating body");
-
-            bodyApp = hydrate(ArticleBody, { target: bodyTgt });
-            bodyTgt.dataset.svelteMounted = "true";
+            unmount(bodyApp);
         } catch {
-            console.log("remounting body from scratch");
-            mountBody(bodyTgt);
+            /* node already gone */
         }
+        bodyApp = instantiateComponent(ArticleBody, body);
     }
 }, 500);
