@@ -66,21 +66,31 @@ if [ "$DEPLOY_PATH" != "" ]; then
       BODY_HTML=$(cat dist/fragments/body.html)
     fi
 
-    echo "
+    echo ""
+    echo "    Deploy complete!"
+    echo ""
 
-    Deploy complete!
+    if [ -n "$HERO_HTML" ]; then
+      echo "    === HERO CODE BLOCK (paste into CMS hero area) ==="
+      echo ""
+      echo "    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">"
+      echo "    <div id=\"proj-hero\">$HERO_HTML</div>"
+      echo "    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>"
+      echo ""
+    fi
 
-    === HERO CODE BLOCK (paste into CMS hero area) ===
-
-    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">
-    <div id=\"proj-hero\">$HERO_HTML</div>
-    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>
-
-    === BODY CODE BLOCK (paste into CMS body area) ===
-
-    <div id=\"proj-body\">$BODY_HTML</div>
-
-    "
+    if [ -n "$BODY_HTML" ]; then
+      echo "    === BODY CODE BLOCK (paste into CMS body area) ==="
+      echo ""
+      if [ -z "$HERO_HTML" ]; then
+        echo "    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">"
+      fi
+      echo "    <div id=\"proj-body\">$BODY_HTML</div>"
+      if [ -z "$HERO_HTML" ]; then
+        echo "    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>"
+      fi
+      echo ""
+    fi
 
   else
     echo "No 'dist/' directory found. Do you need to run the build command?"
