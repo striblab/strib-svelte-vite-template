@@ -14,14 +14,14 @@ Accepts the optional property additionalClasses for customization.
 -->
 
 <script>
-  /** @type {{additionalClasses?: string; children?: function}} */
-  let { additionalClasses = "", children } = $props();
+    /** @type {{additionalClasses?: string; children?: function}} */
+    let { additionalClasses = "", children } = $props();
 </script>
 
 <!-- ignoring svelte a11y checking since this component is the direct child of a <figure> tag once imported inside the Image component -->
 <!-- svelte-ignore a11y_figcaption_parent -->
 <figcaption
-  class="font-utility-meta-reg-02 text-text-secondary {additionalClasses}"
+    class="font-utility-meta-reg-02 text-text-tertiary {additionalClasses}"
 >
-  {@render children?.()}
+    {@render children?.()}
 </figcaption>
