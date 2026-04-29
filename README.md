@@ -61,9 +61,9 @@ To build for deployment, run `npm run build`. This produces preprendered HTML al
 
 In short, prerendering HTML is probably better for SEO and presents fewer layout shifts when loading.
 
-Without prerendering, the CMS code block contains an empty `<div>`. When a reader loads the page, the browser has to download the JavaScript bundle, parse it and run it before any content appears. This results in in a brief blank space above the fold that flashes until the broader article page's rerendering cycle settles down. With prerendering, the code block already contains the fully-formed HTML, so the content is visible the moment the browser renders the page, with no waiting for JavaScript.
+Without prerendering, the CMS code block contains an empty `<div>`. When a reader loads the page, the browser has to download the JavaScript bundle, parse it and run it before any content appears. This results in a brief blank space above the fold that flashes until the broader article page's rerendering cycle settles down. With prerendering, the code block already contains the fully-formed HTML, so the content is visible the moment the browser renders the page, with no waiting for JavaScript.
 
-Once the JavaScript bundle does load, `main.js` calls Svelte's `hydrate()` function on each container. Hydration reads the existing HTML and attaches Svelte's event listeners and reactive state to it without wiping and re-drawing anything. As a safeguard, `main.js` also runs a check every 500 ms. If a container is found rerendered and without the functionality gained following hydration, the interval will rehydrate that markup, or mount the app's DOM nodes from scratch in the absence of hydratable HTML.
+Once the JavaScript bundle does load, `main.js` calls Svelte's `hydrate()` function on each container. Hydration reads the existing HTML and attaches Svelte's event listeners and reactive state to it without wiping and re-drawing anything. As a safeguard, `main.js` also runs a check every 500 ms. If a container is found rerendered and without JS functionality, the interval will rehydrate that markup.
 
 ### Choosing your build target
 
