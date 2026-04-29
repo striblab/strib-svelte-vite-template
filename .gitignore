@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 /.claude
+.prerender-default
 
 # Editor directories and files
 .vscode/*
