@@ -28,7 +28,7 @@ export default defineConfig({
             plugins: [
                 tailwind(),
                 /** @type {any} */ (
-                    prefixer({ prefix: ":is(#proj-container)" })
+                    prefixer({ prefix: ":is(#proj-hero, #proj-body)" })
                 ),
                 unwrapLayers,
             ],
