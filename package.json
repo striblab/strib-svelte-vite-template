@@ -1,7 +1,7 @@
 {
   "name": "strib-svelte-vite-template",
   "private": true,
-  "version": "0.5.1",
+  "version": "0.5.2",
   "type": "module",
   "engines": {
     "node": "^20.19 || >=22.12"
