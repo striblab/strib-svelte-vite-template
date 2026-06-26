@@ -31,195 +31,188 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 -->
 
 <script>
-    import { globalState } from "./state.svelte.js";
+  import { globalState } from "./state.svelte.js";
 
-    import Grid from "./components/Grid/Grid.svelte";
-    import GridRow from "./components/Grid/_GridRow.svelte";
-    import Subhead from "./components/ArticleBody/_Subhead.svelte";
-    import Paragraph from "./components/ArticleBody/_Paragraph.svelte";
-    import Dropcap from "./components/ArticleBody/_Dropcap.svelte";
-    import Image from "./components/Image/Image.svelte";
-    import Gallery from "./components/Image/Gallery.svelte";
-    import ScrollySection from "./components/Scrolly/ScrollySection.svelte";
-    import JWPlayer from "./components/Video/JWPlayer.svelte";
-    import Counter from "./components/Counter/Counter.svelte";
+  import Grid from "./components/Grid/Grid.svelte";
+  import GridRow from "./components/Grid/_GridRow.svelte";
+  import Subhead from "./components/ArticleBody/_Subhead.svelte";
+  import Paragraph from "./components/ArticleBody/_Paragraph.svelte";
+  import Dropcap from "./components/ArticleBody/_Dropcap.svelte";
+  import Image from "./components/Image/Image.svelte";
+  import Gallery from "./components/Image/Gallery.svelte";
+  import ScrollySection from "./components/Scrolly/ScrollySection.svelte";
+  import JWPlayer from "./components/Video/JWPlayer.svelte";
+  import Counter from "./components/Counter/Counter.svelte";
 
-    let innerWidth = $state(0);
-    let isMobile = $derived(innerWidth < 768);
-    let isTablet = $derived(innerWidth >= 768 && innerWidth < 1160);
-    let isDesktop = $derived(innerWidth >= 1160);
+  import Video from "./components/Video/Video.svelte";
+
+  import videos from "./data/videos.json";
+
+  let innerWidth = $state(0);
+  let isMobile = $derived(innerWidth < 768);
+  let isTablet = $derived(innerWidth >= 768 && innerWidth < 1160);
+  let isDesktop = $derived(innerWidth >= 1160);
 </script>
 
 <svelte:window bind:innerWidth />
 <Grid additionalClasses={"gap-y-5 px-4 md:px-6 min-[1080px]:px-0"}>
-    <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
-        <Paragraph>
-            <Dropcap dropCapLines={3}>L</Dropcap>orem ipsum dolor sit amet
-            consectetur adipisicing elit.
-            <a
-                href="https://www.startribune.com/"
-                target="_blank"
-                rel="noreferrer">Debitis quas</a
-            >, facilis itaque minus totam repudiandae magnam esse asperiores
-            temporibus sed laborum nisi ut corporis ab officiis dolorum odio,
-            porro eveniet. Quis quaerat tempore adipisci nostrum quia non.</Paragraph
-        >
+  <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
+    <Paragraph>
+      <Dropcap dropCapLines={3}>L</Dropcap>orem ipsum dolor sit amet consectetur
+      adipisicing elit.
+      <a href="https://www.startribune.com/" target="_blank" rel="noreferrer"
+        >Debitis quas</a
+      >, facilis itaque minus totam repudiandae magnam esse asperiores
+      temporibus sed laborum nisi ut corporis ab officiis dolorum odio, porro
+      eveniet. Quis quaerat tempore adipisci nostrum quia non.</Paragraph
+    >
 
-        <Paragraph
-            >Voluptate molestiae, perferendis iusto dolor officiis eaque cum
-            quisquam quidem, doloremque dicta temporibus fuga ducimus voluptatum
-            excepturi ratione laborum ab omnis quibusdam, accusamus vel eum
-            culpa repellendus exercitationem. Fugit, consequatur!</Paragraph
-        >
+    <Paragraph
+      >Voluptate molestiae, perferendis iusto dolor officiis eaque cum quisquam
+      quidem, doloremque dicta temporibus fuga ducimus voluptatum excepturi
+      ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
+      exercitationem. Fugit, consequatur!</Paragraph
+    >
 
-        <Paragraph
-            >Voluptate molestiae, perferendis iusto dolor officiis eaque cum
-            quisquam quidem, doloremque dicta temporibus fuga ducimus voluptatum
-            excepturi ratione laborum ab omnis quibusdam, accusamus vel eum
-            culpa repellendus exercitationem. Fugit, consequatur!</Paragraph
-        >
-    </GridRow>
+    <Paragraph
+      >Voluptate molestiae, perferendis iusto dolor officiis eaque cum quisquam
+      quidem, doloremque dicta temporibus fuga ducimus voluptatum excepturi
+      ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
+      exercitationem. Fugit, consequatur!</Paragraph
+    >
+  </GridRow>
 
-    <GridRow>
-        <Counter
-            count={globalState.count}
-            handleIncrement={() => {
-                globalState.count++;
-            }}
-            handleDecrement={() => {
-                globalState.count--;
-            }}
-        />
-    </GridRow>
+  <GridRow>
+    <Counter
+      count={globalState.count}
+      handleIncrement={() => {
+        globalState.count++;
+      }}
+      handleDecrement={() => {
+        globalState.count--;
+      }}
+    />
+  </GridRow>
 
-    <GridRow variant="fullBleed">
-        <Gallery />
-    </GridRow>
+  <GridRow variant="fullBleed">
+    <Gallery />
+  </GridRow>
 
-    <GridRow variant={"fullBleed"}>
-        <Image
-            variant={"captionCentered"}
-            src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
-            alt="Descriptive alt text"
-            caption="Caption tk tk tk"
-        />
-    </GridRow>
+  <GridRow variant={"fullBleed"}>
+    <Image
+      variant={"captionCentered"}
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
+      caption="Caption tk tk tk"
+    />
+  </GridRow>
 
-    <GridRow variant="inline">
-        <Paragraph
-            >Voluptate molestiae, perferendis iusto dolor officiis eaque cum
-            quisquam quidem, doloremque dicta temporibus fuga ducimus voluptatum
-            excepturi ratione laborum ab omnis quibusdam, accusamus vel eum
-            culpa repellendus exercitationem. Fugit, consequatur!</Paragraph
-        >
-    </GridRow>
+  <GridRow variant="inline">
+    <Paragraph
+      >Voluptate molestiae, perferendis iusto dolor officiis eaque cum quisquam
+      quidem, doloremque dicta temporibus fuga ducimus voluptatum excepturi
+      ratione laborum ab omnis quibusdam, accusamus vel eum culpa repellendus
+      exercitationem. Fugit, consequatur!</Paragraph
+    >
+  </GridRow>
 
-    <GridRow variant={isMobile ? "fullBleed" : "inline"}>
-        <Image
-            src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
-            alt="Descriptive alt text"
-            caption="Caption tk tk tk"
-        />
-    </GridRow>
+  <GridRow variant={isMobile ? "fullBleed" : "inline"}>
+    <Image
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
+      caption="Caption tk tk tk"
+    />
+  </GridRow>
 
-    <GridRow variant={"fullBleed"}>
-        <ScrollySection
-            data={[
-                {
-                    step: 0,
-                    color: "#143D11",
-                    text: "In response to this card's appearance in the viewport, the background color is now #143D11.",
-                },
-                {
-                    step: 1,
-                    color: "#5E95D6",
-                    text: "In response to this card's appearance in the viewport, the background color is now #5E95D6.",
-                },
-                {
-                    step: 2,
-                    color: "#CCCCCC",
-                    text: "In response to this card's appearance in the viewport, the background color is now #CCCCCC.",
-                },
-                {
-                    step: 3,
-                    color: "#B13B5B",
-                    text: "In response to this card's appearance in the viewport, the background color is now #B13B5B.",
-                },
-                {
-                    step: 4,
-                    color: "#804316",
-                    text: "In response to this card's appearance in the viewport, the background color is now #804316.",
-                },
-                {
-                    step: 5,
-                    color: "#B28333",
-                    text: "In response to this card's appearance in the viewport, the background color is now #B28333.",
-                },
-                {
-                    step: 6,
-                    color: "#052949",
-                    text: "In response to this card's appearance in the viewport, the background color is now #052949.",
-                },
-            ]}
-        />
-    </GridRow>
+  <GridRow variant={"fullBleed"}>
+    <ScrollySection
+      data={[
+        {
+          step: 0,
+          color: "#143D11",
+          text: "In response to this card's appearance in the viewport, the background color is now #143D11.",
+        },
+        {
+          step: 1,
+          color: "#5E95D6",
+          text: "In response to this card's appearance in the viewport, the background color is now #5E95D6.",
+        },
+        {
+          step: 2,
+          color: "#CCCCCC",
+          text: "In response to this card's appearance in the viewport, the background color is now #CCCCCC.",
+        },
+        {
+          step: 3,
+          color: "#B13B5B",
+          text: "In response to this card's appearance in the viewport, the background color is now #B13B5B.",
+        },
+        {
+          step: 4,
+          color: "#804316",
+          text: "In response to this card's appearance in the viewport, the background color is now #804316.",
+        },
+        {
+          step: 5,
+          color: "#B28333",
+          text: "In response to this card's appearance in the viewport, the background color is now #B28333.",
+        },
+        {
+          step: 6,
+          color: "#052949",
+          text: "In response to this card's appearance in the viewport, the background color is now #052949.",
+        },
+      ]}
+    />
+  </GridRow>
 
-    <GridRow variant="inline" additionalClasses={"gap-y-5"}>
-        <Subhead>Subhead</Subhead>
+  <GridRow variant="inline" additionalClasses={"gap-y-5"}>
+    <Subhead>Subhead</Subhead>
 
-        <Paragraph
-            >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
-            quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
-            reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
-            eveniet magnam.</Paragraph
-        >
+    <Paragraph
+      >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non quam
+      suscipit omnis asperiores cupiditate, a eos, aliquid libero, reprehenderit
+      rerum excepturi ex. Eius perferendis rem fugit nostrum eveniet magnam.</Paragraph
+    >
 
-        <JWPlayer
-            mediaid={"hvh0xHRH"}
-            aspectRatio="9:16"
-            showOverlay={true}
-            loop={false}
-        />
+    <!-- Native <video> Video component (replaces JW Player). Build-time-resolved
+         clip JSON spread in; inline variant keeps the minimal-UX overlay. -->
+    <Video
+      {...videos.find((v) => v.uuid === "ca87479d-8b16-4f7b-94e3-be0a28b72be0")}
+      credit="Video by the Minnesota Star Tribune"
+      variant="inline"
+    />
 
-        <JWPlayer
-            mediaid={"0CljWbDv"}
-            aspectRatio="1:1"
-            showOverlay={true}
-            loop={false}
-        />
+    <Paragraph
+      >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non quam
+      suscipit omnis asperiores cupiditate, a eos, aliquid libero, reprehenderit
+      rerum excepturi ex. Eius perferendis rem fugit nostrum eveniet magnam.</Paragraph
+    >
 
-        <Paragraph
-            >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
-            quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
-            reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
-            eveniet magnam.</Paragraph
-        >
+    <Paragraph
+      >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non quam
+      suscipit omnis asperiores cupiditate, a eos, aliquid libero, reprehenderit
+      rerum excepturi ex. Eius perferendis rem fugit nostrum eveniet magnam.</Paragraph
+    >
+  </GridRow>
 
-        <Paragraph
-            >Quis quaerat tempore adipisci nostrum quia non. Provident, eum! Non
-            quam suscipit omnis asperiores cupiditate, a eos, aliquid libero,
-            reprehenderit rerum excepturi ex. Eius perferendis rem fugit nostrum
-            eveniet magnam.</Paragraph
-        >
-    </GridRow>
-
-    <GridRow variant={isMobile ? "fullBleed" : "default"}>
-        <Image
-            src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
-            alt="Descriptive alt text"
-            caption="Caption tk tk tk"
-        />
-    </GridRow>
+  <GridRow variant={isMobile ? "fullBleed" : "default"}>
+    <Image
+      src="https://arc.stimg.co/startribunemedia/4SPNT7DI36ANT2SOB5N5EJAIJU.jpg"
+      alt="Descriptive alt text"
+      caption="Caption tk tk tk"
+    />
+  </GridRow>
 </Grid>
 
 <style>
-    a {
-        text-decoration-line: underline;
-        text-decoration-color: #00854b;
-        text-underline-offset: 2px;
-    }
+  a {
+    text-decoration-line: underline;
+    text-decoration-color: #00854b;
+    text-underline-offset: 2px;
+  }
 
-    a:hover {
-        color: #00854b;
-    }
+  a:hover {
+    color: #00854b;
+  }
 </style>

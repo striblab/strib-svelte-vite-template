@@ -1,7 +1,7 @@
 {
   "name": "strib-svelte-vite-template",
   "private": true,
-  "version": "0.5.2",
+  "version": "0.6.0",
   "type": "module",
   "engines": {
     "node": "^20.19 || >=22.12"
@@ -12,6 +12,7 @@
     "build:hero": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js hero",
     "build:body": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js body",
     "preview": "vite preview",
+    "resolve:video": "node scripts/resolve-video.js",
     "svelte-check": "svelte-check",
     "deploy-staging": "./strib-deploy.sh --environment staging",
     "deploy-production": "./strib-deploy.sh --environment production"
@@ -21,6 +22,7 @@
     "@inquirer/select": "^5.1.4",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^26.1.0",
     "postcss": "^8.4.39",
     "postcss-prefix-selector": "^2.1.0",
     "svelte": "^5.2.9",

@@ -3,6 +3,9 @@
 ### JWPlayer component
 Renders a configurable video player that will autoplay when it enters the viewport by leveraging the JW Player JavaScript library. Several props allow for out-of-the-box customization for displaying a video overlay, looping the video upon end and setting the desired aspect ratio among the several supported. 
 
+### THIS COMPONENT IS DEPRECATED
+Please consider using the native Video.svelte component instead.
+
 #### Optional properties
 - mediaid: String;
 - aspectRatio: "2:1" | "16:9" | "5:3" | "4:3" | "1:1" | "9:13" | "2:3" | "9:16";
