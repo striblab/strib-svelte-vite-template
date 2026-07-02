@@ -36,7 +36,8 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --exclude ".DS_Store" \
       --exclude "strib-webfonts/*" \
       --exclude "assets/*" \
-      --exclude "assets/fonts/*"
+      --exclude "assets/fonts/*" \
+      --exclude "fragments/*"
 
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -54,18 +55,42 @@ if [ "$DEPLOY_PATH" != "" ]; then
 
     JS_BUNDLE=$(basename dist/assets/index-*.js)
     CSS_BUNDLE=$(basename dist/assets/index-*.css)
-    echo "
-    
-    Deploy complete! Code block:
+    ASSET_BASE="${DEPLOY_PATH/s3:/https:}"
 
+    HERO_HTML=""
+    BODY_HTML=""
+    if [ -f "dist/fragments/hero.html" ]; then
+      HERO_HTML=$(cat dist/fragments/hero.html)
+    fi
+    if [ -f "dist/fragments/body.html" ]; then
+      BODY_HTML=$(cat dist/fragments/body.html)
+    fi
 
-    <div id=\"proj-container\"></div>
-    <link rel=\"stylesheet\" href=\"${DEPLOY_PATH/s3:/https:}/assets/$CSS_BUNDLE\">
-    <script type=\"module\" crossorigin src=\"${DEPLOY_PATH/s3:/https:}/assets/$JS_BUNDLE\"></script>
-    
-    
-    
-    "
+    echo ""
+    echo "    Deploy complete!"
+    echo ""
+
+    if [ -n "$HERO_HTML" ]; then
+      echo "    === HERO CODE BLOCK (paste into CMS hero area) ==="
+      echo ""
+      echo "    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">"
+      echo "    <div id=\"proj-hero\">$HERO_HTML</div>"
+      echo "    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>"
+      echo ""
+    fi
+
+    if [ -n "$BODY_HTML" ]; then
+      echo "    === BODY CODE BLOCK (paste into CMS body area) ==="
+      echo ""
+      if [ -z "$HERO_HTML" ]; then
+        echo "    <link rel=\"stylesheet\" href=\"$ASSET_BASE/assets/$CSS_BUNDLE\">"
+      fi
+      echo "    <div id=\"proj-body\">$BODY_HTML</div>"
+      if [ -z "$HERO_HTML" ]; then
+        echo "    <script type=\"module\" crossorigin src=\"$ASSET_BASE/assets/$JS_BUNDLE\"></script>"
+      fi
+      echo ""
+    fi
 
   else
     echo "No 'dist/' directory found. Do you need to run the build command?"

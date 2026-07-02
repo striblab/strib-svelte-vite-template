@@ -41,6 +41,6 @@ Wrap this component around additional markup to control that markup's width and 
     });
 </script>
 
-<div class="{variantStyles} {additionalClasses}">
+<div class="*:min-w-0 {variantStyles} {additionalClasses}">
     {@render children?.()}
 </div>

@@ -1,9 +1,4 @@
-@utility full-bleed {
-    --full-bleed-max: 1800px;
-    width: min(100vw, var(--full-bleed-max));
-    margin-left: max(calc(50% - 50vw), calc(50% - var(--full-bleed-max) / 2));
-}
-
+/* deprecated type tokens */
 @utility font-editorial-display-brand-uppercase-01 {
     /* Display */
     /* Popular Font */
@@ -604,3 +599,1704 @@
 @utility font-utility-meta-bold-02 {
     @apply font-graphik-semibold leading-heading text-12;
 }
+
+@utility full-bleed {
+    width: min(100vw, 1800px);
+    margin-left: max(calc(50% - 50vw), calc(50% - 1800px / 2));
+}
+
+/* article body — fixed sizes */
+
+@utility typography-article-body-dropcap {
+  &::first-letter {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 82px;
+    font-weight: 300;
+    line-height: 0.8;
+    float: left;
+    padding-right: 0.375rem;
+  }
+}
+
+@utility typography-article-body-h1 {
+  font-family: Publico Headline, serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-h2 {
+  font-family: Publico Headline, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-h3 {
+  font-family: Publico Headline, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-h4 {
+  font-family: Publico Headline, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-h5 {
+  font-family: Publico Headline, serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-h6 {
+  font-family: Publico Headline, serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* article body sponsored — fixed sizes */
+
+@utility typography-article-body-sponsored-h1 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-sponsored-h2 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-sponsored-h3 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-sponsored-h4 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-sponsored-h5 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@utility typography-article-body-sponsored-h6 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+/* editorial enterprise h4-h6 — fixed sizes */
+
+@utility typography-editorial-enterprise-h4 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+@utility typography-editorial-enterprise-h5 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+@utility typography-editorial-enterprise-h6 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* editorial news h4-h6 — fixed sizes */
+
+@utility typography-editorial-news-h4 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+@utility typography-editorial-news-h5 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-editorial-news-h6 {
+  font-family: Publico Headline Condensed, serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+/* editorial non-news h4-h6 — fixed sizes */
+
+@utility typography-editorial-non-news-h4 {
+  font-family: Publico Headline, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@utility typography-editorial-non-news-h5 {
+  font-family: Publico Headline, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+@utility typography-editorial-non-news-h6 {
+  font-family: Publico Headline, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* editorial opinion h4-h6 — fixed sizes */
+
+@utility typography-editorial-opinion-h4 {
+  font-family: Publico Headline, serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+@utility typography-editorial-opinion-h5 {
+  font-family: Publico Headline, serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+@utility typography-editorial-opinion-h6 {
+  font-family: Publico Headline, serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* editorial sponsored h4-h6 — fixed sizes */
+
+@utility typography-editorial-sponsored-h4 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+@utility typography-editorial-sponsored-h5 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+@utility typography-editorial-sponsored-h6 {
+  font-family: Barlow Condensed, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* editorial text — fixed sizes */
+
+@utility typography-editorial-text-bold-small {
+  font-family: Publico Text, serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-bold-x-small {
+  font-family: Publico Text, serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-bold-xx-small {
+  font-family: Publico Text, serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-regular-small {
+  font-family: Publico Text, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-regular-x-small {
+  font-family: Publico Text, serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-regular-xx-small {
+  font-family: Publico Text, serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-bold-small {
+  font-family: Barlow, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-bold-x-small {
+  font-family: Barlow, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-bold-xx-small {
+  font-family: Barlow, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-regular-small {
+  font-family: Barlow, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-regular-x-small {
+  font-family: Barlow, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+@utility typography-editorial-text-sponsored-regular-xx-small {
+  font-family: Barlow, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+/* utility labels — fixed sizes */
+
+@utility typography-utility-label-large {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-large-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@utility typography-utility-label-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-medium-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@utility typography-utility-label-semibold-large {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-semibold-large-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@utility typography-utility-label-semibold-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-semibold-medium-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@utility typography-utility-label-semibold-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-semibold-small-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+@utility typography-utility-label-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-label-small-caps {
+  font-family: Graphik, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* utility section headings — fixed sizes */
+
+@utility typography-utility-section-h1 {
+  font-family: Graphik, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@utility typography-utility-section-h2 {
+  font-family: Graphik, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@utility typography-utility-section-h3 {
+  font-family: Graphik, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+@utility typography-utility-section-h4 {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+@utility typography-utility-section-h5 {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+@utility typography-utility-section-h6 {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+/* utility text bold — fixed sizes */
+
+@utility typography-utility-text-bold-large {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-bold-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-bold-small {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-bold-x-large {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-bold-x-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-bold-xx-small {
+  font-family: Graphik, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* utility text italic — fixed sizes */
+
+@utility typography-utility-text-italic-large {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-italic-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-italic-small {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-italic-x-large {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-italic-x-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-italic-xx-small {
+  font-family: Graphik, sans-serif;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* utility text medium — fixed sizes */
+
+@utility typography-utility-text-medium-large {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-medium-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-medium-small {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-medium-x-large {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-medium-x-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-medium-xx-small {
+  font-family: Graphik, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* utility text regular — fixed sizes */
+
+@utility typography-utility-text-regular-large {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-regular-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-regular-small {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-regular-x-large {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-regular-x-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-regular-xx-small {
+  font-family: Graphik, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* utility text semibold — fixed sizes */
+
+@utility typography-utility-text-semibold-large {
+  font-family: Graphik, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-semibold-medium {
+  font-family: Graphik, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-semibold-small {
+  font-family: Graphik, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-semibold-x-large {
+  font-family: Graphik, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-semibold-x-small {
+  font-family: Graphik, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+@utility typography-utility-text-semibold-xx-small {
+  font-family: Graphik, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* article body — responsive */
+
+@utility typography-article-body-bold {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+}
+
+@utility typography-article-body-bold-italic {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.32;
+  }
+}
+
+@utility typography-article-body-italic {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+}
+
+@utility typography-article-body-link {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.32;
+    text-decoration: underline;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.32;
+    text-decoration: underline;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.32;
+    text-decoration: underline;
+  }
+}
+
+@utility typography-article-body-regular {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.32;
+  }
+}
+
+/* article body sponsored — responsive */
+
+@utility typography-article-body-sponsored-italic {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-article-body-sponsored-link {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-decoration: underline;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-decoration: underline;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-decoration: underline;
+  }
+}
+
+@utility typography-article-body-sponsored-regular {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-article-body-sponsored-semibold {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-article-body-sponsored-semibold-italic {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+}
+
+/* article quotes — responsive */
+
+@utility typography-article-quote-large {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+}
+
+@utility typography-article-quote-small {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+}
+
+/* editorial enterprise h1-h3 — responsive */
+
+@utility typography-editorial-enterprise-h1 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 66px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-enterprise-h2 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-enterprise-h3 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+}
+
+/* editorial news h1-h3 — responsive */
+
+@utility typography-editorial-news-h1 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 66px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-news-h2 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-news-h3 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline Condensed, serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+}
+
+/* editorial non-news h1-h3 — responsive */
+
+@utility typography-editorial-non-news-h1 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-non-news-h2 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-non-news-h3 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+/* editorial opinion h1-h3 — responsive */
+
+@utility typography-editorial-opinion-h1 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 42px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 66px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-opinion-h2 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 42px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 46px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-opinion-h3 {
+  @media (max-width: 767px) {
+    font-family: Publico Headline, serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Headline, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Headline, serif;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+}
+
+/* editorial sponsored h1-h3 — responsive */
+
+@utility typography-editorial-sponsored-h1 {
+  @media (max-width: 767px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 66px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-sponsored-h2 {
+  @media (max-width: 767px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 46px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+}
+
+@utility typography-editorial-sponsored-h3 {
+  @media (max-width: 767px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow Condensed, sans-serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+}
+
+/* editorial text — responsive */
+
+@utility typography-editorial-text-bold-large {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-bold-medium {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-bold-x-large {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+
+@utility typography-editorial-text-regular-large {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-regular-medium {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-regular-x-large {
+  @media (max-width: 767px) {
+    font-family: Publico Text, serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Publico Text, serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Publico Text, serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+/* editorial text sponsored — responsive */
+
+@utility typography-editorial-text-sponsored-bold-large {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-sponsored-bold-medium {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-sponsored-bold-x-large {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+
+@utility typography-editorial-text-sponsored-regular-large {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-sponsored-regular-medium {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+}
+
+@utility typography-editorial-text-sponsored-regular-x-large {
+  @media (max-width: 767px) {
+    font-family: Barlow, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Barlow, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Barlow, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+}
+
+/* utility page headings — responsive */
+
+@utility typography-utility-page-h1 {
+  @media (max-width: 767px) {
+    font-family: Popular, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Popular, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Popular, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+}
+
+@utility typography-utility-page-h2 {
+  @media (max-width: 767px) {
+    font-family: Popular, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Popular, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Popular, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+}
+
+@utility typography-utility-page-h3 {
+  @media (max-width: 767px) {
+    font-family: Popular, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Popular, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Popular, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+}
+
+@utility typography-utility-page-h4 {
+  @media (max-width: 767px) {
+    font-family: Popular, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) and (max-width: 1159px) {
+    font-family: Popular, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+  @media (min-width: 1160px) {
+    font-family: Popular, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+  }
+}
+
