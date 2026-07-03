@@ -13,8 +13,9 @@
     isPlaying = true,
   } = $props();
 
-  let minutes = $derived(Math.floor(timeRemaining / 60));
-  let seconds = $derived(String(timeRemaining % 60).padStart(2, "0"));
+  let timer = $derived(
+    `${Math.floor(timeRemaining / 60)}:${String(timeRemaining % 60).padStart(2, "0")}`,
+  );
 </script>
 
 <div
@@ -47,9 +48,9 @@
         </button>
       {:else if showTimer}
         <span
-          class="font-utility-label-reg-01 py-[5px] px-[10px] rounded-xl tabular-nums text-text-reversed bg-surface-reversed self-center h-auto"
+          class="font-utility-label-reg-01 py-1.25 px-2.5 rounded-xl tabular-nums text-text-reversed bg-surface-reversed self-center h-auto"
         >
-          {minutes}:{seconds}
+          {timer}
         </span>
       {/if}
     </div>

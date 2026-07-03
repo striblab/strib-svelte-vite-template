@@ -1,0 +1,89 @@
+[
+  {
+    "uuid": "290f4539-2037-47a3-b4d3-f145584d1130",
+    "description": "Aerial view of Rush Lake on opening day of fishing season",
+    "sources": [
+      {
+        "src": "https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/Anthony_Souffle_The_Minnesota_Star_Tribune/20260509/69ff1dc8af48230b86778ccd/t_74f63ec5a6e4432f894d2c4361bae022_name_dji_fly_20260509_062552_0328_1778325905646_video_trim/file_1920x1080-5400-v4.mp4",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "poster": "https://d2l28qj3ugy6h9.cloudfront.net/05-09-2026/t_f04f321f1d5f42e2affc2964f10c18ed_name_file_1920x1080_5400_v4_.jpg",
+    "aspectRatio": "1920 / 1080",
+    "captions": "https://d1yv11t56nhu32.cloudfront.net/2026/05/09/290f4539-2037-47a3-b4d3-f145584d1130/2_1782848925171/290f4539-2037-47a3-b4d3-f145584d1130_69ff1d1665e4c2131cf89cea.vtt",
+    "parsedCaptions": [
+      {
+        "start": 0,
+        "end": 2.5,
+        "text": "Welcome to the Example Subtitle File!"
+      },
+      {
+        "start": 3,
+        "end": 6,
+        "text": "This is a demonstration of SRT subtitles."
+      },
+      {
+        "start": 7,
+        "end": 10.5,
+        "text": "You can use SRT files to add subtitles to your videos."
+      },
+      {
+        "start": 12,
+        "end": 15,
+        "text": "Each subtitle entry consists of a number, a timecode,\nand the subtitle text."
+      },
+      {
+        "start": 16,
+        "end": 20,
+        "text": "The timecode format is hours:minutes:seconds,milliseconds."
+      },
+      {
+        "start": 21,
+        "end": 25,
+        "text": "You can adjust the timing to match your video."
+      },
+      {
+        "start": 26,
+        "end": 30,
+        "text": "Make sure the subtitle text is clear and readable."
+      },
+      {
+        "start": 31,
+        "end": 35,
+        "text": "And that's how you create an SRT subtitle file!"
+      },
+      {
+        "start": 36,
+        "end": 40,
+        "text": "Enjoy adding subtitles to your videos!"
+      }
+    ]
+  },
+  {
+    "uuid": "7e224ab7-a598-4309-89f2-34be35cb3953",
+    "description": "Jurassic parked: Yes, the Dino Car in Minneapolis is real",
+    "sources": [
+      {
+        "src": "https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/Ava_Grace/20260629/6a4299cd8a1c2e639318be5d/t_559215adbbdb429e9aaef03a3ffd8ce2_name_Trex__5_/file_540x960-1600-v4.mp4",
+        "width": 540,
+        "height": 960
+      }
+    ],
+    "poster": "https://d2l28qj3ugy6h9.cloudfront.net/06-29-2026/t_a93094c08c7a42a9817ce0429e53f48d_name_file_540x960_1600_v4_.jpg",
+    "aspectRatio": "540 / 960"
+  },
+  {
+    "uuid": "ca87479d-8b16-4f7b-94e3-be0a28b72be0",
+    "description": "Hundreds of Minnesotans gather for annual Wedge Cat Tour",
+    "sources": [
+      {
+        "src": "https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/Abby_Sliva_Izzy_Caswell/20260625/6a3d8586e8e4927298e3a81e/t_d6963089fe7a4ce4a601990a65c1c80f_name_Cattour__2_/file_540x960-1600-v4.mp4",
+        "width": 540,
+        "height": 960
+      }
+    ],
+    "poster": "https://d2l28qj3ugy6h9.cloudfront.net/06-25-2026/t_b4a54adb1ef34c7fb2c62ed37c380b6c_name_file_540x960_1600_v4_.jpg",
+    "aspectRatio": "540 / 960"
+  }
+]
