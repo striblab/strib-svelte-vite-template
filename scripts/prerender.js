@@ -14,6 +14,29 @@ async function resolveTarget() {
     return readFileSync(DEFAULT_FILE, "utf-8").trim();
   }
 
+  // NON-INTERACTIVE FALLBACK — do not prompt where nobody can answer.
+  // `.prerender-default` is gitignored, so a FRESH CLONE has no saved answer and
+  // the prompt below is the first thing `npm run build` hits. In CI, a script, or
+  // an agent session there is no TTY, so the build either throws or hangs forever
+  // on a question no one will read — the worst kind of failure, because it looks
+  // like a slow build.
+  // Falls back to "both" deliberately: it is the SUPERSET, so it can only produce
+  // an extra fragment, never silently omit one. A missing hero fragment is the
+  // dangerous outcome — strib-deploy.sh would then emit no hero CMS block and say
+  // nothing about it.
+  // Chosen over committing a default `.prerender-default`, which would impose the
+  // first project's answer on every clone born from this template.
+  if (!process.stdin.isTTY) {
+    console.warn(
+      "⚠ prerender: no build target given, no .prerender-default, and no TTY to " +
+      "ask — falling back to BOTH fragments.\n" +
+      "  Pass an explicit target to silence this: " +
+      "node scripts/prerender.js hero|body|both\n" +
+      "  (or npm run build:hero / build:body / build:both)"
+    );
+    return "both";
+  }
+
   // First run — prompt and persist
   const target = await select({
     message:
