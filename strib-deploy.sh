@@ -12,6 +12,11 @@ DRY_FLAG=""
 while [ $# -gt 0 ]; do
   case $1 in
   --environment)
+    # `shift 2` with only one positional left FAILS and shifts NOTHING, so the
+    # enclosing `while [ $# -gt 0 ]` spins forever. A hung deploy script reads as
+    # a slow upload, which is the same failure shape this script's own prerender
+    # fallback exists to prevent. Verify there IS a value before consuming two.
+    [ $# -ge 2 ] || { echo "⚠ --environment needs a value (production|staging)"; exit 2; }
     DEPLOYTO="$2"
     shift 2
     ;;
@@ -33,6 +38,8 @@ while [ $# -gt 0 ]; do
     shift 1
     ;;
   --copy)
+    # See the --environment note: a missing value would hang the loop, not error.
+    [ $# -ge 2 ] || { echo "⚠ --copy needs a value (hero|body|none)"; exit 2; }
     # Which block to put on the clipboard: hero | body | none.
     # A SVELTE-hero/SVELTE-body project produces TWO blocks for TWO separate ARC
     # code blocks, and only one thing can be on the clipboard at a time — so this
@@ -57,12 +64,22 @@ done
 # silently builds for you is a different kind of surprise, and `build` vs
 # `build:hero` vs `build:body` is a real choice only the author can make.
 # Override with --force when you know the mismatch is harmless.
+# ⚠ arc-*-block.html is EXCLUDED, and that exclusion is the whole point.
+# Those files are written BY THIS SCRIPT into dist/, so without the exclusion they
+# become the newest thing in dist/ and the freshness check below stops measuring the
+# BUILD at all. Measured: bundle 11:00 + source 12:00 correctly refuses, but add a
+# 12:30 block file and the same stale bundle reports "✅ Build is current".
+# That made --block-only (a feature of this very script) silently re-arm the exact
+# failure the guard exists to catch — worse than no guard, because it prints a green
+# line while shipping a stale bundle. Anything generated here, not by the build,
+# must be invisible to this comparison.
+NOT_BUILD_OUTPUT='-name .DS_Store -o -name arc-hero-block.html -o -name arc-body-block.html'
 newest_mtime() {  # newest mtime (epoch seconds) among existing paths, recursively
-  find "$@" -type f -not -name ".DS_Store" -print0 2>/dev/null \
+  find "$@" -type f -not \( $NOT_BUILD_OUTPUT \) -print0 2>/dev/null \
     | xargs -0 stat -f '%m' 2>/dev/null | sort -rn | head -1
 }
 newest_file() {   # path of the newest file among existing paths, recursively
-  find "$@" -type f -not -name ".DS_Store" -print0 2>/dev/null \
+  find "$@" -type f -not \( $NOT_BUILD_OUTPUT \) -print0 2>/dev/null \
     | xargs -0 stat -f '%m %N' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-
 }
 
@@ -79,7 +96,7 @@ if [ "$SKIP_FRESHNESS" -eq 0 ] && [ -d "dist" ]; then
       # the @epoch form and silently lists nothing, which quietly drops the most
       # useful line of this whole message.
       DIST_REF=$(newest_file dist)
-      NEWEST_FILE=$(find $SRC_PATHS -type f -not -name ".DS_Store" -newer "$DIST_REF" -print 2>/dev/null | head -3)
+      NEWEST_FILE=$(find $SRC_PATHS -type f -not \( $NOT_BUILD_OUTPUT \) -newer "$DIST_REF" -print 2>/dev/null | head -3)
       echo ""
       echo "❌ STALE BUILD — refusing to deploy."
       echo ""
