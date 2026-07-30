@@ -11,6 +11,7 @@
     "build": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js",
     "build:hero": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js hero",
     "build:body": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js body",
+    "build:both": "vite build && vite build --ssr src/prerender.entry.js --outDir dist-ssr && node scripts/prerender.js both",
     "preview": "vite preview",
     "resolve:video": "node scripts/resolve-video.js",
     "svelte-check": "svelte-check",
