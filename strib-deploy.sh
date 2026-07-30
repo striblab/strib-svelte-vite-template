@@ -150,7 +150,9 @@ if [ "$DEPLOY_PATH" != "" ]; then
     # change (3 junk files under .../all/tmpl-fresh/, removed immediately).
     # A tool that cannot be tested without side effects WILL be tested with them.
     if [ "$DRY_RUN" -eq 1 ]; then
-      echo "🅳 --dry-run: NOTHING will be uploaded. Showing planned changes only."
+      echo "🅳 --dry-run: NOTHING will be uploaded to S3 — planned changes only."
+      echo "   (dist/arc-*-block.html IS still written; the clipboard is NOT touched"
+      echo "    unless you passed --copy explicitly.)"
     fi
     echo "Syncing general assets..."
     aws s3 sync ./dist/ $DEPLOY_PATH \
@@ -160,7 +162,9 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --exclude "strib-webfonts/*" \
       --exclude "assets/*" \
       --exclude "assets/fonts/*" \
-      --exclude "fragments/*"
+      --exclude "fragments/*" \
+      --exclude "arc-hero-block.html" \
+      --exclude "arc-body-block.html"
 
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -244,8 +248,19 @@ if [ "$DEPLOY_PATH" != "" ]; then
     fi
 
     # Decide what goes on the clipboard. Default: hero if present, else body.
+    # EXCEPT under --dry-run, which must not touch the pasteboard: a "nothing will
+    # happen" run that silently replaces your clipboard is a lie, and during this
+    # PR's own testing it meant passing --copy none by hand to protect a block
+    # waiting to be pasted. Needing an extra flag to make a dry run safe is the
+    # tell that the default was wrong. An explicit --copy still wins.
     if [ -z "$COPY_WHICH" ]; then
-      if [ -n "$HERO_HTML" ]; then COPY_WHICH="hero"; else COPY_WHICH="body"; fi
+      if [ "$DRY_RUN" -eq 1 ]; then
+        COPY_WHICH="none"
+      elif [ -n "$HERO_HTML" ]; then COPY_WHICH="hero"
+      else COPY_WHICH="body"
+      fi
+    elif [ "$DRY_RUN" -eq 1 ] && [ "$COPY_WHICH" != "none" ]; then
+      echo "    ⚠ --dry-run with an explicit --copy $COPY_WHICH: the clipboard WILL be replaced."
     fi
 
     copy_block() {  # $1 = label, $2 = file

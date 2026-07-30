@@ -51,7 +51,25 @@ async function resolveTarget() {
   return target;
 }
 
+const VALID_TARGETS = ["hero", "body", "both"];
 const target = await resolveTarget();
+
+// FAIL LOUD on a target nobody recognises. Without this, an unknown value (a typo
+// in .prerender-default, a stale value from a project that changed shape, a
+// mis-passed argument) matched NEITHER branch below: no fragment was written, no
+// warning printed, exit code 0. strib-deploy.sh would then find no fragments, emit
+// no CMS block, and also say nothing — two silent no-ops in a row, ending in a
+// deploy that looks successful and publishes an empty hero slot. That is the exact
+// class of failure the rest of this file was changed to prevent.
+if (!VALID_TARGETS.includes(target)) {
+  console.error(
+    `\n❌ prerender: unknown build target ${JSON.stringify(target)}.\n` +
+    `   Expected one of: ${VALID_TARGETS.join(" | ")}\n` +
+    `   Source: ${process.argv[2] ? "the command-line argument" : `the ${DEFAULT_FILE} file`}\n` +
+    `   Fix the value (or delete ${DEFAULT_FILE} to be asked again), then rebuild.\n`
+  );
+  process.exit(1);
+}
 
 mkdirSync("dist/fragments", { recursive: true });
 
