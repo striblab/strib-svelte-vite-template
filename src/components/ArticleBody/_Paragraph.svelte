@@ -11,10 +11,10 @@ Wrap this component around the markup you want rendered.
 -->
 
 <script>
-  /** @type {{children?: function}} */
-  let { children } = $props();
+  /** @type {{additionalClasses: String; children?: function}} */
+  let { additionalClasses = "", children } = $props();
 </script>
 
-<p class="font-editorial-body-reg-02 text-text-primary">
+<p class="font-editorial-body-reg-02 text-text-primary {additionalClasses}">
   {@render children?.()}
 </p>
