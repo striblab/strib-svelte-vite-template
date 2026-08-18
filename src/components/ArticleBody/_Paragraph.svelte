@@ -11,7 +11,7 @@ Wrap this component around the markup you want rendered.
 -->
 
 <script>
-  /** @type {{additionalClasses: String; children?: function}} */
+  /** @type {{additionalClasses?: String; children?: function}} */
   let { additionalClasses = "", children } = $props();
 </script>
 
