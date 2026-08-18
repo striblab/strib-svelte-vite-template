@@ -1,19 +1,13 @@
 import "./styles/tailwind.css";
 
-import { mount, hydrate } from "svelte";
+import { hydrate } from "svelte";
 import Hero from "./Hero.svelte";
 import ArticleBody from "./ArticleBody.svelte";
 
-function instantiateComponent(Component, target) {
+function hydrateComponent(Component, target) {
     if (!target) return null;
-    try {
-        return target.innerHTML.trim()
-            ? hydrate(Component, { target })
-            : mount(Component, { target });
-    } catch {
-        return null;
-    }
+    return hydrate(Component, { target });
 }
 
-instantiateComponent(Hero, document.getElementById("proj-hero"));
-instantiateComponent(ArticleBody, document.getElementById("proj-body"));
+hydrateComponent(Hero, document.getElementById("proj-hero"));
+hydrateComponent(ArticleBody, document.getElementById("proj-body"));
