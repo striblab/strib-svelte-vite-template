@@ -41,7 +41,6 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
   import Image from "./components/Image/Image.svelte";
   import Gallery from "./components/Image/Gallery.svelte";
   import ScrollySection from "./components/Scrolly/ScrollySection.svelte";
-  import JWPlayer from "./components/Video/JWPlayer.svelte";
   import Counter from "./components/Counter/Counter.svelte";
 
   import Video from "./components/Video/Video.svelte";
