@@ -176,11 +176,12 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
     >
 
     <!-- Native <video> Video component (replaces JW Player). Build-time-resolved
-         clip JSON spread in; inline variant keeps the minimal-UX overlay. -->
+         clip JSON spread in; showControls defaults on for the minimal-UX
+         overlay. -->
     <Video
       {...videos.find((v) => v.uuid === "ca87479d-8b16-4f7b-94e3-be0a28b72be0")}
+      autoplayThreshold={0.5}
       credit="Video by the Minnesota Star Tribune"
-      variant="inline"
     />
 
     <Paragraph
