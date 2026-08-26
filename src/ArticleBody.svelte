@@ -180,6 +180,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
     <Video
       {...videos.find((v) => v.uuid === "ca87479d-8b16-4f7b-94e3-be0a28b72be0")}
       autoplayThreshold={0.5}
+      containerStyles="overflow-hidden rounded-2xl"
       credit="Video by the Minnesota Star Tribune"
     />
 

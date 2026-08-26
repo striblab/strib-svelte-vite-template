@@ -26,7 +26,9 @@ from prerendered HTML — no JS selection, no adaptive-bitrate ramp.
   for a full-bleed ambient clip.
 - `shouldLoop`: boolean — loop playback continuously (default false). A clip
   that doesn't loop shows the replay control, if `showControls` is on.
-- `credit`: string — caption text (rendered only when `showControls`).
+- `credit`: string — caption text.
+- `hasCenteredCaption`: boolean — center the credit text (default false). Useful
+  on a full-bleed clip, where a left-aligned caption sits on the viewport edge.
 - `autoplayInView`: boolean — play/pause as it scrolls in/out of view (default true).
 - `autoplayThreshold`: number 0-1 — how much of the video must be visible before
   `autoplayInView` starts it (and below which it pauses). Default `0`: play as
@@ -75,6 +77,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
    *   containerStyles?: string;
    *   shouldLoop?: boolean;
    *   credit?: string;
+   *   hasCenteredCaption?: boolean;
    *   autoplayInView?: boolean;
    *   autoplayThreshold?: number;
    *   preloadMargin?: string;
@@ -86,9 +89,10 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
     poster = "",
     aspectRatio = "",
     showControls = true,
-    containerStyles = "mb-2 flex flex-col gap-4 overflow-hidden rounded-2xl",
+    containerStyles = "",
     shouldLoop = false,
     credit = "",
+    hasCenteredCaption = false,
     autoplayInView = true,
     autoplayThreshold = 0,
     preloadMargin = "200%",
@@ -149,40 +153,8 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   });
 </script>
 
-{#snippet player()}
-  <!-- svelte-ignore a11y_media_has_caption -->
-  <video
-    bind:this={video}
-    bind:duration
-    bind:currentTime
-    bind:paused={isPaused}
-    bind:ended={hasEnded}
-    bind:muted={isMuted}
-    class="block w-full h-full"
-    {poster}
-    style:aspect-ratio={aspectRatio}
-    style:background={poster && `center / cover no-repeat url("${poster}")`}
-    playsinline
-    preload="metadata"
-    loop={shouldLoop}
-    onended={() => {
-      if (!shouldLoop) isPaused = true;
-    }}
-  >
-    <LazyMount
-      target={container}
-      rootMargin={preloadMargin}
-      onRelease={releaseVideo}
-    >
-      {#each sources as source (source.src)}
-        <source src={source.src} media={source.media} type="video/mp4" />
-      {/each}
-    </LazyMount>
-  </video>
-{/snippet}
-
 <figure class="mx-auto w-full">
-  <div class={containerStyles}>
+  <div class="mb-2 {containerStyles}">
     <div class="relative" bind:this={container}>
       {#if showControls}
         <Overlay
@@ -197,12 +169,46 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           onReplay={restart}
         />
       {/if}
-      {@render player()}
+      <!-- svelte-ignore a11y_media_has_caption -->
+      <video
+        bind:this={video}
+        bind:duration
+        bind:currentTime
+        bind:paused={isPaused}
+        bind:ended={hasEnded}
+        bind:muted={isMuted}
+        class="block w-full h-full"
+        {poster}
+        style:aspect-ratio={aspectRatio}
+        style:background={poster && `center / cover no-repeat url("${poster}")`}
+        playsinline
+        preload="metadata"
+        loop={shouldLoop}
+        onended={() => {
+          if (!shouldLoop) isPaused = true;
+        }}
+      >
+        <LazyMount
+          target={container}
+          rootMargin={preloadMargin}
+          onRelease={releaseVideo}
+        >
+          {#each sources as source (source.src)}
+            <source src={source.src} media={source.media} type="video/mp4" />
+          {/each}
+        </LazyMount>
+      </video>
     </div>
   </div>
 
-  {#if showControls && credit}
-    <ImageCaption>{credit}</ImageCaption>
+  {#if credit}
+    <ImageCaption
+      additionalClasses="md:px-0 {hasCenteredCaption
+        ? 'px-4 md:text-center'
+        : ''}"
+    >
+      {credit}
+    </ImageCaption>
   {/if}
 
   {#if showControls && activeCaption}
