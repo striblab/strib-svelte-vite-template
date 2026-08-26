@@ -62,6 +62,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   import Overlay from "./_Overlay.svelte";
   import ImageCaption from "../Image/_ImageCaption.svelte";
   import ElevatedCaption from "./_ElevatedCaption.svelte";
+  import LazyMount from "../LazyMount/LazyMount.svelte";
 
   /**
    * @type {{
@@ -73,6 +74,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
    *   credit?: string;
    *   autoplayInView?: boolean;
    *   autoplayThreshold?: number;
+   *   preloadMargin?: string;
    *   parsedCaptions?: Array<{ start: number; end: number; text: string }>;
    * }}
    */
@@ -85,11 +87,14 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
     credit = "",
     autoplayInView = true,
     autoplayThreshold = 0,
+    preloadMargin = "200%",
     parsedCaptions = [],
   } = $props();
 
   /** @type {HTMLElement | null} */
   let container = $state(null);
+  /** @type {HTMLVideoElement | null} */
+  let video = $state(null);
 
   // Overlay state (only read when showControls).
   let isMuted = $state(true);
@@ -114,6 +119,13 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
     isPaused = false;
   }
 
+  // Unmounting alone would not free anything — a detached <video> holds its
+  // player until GC. load() with the sources gone drops it to NETWORK_EMPTY.
+  function releaseVideo() {
+    video?.pause();
+    video?.load();
+  }
+
   onMount(() => {
     isMuted = true;
     /** @type {IntersectionObserver | undefined} */
@@ -133,9 +145,18 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   });
 </script>
 
+{#snippet posterBox()}
+  <div
+    class="block w-full h-full"
+    style:aspect-ratio={aspectRatio}
+    style:background={poster && `center / cover no-repeat url("${poster}")`}
+  ></div>
+{/snippet}
+
 {#snippet player()}
   <!-- svelte-ignore a11y_media_has_caption -->
   <video
+    bind:this={video}
     bind:duration
     bind:currentTime
     bind:paused={isPaused}
@@ -158,6 +179,17 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   </video>
 {/snippet}
 
+{#snippet gatedPlayer()}
+  <LazyMount
+    class="w-full"
+    rootMargin={preloadMargin}
+    placeholder={posterBox}
+    onRelease={releaseVideo}
+  >
+    {@render player()}
+  </LazyMount>
+{/snippet}
+
 {#if showControls}
   <figure class="mx-auto w-full">
     <div class="mb-2 flex flex-col gap-4 overflow-hidden rounded-2xl">
@@ -173,7 +205,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           }}
           onReplay={restart}
         />
-        {@render player()}
+        {@render gatedPlayer()}
       </div>
     </div>
     {#if credit}
@@ -186,6 +218,6 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   </figure>
 {:else}
   <div bind:this={container}>
-    {@render player()}
+    {@render gatedPlayer()}
   </div>
 {/if}
