@@ -145,14 +145,6 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   });
 </script>
 
-{#snippet posterBox()}
-  <div
-    class="block w-full h-full"
-    style:aspect-ratio={aspectRatio}
-    style:background={poster && `center / cover no-repeat url("${poster}")`}
-  ></div>
-{/snippet}
-
 {#snippet player()}
   <!-- svelte-ignore a11y_media_has_caption -->
   <video
@@ -173,21 +165,16 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
       if (!shouldLoop) isPaused = true;
     }}
   >
-    {#each sources as source (source.src)}
-      <source src={source.src} media={source.media} type="video/mp4" />
-    {/each}
+    <LazyMount
+      target={container}
+      rootMargin={preloadMargin}
+      onRelease={releaseVideo}
+    >
+      {#each sources as source (source.src)}
+        <source src={source.src} media={source.media} type="video/mp4" />
+      {/each}
+    </LazyMount>
   </video>
-{/snippet}
-
-{#snippet gatedPlayer()}
-  <LazyMount
-    class="w-full"
-    rootMargin={preloadMargin}
-    placeholder={posterBox}
-    onRelease={releaseVideo}
-  >
-    {@render player()}
-  </LazyMount>
 {/snippet}
 
 {#if showControls}
@@ -205,7 +192,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           }}
           onReplay={restart}
         />
-        {@render gatedPlayer()}
+        {@render player()}
       </div>
     </div>
     {#if credit}
@@ -218,6 +205,6 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   </figure>
 {:else}
   <div bind:this={container}>
-    {@render gatedPlayer()}
+    {@render player()}
   </div>
 {/if}
