@@ -22,6 +22,8 @@ from prerendered HTML — no JS selection, no adaptive-bitrate ramp.
 - `showControls`: boolean — `true` (default) wraps the video in a `<figure>`
   with the overlay (mute / replay / countdown) and captions. `false` renders
   just the bare video — the ambient/background-loop case.
+- `containerStyles`: string — classes on the wrapper around the video. Pass `""`
+  for a full-bleed ambient clip.
 - `shouldLoop`: boolean — loop playback continuously (default false). A clip
   that doesn't loop shows the replay control, if `showControls` is on.
 - `credit`: string — caption text (rendered only when `showControls`).
@@ -70,6 +72,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
    *   poster?: string;
    *   aspectRatio?: string;
    *   showControls?: boolean;
+   *   containerStyles?: string;
    *   shouldLoop?: boolean;
    *   credit?: string;
    *   autoplayInView?: boolean;
@@ -83,6 +86,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
     poster = "",
     aspectRatio = "",
     showControls = true,
+    containerStyles = "mb-2 flex flex-col gap-4 overflow-hidden rounded-2xl",
     shouldLoop = false,
     credit = "",
     autoplayInView = true,
@@ -177,10 +181,10 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   </video>
 {/snippet}
 
-{#if showControls}
-  <figure class="mx-auto w-full">
-    <div class="mb-2 flex flex-col gap-4 overflow-hidden rounded-2xl">
-      <div class="relative" bind:this={container}>
+<figure class="mx-auto w-full">
+  <div class={containerStyles}>
+    <div class="relative" bind:this={container}>
+      {#if showControls}
         <Overlay
           {isMuted}
           {isPaused}
@@ -192,19 +196,16 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           }}
           onReplay={restart}
         />
-        {@render player()}
-      </div>
+      {/if}
+      {@render player()}
     </div>
-    {#if credit}
-      <ImageCaption>{credit}</ImageCaption>
-    {/if}
-
-    {#if activeCaption}
-      <ElevatedCaption>{activeCaption}</ElevatedCaption>
-    {/if}
-  </figure>
-{:else}
-  <div bind:this={container}>
-    {@render player()}
   </div>
-{/if}
+
+  {#if showControls && credit}
+    <ImageCaption>{credit}</ImageCaption>
+  {/if}
+
+  {#if showControls && activeCaption}
+    <ElevatedCaption>{activeCaption}</ElevatedCaption>
+  {/if}
+</figure>
