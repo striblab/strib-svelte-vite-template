@@ -1,6 +1,6 @@
 <!--
 @component
-### LazyMount
+### MountWhileNear
 Mounts its children only while `target` is near the viewport, and unmounts
 them again on the way out. An IntersectionObserver with a generous
 `rootMargin` decides "near", so children are ready before they're visible.
@@ -40,11 +40,11 @@ being one this component owns.
 #### Example
 ```svelte
 <video bind:this={video} {poster}>
-  <LazyMount target={container} onRelease={releaseVideo}>
+  <MountWhileNear target={container} onRelease={releaseVideo}>
     {#each sources as source (source.src)}
       <source src={source.src} type="video/mp4" />
     {/each}
-  </LazyMount>
+  </MountWhileNear>
 </video>
 ```
 -->

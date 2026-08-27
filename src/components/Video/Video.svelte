@@ -66,7 +66,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   import Overlay from "./_Overlay.svelte";
   import ImageCaption from "../Image/_ImageCaption.svelte";
   import ElevatedCaption from "./_ElevatedCaption.svelte";
-  import LazyMount from "../LazyMount/LazyMount.svelte";
+  import MountWhileNear from "../MountWhileNear/MountWhileNear.svelte";
 
   /**
    * @type {{
@@ -188,7 +188,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           if (!shouldLoop) isPaused = true;
         }}
       >
-        <LazyMount
+        <MountWhileNear
           target={container}
           rootMargin={preloadMargin}
           onRelease={releaseVideo}
@@ -196,7 +196,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           {#each sources as source (source.src)}
             <source src={source.src} media={source.media} type="video/mp4" />
           {/each}
-        </LazyMount>
+        </MountWhileNear>
       </video>
     </div>
   </div>
