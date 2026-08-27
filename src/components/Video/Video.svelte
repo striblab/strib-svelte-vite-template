@@ -4,7 +4,7 @@
 Native `<video>` playing Arc-hosted progressive MP4(s) over CloudFront. Fully
 prop-driven: pass a `sources` ladder (+ `poster` / `aspectRatio`) resolved at
 build time by `scripts/resolve-video.js`, which writes one `<uuid>.json` per
-video whose keys ARE these props — so you spread it straight in:
+video whose keys are these props — so you spread it straight in:
 `<Video {...someClip} />`.
 
  The browser loads the first `<source>` whose media query matches (smallest file
@@ -104,7 +104,6 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   /** @type {HTMLVideoElement | null} */
   let video = $state(null);
 
-  // Overlay state (only read when showControls).
   let isMuted = $state(true);
   let isPaused = $state(true);
   let duration = $state(0);
