@@ -39,11 +39,14 @@ Renders a visual replica of the Immersive Template hero.
   import Headline from "./components/Hero/_Headline.svelte";
   import Timestamp from "./components/Hero/_Timestamp.svelte";
   import Image from "./components/Image/Image.svelte";
+  import Video from "./components/Video/Video.svelte";
   import Dek from "./components/Hero/_Dek.svelte";
   import Byline from "./components/Hero/_Byline.svelte";
   import Counter from "./components/Counter/Counter.svelte";
 
-  /** @type {{sectionLabel?: string; headline?: string; timestamp?: string; heroImageUrl?: string; heroImageCaption?: string; heroImageAltText?: string; dek?: string; authorName?: string; authorBioUrl?: string;}} */
+  import videos from "./data/videos.json";
+
+  /** @type {{sectionLabel?: string; headline?: string; timestamp?: string; heroImageUrl?: string; heroImageCaption?: string; heroImageAltText?: string; dek?: string; authorName?: string; authorBioUrl?: string; heroVideoUuid?: string;}} */
   let {
     sectionLabel = "Section label",
     headline = "Lorem ipsum dolor sit amet consectetur adipiscing elit",
@@ -54,6 +57,7 @@ Renders a visual replica of the Immersive Template hero.
     dek = "Lorem ipsum dolor sit amet consectetur adipiscing elit, fusce sociis at montes vitae tempor enim, venenatis tristique feugiat arcu dis ridiculus.",
     authorName = "Bryan Brussee",
     authorBioUrl = "",
+    heroVideoUuid = "",
   } = $props();
 </script>
 
@@ -68,7 +72,17 @@ Renders a visual replica of the Immersive Template hero.
     </div>
   </GridRow>
 
-  {#if heroImageUrl}
+  {#if heroVideoUuid}
+    <GridRow variant="fullBleed">
+      <Video
+        {...videos.find((v) => v.uuid === heroVideoUuid)}
+        credit="Video by the Minnesota Star Tribune"
+        showControls={false}
+        shouldLoop={true}
+        hasCenteredCaption={true}
+      />
+    </GridRow>
+  {:else if heroImageUrl}
     <GridRow variant={"fullBleed"}>
       <Image
         variant={"captionCentered"}

@@ -10,7 +10,7 @@
     timeRemaining,
     showReplay = false,
     showTimer = false,
-    isPlaying = true,
+    isPaused = false,
   } = $props();
 
   let timer = $derived(
@@ -20,7 +20,7 @@
 
 <div
   class="absolute h-full w-full z-10 transition-colors duration-300"
-  style:background-color={isPlaying ? "rgba(0,0,0,0)" : "rgba(0,0,0,.4)"}
+  style:background-color={isPaused ? "rgba(0,0,0,.4)" : "rgba(0,0,0,0)"}
 >
   <div class="h-full flex flex-col justify-between">
     <div class="p-4 flex flex-row justify-between">

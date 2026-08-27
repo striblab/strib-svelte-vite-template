@@ -85,5 +85,18 @@
     ],
     "poster": "https://d2l28qj3ugy6h9.cloudfront.net/06-25-2026/t_b4a54adb1ef34c7fb2c62ed37c380b6c_name_file_540x960_1600_v4_.jpg",
     "aspectRatio": "540 / 960"
+  },
+  {
+    "uuid": "c2e292c4-84c4-464c-ab5e-c89a942676a7",
+    "description": "Spring: School drone",
+    "sources": [
+      {
+        "src": "https://d2rhwptr68oefh.cloudfront.net/wp-startribunemedia/20260729/6a6a53d2b9fa8432e90539b9/t_617b20c4a0e7469ea5919e5d9154b713_name_7_Summer_schooldrone/file_1920x1080-5400-v4.mp4",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "poster": "https://d2l28qj3ugy6h9.cloudfront.net/07-29-2026/t_c7d31f7c702548f98360fd9abf36e611_name_file_1920x1080_5400_v4_.jpg",
+    "aspectRatio": "1920 / 1080"
   }
 ]
