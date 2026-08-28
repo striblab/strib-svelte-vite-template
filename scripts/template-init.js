@@ -34,6 +34,13 @@ const PLACEHOLDER_PKG_NAME = "strib-svelte-vite-template";
 const STARTING_SECTION_RE =
   /\n## Starting a project\n[\s\S]*?(?=\nThis project requires the latest versions)/;
 
+// Template-only encouragement to poke around the included components —
+// doesn't apply once a project has its own real content. Removed and
+// replaced with a "## Setup" heading directly above the Node version
+// requirements paragraph that follows it.
+const ENCOURAGEMENT_PARAGRAPH =
+  "You're encouraged to modify the included components and write your own. The documentation bundled with each component and [Svelte's interactive tutorial](https://svelte.dev/tutorial/svelte/welcome-to-svelte) are good places to start.";
+
 /**
  * Humanize a kebab/snake-case repo slug into a title, e.g.
  * "mn-election-2026" -> "Mn Election 2026". Best-effort — it doesn't know
@@ -67,6 +74,10 @@ if (readme.includes(PLACEHOLDER_TITLE)) {
   let nextReadme = readme.replace(PLACEHOLDER_TITLE, `# ${title}`);
   nextReadme = nextReadme.replace(PLACEHOLDER_DESCRIPTION, description);
   nextReadme = nextReadme.replace(STARTING_SECTION_RE, "");
+  nextReadme = nextReadme.replace(
+    `${ENCOURAGEMENT_PARAGRAPH}\n\nThis project requires the latest versions`,
+    "## Setup\n\nThis project requires the latest versions",
+  );
   writeFileSync(README_PATH, nextReadme);
   console.log(`template-init: README.md customized for "${repoName}".`);
 } else {

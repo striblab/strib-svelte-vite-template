@@ -15,10 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-
+      # No devDependencies needed (plain node:fs), so this skips
+      # actions/setup-node and just uses ubuntu-latest's preinstalled
+      # Node.js to shave a few seconds off the run.
       - name: Customize README and package.json
         env:
           REPO_NAME: ${{ github.event.repository.name }}
