@@ -63,6 +63,10 @@
   --breakpoint-lg: 1160px;
   --breakpoint-xl: 1440px;
 
+  /* page layout widths — see the page-grid utility */
+  --width-content-max: 1080px;
+  --width-bleed-max: 1800px;
+
   /* deprecated color tokens */
   --color-none: none;
   --color-transparent: transparent;

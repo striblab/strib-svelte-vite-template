@@ -11,7 +11,7 @@ Wrap this component around additional markup to control that markup's width and 
 #### Variants
 - default: GridRow spans the full width of its parent grid. This is the default behavior if the optional variant property is not passed in.  
 - inline: GridRow spans the full width of its parent grid on mobile, and the middle six columns of its parent grid on tablet and desktop.
-- fullBleed: GridRow spans the width of the page up to 1800px. 
+- fullBleed: GridRow spans the width of the page, up to a 1800px band (--width-bleed-max), centered.
 
 #### Example
 ```svelte
@@ -32,11 +32,11 @@ Wrap this component around additional markup to control that markup's width and 
     let variantStyles = $derived.by(() => {
         switch (variant) {
             case "default":
-                return "col-span-full";
+                return "grid-row-default";
             case "inline":
-                return "col-span-full grid md:col-start-2 md:col-span-6 lg:col-start-4";
+                return "grid-row-inline grid";
             case "fullBleed":
-                return "col-span-full full-bleed";
+                return "grid-row-full";
         }
     });
 </script>
