@@ -61,7 +61,7 @@ Renders a visual replica of the Immersive Template hero.
   } = $props();
 </script>
 
-<Grid additionalClasses="gap-y-8 md:gap-y-10 px-4 md:px-6 min-[1080px]:px-0">
+<Grid additionalClasses="gap-y-8 md:gap-y-10">
   <GridRow>
     <div class="flex justify-center mt-8 mb-6">
       <SectionLabel>{sectionLabel}</SectionLabel>

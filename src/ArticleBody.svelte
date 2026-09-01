@@ -54,7 +54,7 @@ The following example uses a ternary to render an image edge-to-edge on mobile b
 </script>
 
 <svelte:window bind:innerWidth />
-<Grid additionalClasses={"gap-y-5 px-4 md:px-6 min-[1080px]:px-0"}>
+<Grid additionalClasses={"gap-y-5"}>
   <GridRow variant={"inline"} additionalClasses={"gap-y-5"}>
     <Paragraph>
       <Dropcap dropCapLines={3}>L</Dropcap>orem ipsum dolor sit amet consectetur

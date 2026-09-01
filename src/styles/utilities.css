@@ -600,9 +600,67 @@
     @apply font-graphik-semibold leading-heading text-12;
 }
 
-@utility full-bleed {
-    width: min(100vw, 1800px);
-    margin-left: max(calc(50% - 50vw), calc(50% - 1800px / 2));
+/* Page layout grid.
+
+   Gutter tracks — not negative margins — carry full-bleed rows out to the
+   page edge, so nothing here reads a viewport unit. `100vw` includes the
+   scrollbar gutter while `%` does not, and mixing them threw full-bleed rows
+   off by half a scrollbar (7.5px) on every edge for anyone running macOS with
+   scrollbars always visible.
+
+   The element's own max-width caps the bleed band; the column max caps the
+   content column. Two caps, one element, no wrapper. */
+@utility page-grid {
+    --page-grid-gap: --spacing(4);
+    --page-grid-cols: 8;
+
+    display: grid;
+    column-gap: var(--page-grid-gap);
+    max-width: var(--width-bleed-max);
+    margin-inline: auto;
+    grid-template-columns:
+        [full-start] minmax(0, 1fr)
+        [content-start] repeat(
+            var(--page-grid-cols),
+            [col-start]
+                minmax(
+                    0,
+                    calc(
+                        (var(--width-content-max) - (var(--page-grid-cols) - 1) *
+                                    var(--page-grid-gap)) / var(--page-grid-cols)
+                    )
+                )
+        )
+        [content-end] minmax(0, 1fr)
+        [full-end];
+
+    @variant md {
+        --page-grid-gap: --spacing(6);
+    }
+
+    @variant lg {
+        --page-grid-cols: 12;
+    }
+}
+
+@utility grid-row-default {
+    grid-column: content-start / content-end;
+}
+
+@utility grid-row-full {
+    grid-column: full-start / full-end;
+}
+
+@utility grid-row-inline {
+    grid-column: content-start / content-end;
+
+    @variant md {
+        grid-column: col-start 2 / span 6;
+    }
+
+    @variant lg {
+        grid-column: col-start 4 / span 6;
+    }
 }
 
 /* article body — fixed sizes */
