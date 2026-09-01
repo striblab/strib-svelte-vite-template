@@ -28,7 +28,10 @@ export default defineConfig({
       plugins: [
         tailwind(),
         /** @type {any} */ (
-          prefixer({ prefix: ":is(#proj-hero, #proj-body)" })
+          prefixer({
+            prefix: ":is(#proj-hero, #proj-body)",
+            ignoreFiles: ["index.html"],
+          })
         ),
         unwrapLayers,
       ],

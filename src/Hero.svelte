@@ -63,7 +63,7 @@ Renders a visual replica of the Immersive Template hero.
 
 <Grid additionalClasses="gap-y-8 md:gap-y-10 px-4 md:px-6 min-[1080px]:px-0">
   <GridRow>
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center mt-8 mb-6">
       <SectionLabel>{sectionLabel}</SectionLabel>
     </div>
     <div class="flex flex-col gap-y-6 md:gap-y-8 text-center">
