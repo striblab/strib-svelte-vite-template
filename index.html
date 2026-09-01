@@ -1,38 +1,120 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="robots" content="noindex,nofollow" />
-        <title>Star Tribune svelte app</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Star Tribune svelte app</title>
 
-        <link
-            rel="icon"
-            href="https://www.startribune.com/icon.svg"
-            type="image/svg+xml"
-            sizes="any"
-        />
-    </head>
+    <link
+      rel="icon"
+      href="https://www.startribune.com/icon.svg"
+      type="image/svg+xml"
+      sizes="any"
+    />
+    <style>
+      #global-header {
+        display: block;
+        /* rt-Box */
+        z-index: 5000;
+        /* z-[5000] */
+        position: sticky;
+        /* sticky */
+        top: 0;
+        /* top-0 */
+        background-color: white;
+        /* bg-surface-primary (custom color) */
+        transition: box-shadow 200ms;
+        /* transition-box-shadow duration-200 */
+        border-bottom: 1px solid #e3e5e8;
+        /* border-b border-b-border-subtle-01 border-b-solid */
+        padding: 1rem 0;
+      }
 
-    <body id="top" style="margin: 0">
-        <link rel="stylesheet"
-        href="/global-nav.css" />
-        <div data-testid="global-navigation-header" id="global-header">
-            <img class="desktop-logo"
-                src="https://static.startribune.com/news/tools/img/TheMinnesotaStarTribune_Logo_Lockup_HZ_CMYK.svg"
-                alt="Star Tribune logo" />
-            <img class="mobile-logo"
-                src="https://static.startribune.com/news/tools/img/star-logo.svg"
-                alt="Star Tribune logo" />
-        </div>
+      #global-header img {
+        display: block;
+        margin: auto;
+      }
 
-        <div style="margin-bottom: 2rem" data-label="CMS Hero Code Block">
-            <div id="proj-hero"></div>
-        </div>
+      #global-header img.mobile-logo {
+        display: none;
+      }
 
-        <div data-label="CMS Body Code Block">
-            <div id="proj-body"></div>
-        </div>
-        <script type="module" src="/src/main.js"></script>
-    </body>
+      /* xs */
+      @media only screen and (max-width: 767px) {
+        #global-header {
+          padding: 0.5rem 0;
+        }
+
+        #global-header img {
+          height: 41px;
+        }
+
+        #global-header img.mobile-logo {
+          display: block;
+        }
+
+        #global-header img.desktop-logo {
+          display: none;
+        }
+      }
+
+      /* md */
+      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        #global-header img {
+          width: 21.5rem;
+        }
+
+        #global-header {
+          padding: 0.8rem 0;
+        }
+      }
+
+      /* lg */
+      @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+        #global-header img {
+          width: 25.25rem;
+        }
+
+        #global-header {
+          padding: 0.65rem 0;
+        }
+      }
+
+      /* xl */
+      @media only screen and (min-width: 1440px) {
+        #global-header img {
+          width: 25.25rem;
+        }
+
+        #global-header {
+          padding: 0.65rem 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="top" style="margin: 0">
+    <div data-testid="global-navigation-header" id="global-header">
+      <img
+        class="desktop-logo"
+        src="https://static.startribune.com/news/tools/img/TheMinnesotaStarTribune_Logo_Lockup_HZ_CMYK.svg"
+        alt="Star Tribune logo"
+      />
+      <img
+        class="mobile-logo"
+        src="https://static.startribune.com/news/tools/img/star-logo.svg"
+        alt="Star Tribune logo"
+      />
+    </div>
+
+    <div style="margin-bottom: 2rem" data-label="CMS Hero Code Block">
+      <div id="proj-hero"></div>
+    </div>
+
+    <div data-label="CMS Body Code Block">
+      <div id="proj-body"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
