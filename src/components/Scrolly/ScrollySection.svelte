@@ -45,7 +45,7 @@ Just import the ScrollySection component and include it as follows inside of the
     class="sticky top-0 w-full h-svh"
     style:background-color={activeColor}
   ></div>
-  <Grid additionalClasses="relative px-4 md:px-6 min-[1080px]:px-0">
+  <Grid additionalClasses="relative">
     <GridRow variant="inline">
       <Scrolly
         bind:value={scrollIndex}
