@@ -53,8 +53,8 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --profile default \
       --content-type "text/css" \
 
-    JS_BUNDLE=$(basename dist/assets/index-*.js)
-    CSS_BUNDLE=$(basename dist/assets/index-*.css)
+    JS_BUNDLE=$(basename "$(grep -o 'assets/index-[^"]*\.js' dist/index.html | head -1)")
+    CSS_BUNDLE=$(basename "$(grep -o 'assets/index-[^"]*\.css' dist/index.html | head -1)")
     ASSET_BASE="${DEPLOY_PATH/s3:/https:}"
 
     HERO_HTML=""
