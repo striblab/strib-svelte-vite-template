@@ -80,6 +80,7 @@ Renders a visual replica of the Immersive Template hero.
         showControls={false}
         shouldLoop={true}
         hasCenteredCaption={true}
+        shouldMountWhileNear={false}
       />
     </GridRow>
   {:else if heroImageUrl}
