@@ -36,6 +36,10 @@ from prerendered HTML — no JS selection, no adaptive-bitrate ramp.
 - `parsedCaptions`: Array<{ start: number; end: number; text: string }> — VTT cues
   pre-parsed at build time by `resolve-video.js`. Drives the `activeCaption` derived
   (the cue text for the current playback moment).
+- `shouldMountWhileNear`: boolean — only attach the `<source>`s while the video is
+  within `preloadMargin` of the viewport, and release the player once it scrolls
+  past (default true). Pass `false` for an above-the-fold clip (e.g. the hero),
+  where the sources should be in the prerendered HTML from the start.
 
 #### Getting Arc video data
 To generate the data this component expects from an Arc Video Center asset, find your asset's UUID {@link https://startribunemedia.arcpublishing.com/videocenter/x/vodxsearch here}.
@@ -81,6 +85,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
    *   autoplayInView?: boolean;
    *   autoplayThreshold?: number;
    *   preloadMargin?: string;
+   *   shouldMountWhileNear?: boolean;
    *   parsedCaptions?: Array<{ start: number; end: number; text: string }>;
    * }}
    */
@@ -96,6 +101,7 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
     autoplayInView = true,
     autoplayThreshold = 0,
     preloadMargin = "200%",
+    shouldMountWhileNear = true,
     parsedCaptions = [],
   } = $props();
 
@@ -152,6 +158,12 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
   });
 </script>
 
+{#snippet sourceList()}
+  {#each sources as source (source.src)}
+    <source src={source.src} media={source.media} type="video/mp4" />
+  {/each}
+{/snippet}
+
 <figure class="mx-auto w-full">
   <div class="mb-2 {containerStyles}">
     <div class="relative" bind:this={container}>
@@ -187,15 +199,17 @@ browser autoplay policy blocks unmuted autoplay. `playsinline` keeps iOS inline.
           if (!shouldLoop) isPaused = true;
         }}
       >
-        <MountWhileNear
-          target={container}
-          rootMargin={preloadMargin}
-          onRelease={releaseVideo}
-        >
-          {#each sources as source (source.src)}
-            <source src={source.src} media={source.media} type="video/mp4" />
-          {/each}
-        </MountWhileNear>
+        {#if shouldMountWhileNear}
+          <MountWhileNear
+            target={container}
+            rootMargin={preloadMargin}
+            onRelease={releaseVideo}
+          >
+            {@render sourceList()}
+          </MountWhileNear>
+        {:else}
+          {@render sourceList()}
+        {/if}
       </video>
     </div>
   </div>
