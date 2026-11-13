@@ -30,6 +30,23 @@ if [ "$DEPLOY_PATH" != "" ]; then
 
     FONTS_PATH="$DEPLOY_PATH/fonts/"
 
+    sync_failed() {
+      echo "" >&2
+      echo "    DEPLOY FAILED: aws s3 sync exited with an error (see output above)." >&2
+      echo "    Check that your AWS credentials are valid (run 'aws sso login', or 'aws configure sso' if you've never set it up)." >&2
+      echo "" >&2
+      exit 1
+    }
+
+    echo "Checking AWS credentials..."
+    if ! aws sts get-caller-identity --profile default > /dev/null; then
+      echo "" >&2
+      echo "    DEPLOY FAILED: AWS credentials are missing or expired (see output above)." >&2
+      echo "    Sign in (run 'aws sso login', or 'aws configure sso' if you've never set it up) and try again. Nothing was uploaded." >&2
+      echo "" >&2
+      exit 1
+    fi
+
     echo "Syncing general assets..."
     aws s3 sync ./dist/ $DEPLOY_PATH \
       --profile default \
@@ -37,7 +54,8 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --exclude "strib-webfonts/*" \
       --exclude "assets/*" \
       --exclude "assets/fonts/*" \
-      --exclude "fragments/*"
+      --exclude "fragments/*" \
+      || sync_failed
 
     echo "Syncing JavaScript files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -45,6 +63,7 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --include "*.js" \
       --profile default \
       --content-type "application/javascript" \
+      || sync_failed
 
     echo "Syncing CSS files..."
     aws s3 sync ./dist/assets/ "$DEPLOY_PATH/assets" \
@@ -52,6 +71,7 @@ if [ "$DEPLOY_PATH" != "" ]; then
       --include "*.css" \
       --profile default \
       --content-type "text/css" \
+      || sync_failed
 
     JS_BUNDLE=$(basename "$(grep -o 'assets/index-[^"]*\.js' dist/index.html | head -1)")
     CSS_BUNDLE=$(basename "$(grep -o 'assets/index-[^"]*\.css' dist/index.html | head -1)")
