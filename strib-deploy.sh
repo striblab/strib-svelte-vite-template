@@ -33,7 +33,7 @@ if [ "$DEPLOY_PATH" != "" ]; then
     sync_failed() {
       echo "" >&2
       echo "    DEPLOY FAILED: aws s3 sync exited with an error (see output above)." >&2
-      echo "    Check that your AWS credentials are valid (e.g. run 'aws configure sso')." >&2
+      echo "    Check that your AWS credentials are valid (run 'aws sso login', or 'aws configure sso' if you've never set it up)." >&2
       echo "" >&2
       exit 1
     }
@@ -42,7 +42,7 @@ if [ "$DEPLOY_PATH" != "" ]; then
     if ! aws sts get-caller-identity --profile default > /dev/null; then
       echo "" >&2
       echo "    DEPLOY FAILED: AWS credentials are missing or expired (see output above)." >&2
-      echo "    Sign in (e.g. run 'aws configure sso') and try again. Nothing was uploaded." >&2
+      echo "    Sign in (run 'aws sso login', or 'aws configure sso' if you've never set it up) and try again. Nothing was uploaded." >&2
       echo "" >&2
       exit 1
     fi
